@@ -1,84 +1,137 @@
 # ⚽ Matchday Maestro - Landing Page
 
-Premium landing page for Matchday Maestro, the AI-powered football prediction app that rewards knowledge over luck.
+Premium Next.js landing page for Matchday Maestro, the AI-powered football prediction app that rewards knowledge over luck.
 
-## 🚀 Live Website
+## 🚀 Tech Stack
 
-- **Main Landing Page**: `matchday-maestro.html`
-- **Privacy Policy**: `privacy-policy.html` 
-- **Terms of Service**: `terms-of-service.html`
+- **Framework**: Next.js 16 with App Router
+- **UI Library**: React 19.2
+- **Styling**: Tailwind CSS + Custom Glassmorphism
+- **Animations**: Framer Motion
+- **Components**: Shadcn/ui
+- **TypeScript**: Full type safety
 
-## 📧 Email Signup Integration
+## 📄 Pages
 
-Professional email signup form with:
-- ✅ Custom button text: "Join Waiting List"
-- ✅ Custom success message: "Thanks! We'll notify you when Matchday Maestro launches."
-- ✅ Premium styling matching the website design
-- ✅ Secure Mailchimp API integration via Netlify Functions
-- ✅ GDPR compliance with consent tracking
-- ✅ Mobile responsive design
+- `/` - Main landing page with hero, features, testimonials, and CTA
+- `/how-it-works` - Detailed explanation of the prediction system
+- `/pricing` - Free vs Premium tier comparison
+- `/faq` - Frequently asked questions
+- `/privacy` - Privacy policy
+- `/terms` - Terms of service
 
-## 🛠️ Deployment (Netlify)
+## 🎨 Brand Colors
 
-### Quick Deploy:
-1. **Drag & drop** this folder to [netlify.com](https://netlify.com)
-2. **Add environment variables** in Netlify dashboard:
-   ```
-   MAILCHIMP_API_KEY = your_api_key
-   MAILCHIMP_AUDIENCE_ID = bf38127eee
-   MAILCHIMP_SERVER_PREFIX = us18
-   ```
-3. **Deploy** - Your site is live!
+### Primary - Electric Emerald
+- Main: `#00C896`
+- Dark: `#00A374`
+- Light: `#33D4A8`
 
-### Files Structure:
+### Secondary - Deep Blues
+- Main: `#1E40AF`
+- Dark: `#1E3A8A`
+- Light: `#3B82F6`
+
+### Accent & Status
+- Accent: `#EC4899` (Hot Pink)
+- Warning: `#F59E0B` (Gold)
+- Error: `#EF4444` (Red)
+
+## 🛠️ Development
+
+### Install dependencies:
+```bash
+cd matchday-maestro
+npm install
 ```
-FusionFirstStudios/
-├── netlify/
-│   └── functions/
-│       └── subscribe.js        # Secure Mailchimp integration
-├── matchday-maestro.html       # Main landing page  
-├── privacy-policy.html         # Privacy policy page
-├── terms-of-service.html       # Terms of service page
-└── README.md                   # This file
+
+### Run development server:
+```bash
+npm run dev
 ```
 
-## 🔐 Security
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-- ✅ API keys stored securely in environment variables
-- ✅ Server-side processing via Netlify Functions
-- ✅ No exposed credentials in client-side code
-- ✅ GDPR compliant email collection
+### Build for production:
+```bash
+npm run build
+npm start
+```
 
-## 📊 Features
+## 📦 Project Structure
 
-### 🎨 Design:
-- Modern glass morphism styling
-- Premium color scheme (blues, greens, gold accents)
-- Smooth animations and micro-interactions  
-- Mobile-first responsive design
-- Professional typography
+```
+matchday-maestro/
+├── app/
+│   ├── page.tsx                # Landing page
+│   ├── how-it-works/page.tsx
+│   ├── pricing/page.tsx
+│   ├── faq/page.tsx
+│   ├── privacy/page.tsx
+│   ├── terms/page.tsx
+│   ├── layout.tsx              # Root layout
+│   └── globals.css             # Global styles
+├── components/
+│   ├── hero.tsx
+│   ├── features-carousel.tsx
+│   ├── problem-section.tsx
+│   ├── early-access.tsx
+│   ├── final-cta.tsx
+│   ├── footer.tsx
+│   └── ui/                     # Shadcn components
+├── public/
+│   ├── matchday-maestro-icon.png
+│   ├── matchday-maestro-logo.png
+│   └── *.jpg                   # Feature images
+└── package.json
+```
 
-### 🧠 Functionality:
-- Email validation with real-time feedback
-- GDPR consent tracking
-- Loading states and error handling
-- Success/error messaging
-- Google Analytics integration ready
+## ✨ Key Features
 
-### 📧 Mailchimp Integration:
-- Secure API connection via serverless function
-- Automatic tagging: `Waitlist`, `MatchdayMaestro`, `Website_Signup`
-- Source tracking and GDPR compliance
-- Custom merge fields for enhanced segmentation
+### Design
+- ✅ Modern glassmorphism UI with animated stadium background
+- ✅ Smooth scroll animations with Intersection Observer
+- ✅ Responsive design (mobile-first)
+- ✅ Electric Emerald brand colors throughout
 
-## 🎯 Launch Ready
+### Content
+- ✅ "The Three Flaws" problem section (competitor analysis)
+- ✅ 12 beta user testimonials marquee
+- ✅ Countdown timer to December 12th launch
+- ✅ Early adopter benefits (First 500 users)
+- ✅ Social media integration (X, Instagram, Facebook, TikTok)
 
-Built for the **November 1st launch** with:
-- Professional email collection system
-- Launch notification capability  
-- Early access user management
-- Conversion tracking and analytics
+### Functionality
+- ✅ Multi-page architecture with working navigation
+- ✅ Email waitlist signup form
+- ✅ Social share buttons
+- ✅ Mobile-responsive header and footer
+- ✅ Framer Motion animations
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Push to GitHub
+2. Connect repository to [Vercel](https://vercel.com)
+3. Deploy automatically with zero config
+
+### Netlify
+1. Build command: `npm run build`
+2. Publish directory: `.next`
+3. Deploy
+
+## 🎯 Launch Info
+
+- **Launch Date**: December 12th, 2025
+- **Early Access**: First 500 users get premium features free for 3 months
+- **Target**: Premier League prediction enthusiasts
+
+## 📧 Contact
+
+- Email: hello@matchdaymaestro.com
+- Twitter: [@MaestroMatchday](https://x.com/MaestroMatchday)
+- Instagram: [@matchday.maestro](https://instagram.com/matchday.maestro)
 
 ---
 
-**Ready to collect emails and build excitement for the future of fair football predictions! ⚽🚀**
+**Where Football Knowledge Beats Luck. ⚽🚀**

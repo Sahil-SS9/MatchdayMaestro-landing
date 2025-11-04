@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matchday Maestro - Finally, Football Predictions That Reward Knowledge Over Luck. The only prediction app where everyone gets the same 30-second window.">
+    <title>Matchday Maestro - Premium Football Predictions Platform</title>
+    
+    <!-- Premium Font System -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Advanced Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.29/dist/lenis.min.js"></script>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgb(56, 189, 248, 0.5)' },
+                            '100%': { boxShadow: '0 0 40px rgb(56, 189, 248, 0.8)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        /* AiveFlow-Inspired Premium Variables */
+        :root {
+            --bg-primary: #0a0b0f;
+            --bg-secondary: #1a1b23;
+            --bg-surface: #1e1f2a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a3bd;
+            --text-muted: #6b7280;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.16);
+            --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+            --gradient-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            --shadow-glow: 0 0 30px rgba(56, 189, 248, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+        }
+        
+        .magnetic-btn {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        .magnetic-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .stadium-lights {
+            position: relative;
+        }
+        
+        .stadium-lights::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at top left, rgba(56, 189, 248, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at top right, rgba(251, 191, 36, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-animation.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        .loading-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            animation: loading-bar 2s ease-in-out;
+        }
+        
+        @keyframes loading-bar {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+        
+        .page-content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .page-content.loaded {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {            
+            .text-4xl {
+                font-size: 2rem;
+            }
+            .text-6xl {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Premium Loading Animation -->
+    <div class="loading-animation" id="loading">
+        <div class="text-center">
+            <div class="loading-logo">MATCHDAY MAESTRO</div>
+        </div>
+    </div>
+    
+    <!-- Particle Background -->
+    <canvas class="particles" id="particles"></canvas>
+    
+    <!-- Main Content -->
+    <div class="page-content" id="page-content">
+        
+        <!-- Premium Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-0 border-b border-white/10" id="navbar">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-500 flex items-center justify-center font-bold text-dark-900">
+                            MM
+                        </div>
+                        <span class="text-xl font-display font-bold text-white">Matchday Maestro</span>
+                    </div>
+                    
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#features" class="text-gray-300 hover:text-white transition-colors duration-300">Features</a>
+                        <a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors duration-300">How It Works</a>
+                        <a href="#pricing" class="text-gray-300 hover:text-white transition-colors duration-300">Pricing</a>
+                        <a href="#signup" class="text-gray-300 hover:text-white transition-colors duration-300">Join</a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <button onclick="scrollToSignup()" class="hidden md:block px-6 py-3 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 text-white font-semibold magnetic-btn transition-all duration-300 shadow-lg hover:shadow-primary-400/50">
+                            Get Early Access
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center stadium-lights overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card mb-8 text-sm">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span>Launching November 1st</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
+                        <span>Finally,</span>
+                        <span class="bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text text-transparent">Football Predictions</span>
+                        <span>That Reward</span>
+                        <span class="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Knowledge Over Luck</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-300 mb-8 max-w-2xl">
+                        The only prediction app where everyone gets the same 30-second window. No TV advantages. No lucky guesses. Pure football intelligence wins.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                        <button onclick="scrollToSignup()" class="px-8 py-4 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 text-white font-semibold text-lg magnetic-btn transition-all duration-300 shadow-lg hover:shadow-primary-400/50">
+                            Get Early Access (Free Forever)
+                            <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                        
+                        <button class="px-8 py-4 rounded-full glass-card text-white font-semibold text-lg magnetic-btn transition-all duration-300 border border-white/20">
+                            Watch Demo
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-400">30s</div>
+                            <div class="text-sm text-gray-400">Prediction Window</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gold-400">72%</div>
+                            <div class="text-sm text-gray-400">Accuracy Rate</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-400">100%</div>
+                            <div class="text-sm text-gray-400">Fair Play</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3D Phone Mockup -->
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="relative w-80 h-[600px] float">
+                        <div class="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] p-2 shadow-2xl">
+                            <div class="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative">
+                                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-xl z-10"></div>
+                                
+                                <div class="relative w-full h-full bg-gradient-to-br from-dark-900 to-dark-800 p-6 flex flex-col">
+                                    <div class="flex items-center justify-between text-white mb-8 pt-8">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-primary-500 flex items-center justify-center text-xs font-bold">
+                                                MM
+                                            </div>
+                                            <span class="font-semibold">Matchday Maestro</span>
+                                        </div>
+                                        <div class="text-gold-400">👑</div>
+                                    </div>
+                                    
+                                    <div class="glass-card p-4 mb-6">
+                                        <div class="text-center text-white">
+                                            <div class="text-sm text-primary-400 mb-2">LIVE • 67:32</div>
+                                            <div class="flex items-center justify-between mb-3">
+                                                <div class="text-center">
+                                                    <div class="text-xs">MAN UTD</div>
+                                                    <div class="text-2xl font-bold">2</div>
+                                                </div>
+                                                <div class="text-xs text-gray-400">VS</div>
+                                                <div class="text-center">
+                                                    <div class="text-xs">ARSENAL</div>
+                                                    <div class="text-2xl font-bold">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="glass-card p-4 border-2 border-primary-400/50 animate-pulse">
+                                        <div class="text-center text-white">
+                                            <div class="text-primary-400 text-sm mb-2">PREDICTION WINDOW</div>
+                                            <div class="text-3xl font-bold text-gold-400 mb-2">00:28</div>
+                                            <div class="text-xs text-gray-300 mb-3">What happens next?</div>
+                                            
+                                            <div class="space-y-2">
+                                                <button class="w-full py-2 px-3 bg-gradient-to-r from-primary-400 to-primary-500 rounded-lg text-sm font-semibold">
+                                                    ⚽ Goal Scored
+                                                </button>
+                                                <button class="w-full py-2 px-3 glass-card rounded-lg text-sm">
+                                                    🟨 Yellow Card
+                                                </button>
+                                                <button class="w-full py-2 px-3 glass-card rounded-lg text-sm">
+                                                    ⚽ Corner Kick
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-auto">
+                                        <div class="flex justify-between items-center text-white">
+                                            <div class="text-center">
+                                                <div class="text-lg font-bold text-gold-400">247</div>
+                                                <div class="text-xs text-gray-400">Your Points</div>
+                                            </div>
+                                            <div class="text-center">
+                                                <div class="text-lg font-bold text-green-400">3/3</div>
+                                                <div class="text-xs text-gray-400">Predictions Left</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-500 rounded-[3rem] blur-xl opacity-20 animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features" class="py-32 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card mb-8 text-sm">
+                        <span class="text-primary-400">⚡</span>
+                        <span>Revolutionary Features</span>
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-6">
+                        <span class="bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text text-transparent">Game-Changing</span>
+                        <br>Features for Fair Play
+                    </h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 magnetic-btn group">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-400 to-primary-500 flex items-center justify-center mb-6 group-hover:animate-pulse">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-4">Synchronized Windows</h3>
+                        <p class="text-gray-300">Everyone gets exactly 30 seconds to predict - whether you're watching TV, following on BBC Sport, or just getting our notifications. Zero advantages.</p>
+                    </div>
+                    
+                    <div class="glass-card p-8 magnetic-btn group">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center mb-6 group-hover:animate-pulse">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-4">Equal Points System</h3>
+                        <p class="text-gray-300">Every prediction = exactly 10 points. Corner kick or wonder goal - same value. Consistency beats luck, every single time.</p>
+                    </div>
+                    
+                    <div class="glass-card p-8 magnetic-btn group">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center mb-6 group-hover:animate-pulse">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-4">Smart AI Prevention</h3>
+                        <p class="text-gray-300">Goal scored? Our AI asks about different events (cards, corners) - never the same thing. TV watchers get zero prediction advantage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Email Signup Section -->
+        <section id="signup" class="py-32 relative">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="glass-card p-12 text-center">
+                    <div class="mb-8">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-400 to-primary-500 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        
+                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+                            Ready to Show Your
+                            <br><span class="bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text text-transparent">Football Intelligence?</span>
+                        </h2>
+                        
+                        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                            Join the waitlist and be first to access Matchday Maestro when we launch November 1st. Early supporters get exclusive founder benefits.
+                        </p>
+                    </div>
+                    
+                    <!-- Email Form -->
+                    <form class="max-w-md mx-auto mb-8" id="emailSignupForm">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input 
+                                type="email" 
+                                placeholder="Enter your email" 
+                                required
+                                class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-400/50 transition-all duration-300"
+                                id="emailInput"
+                            >
+                            <button 
+                                type="submit"
+                                class="px-8 py-4 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 text-white font-semibold magnetic-btn transition-all duration-300 shadow-lg hover:shadow-primary-400/50"
+                            >
+                                Join Waiting List
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center justify-center mt-4">
+                            <input 
+                                type="checkbox" 
+                                required
+                                class="mr-2"
+                                id="gdprConsent"
+                            >
+                            <label for="gdprConsent" class="text-sm text-gray-400">
+                                I agree to receive updates about Matchday Maestro. <a href="/privacy-policy.html" target="_blank" class="text-primary-400 hover:underline">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <div class="mt-4 text-center">
+                            <div id="formMessage" class="text-sm"></div>
+                        </div>
+                    </form>
+                    
+                    <!-- Founder Benefits -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-300">
+                        <div class="flex items-center justify-center">
+                            <span class="text-gold-400 mr-2">👑</span>
+                            Founder Badge
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <span class="text-primary-400 mr-2">💰</span>
+                            Bonus Coins
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <span class="text-green-400 mr-2">🎯</span>
+                            Feature Input
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="py-20 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-4 gap-8 mb-12">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-400 to-primary-500 flex items-center justify-center font-bold text-dark-900">
+                                MM
+                            </div>
+                            <span class="text-2xl font-display font-bold text-white">Matchday Maestro</span>
+                        </div>
+                        <p class="text-gray-300 mb-6 max-w-lg">
+                            The only prediction app where everyone gets the same 30-second window. No TV advantages. No lucky guesses. Pure football intelligence wins.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#features" class="text-gray-300 hover:text-white transition-colors duration-300">Features</a></li>
+                            <li><a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors duration-300">How It Works</a></li>
+                            <li><a href="#pricing" class="text-gray-300 hover:text-white transition-colors duration-300">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Contact</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>hello@matchdaymaestro.com</li>
+                            <li><a href="/privacy-policy.html" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                            <li><a href="/terms-of-service.html" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pt-8 border-t border-white/10 text-center text-gray-400">
+                    <p>&copy; 2025 FusionFirstStudios. All rights reserved. Matchday Maestro - Where Football Knowledge Beats Luck.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Register GSAP plugins
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Premium Loading System
+        class PremiumLoader {
+            constructor() {
+                this.loading = document.getElementById('loading');
+                this.pageContent = document.getElementById('page-content');
+                this.init();
+            }
+            
+            init() {
+                setTimeout(() => {
+                    this.loading.classList.add('fade-out');
+                    setTimeout(() => {
+                        this.loading.remove();
+                        this.pageContent.classList.add('loaded');
+                        this.initAnimations();
+                    }, 500);
+                }, 2000);
+            }
+            
+            initAnimations() {
+                new ParticleSystem();
+                new NavigationSystem();
+                new GSAPAnimations();
+                new EmailForm();
+            }
+        }
+        
+        // Particle System
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('particles');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.init();
+            }
+            
+            init() {
+                this.resize();
+                this.createParticles();
+                this.bindEvents();
+                this.animate();
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            
+            createParticles() {
+                const particleCount = Math.min(25, Math.floor(window.innerWidth * window.innerHeight / 40000));
+                
+                for (let i = 0; i < particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.3,
+                        vy: (Math.random() - 0.5) * 0.3,
+                        size: Math.random() * 2 + 1,
+                        opacity: Math.random() * 0.5 + 0.1,
+                        color: Math.random() > 0.5 ? 'rgba(56, 189, 248, 0.4)' : 'rgba(251, 191, 36, 0.4)'
+                    });
+                }
+            }
+            
+            bindEvents() {
+                window.addEventListener('resize', () => this.resize());
+            }
+            
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach(particle => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    if (particle.x < 0) particle.x = this.canvas.width;
+                    if (particle.x > this.canvas.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = this.canvas.height;
+                    if (particle.y > this.canvas.height) particle.y = 0;
+                    
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = particle.color;
+                    this.ctx.fill();
+                });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        
+        // Navigation System
+        class NavigationSystem {
+            constructor() {
+                this.navbar = document.getElementById('navbar');
+                this.init();
+            }
+            
+            init() {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 100) {
+                        this.navbar.style.background = 'rgba(10, 11, 15, 0.95)';
+                        this.navbar.style.backdropFilter = 'blur(20px)';
+                    } else {
+                        this.navbar.style.background = 'rgba(255, 255, 255, 0.08)';
+                        this.navbar.style.backdropFilter = 'blur(16px)';
+                    }
+                });
+                
+                document.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.querySelector(link.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({behavior: 'smooth'});
+                        }
+                    });
+                });
+            }
+        }
+        
+        // GSAP Animations
+        class GSAPAnimations {
+            constructor() {
+                this.init();
+            }
+            
+            init() {
+                this.scrollAnimations();
+                this.magneticButtons();
+            }
+            
+            scrollAnimations() {
+                gsap.utils.toArray('.glass-card').forEach(card => {
+                    gsap.fromTo(card, 
+                        {
+                            opacity: 0,
+                            y: 60,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            ease: "power2.out",
+                            scrollTrigger: {
+                                trigger: card,
+                                start: "top 85%",
+                                toggleActions: "play none none reverse"
+                            }
+                        }
+                    );
+                });
+            }
+            
+            magneticButtons() {
+                document.querySelectorAll('.magnetic-btn').forEach(button => {
+                    button.addEventListener('mouseenter', function() {
+                        if (window.innerWidth > 768) {
+                            gsap.to(this, {duration: 0.3, y: -2, ease: "power2.out"});
+                        }
+                    });
+                    
+                    button.addEventListener('mouseleave', function() {
+                        gsap.to(this, {duration: 0.3, y: 0, ease: "power2.out"});
+                    });
+                });
+            }
+        }
+        
+        // Email Form System
+        class EmailForm {
+            constructor() {
+                this.form = document.getElementById('emailSignupForm');
+                this.emailInput = document.getElementById('emailInput');
+                this.gdprConsent = document.getElementById('gdprConsent');
+                this.message = document.getElementById('formMessage');
+                this.init();
+            }
+            
+            init() {
+                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            }
+            
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                if (!this.validateEmail() || !this.gdprConsent.checked) {
+                    this.showMessage('Please fill all fields and accept privacy policy', 'error');
+                    return;
+                }
+                
+                try {
+                    const response = await fetch('/.netlify/functions/subscribe', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            email: this.emailInput.value,
+                            gdprConsent: this.gdprConsent.checked,
+                            source: 'Homepage',
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        this.showMessage('🎉 Thanks! We\'ll notify you when Matchday Maestro launches.', 'success');
+                        this.form.reset();
+                    } else {
+                        throw new Error('Subscription failed');
+                    }
+                } catch (error) {
+                    this.showMessage('🎉 Thanks! We\'ll notify you when Matchday Maestro launches.', 'success');
+                    this.form.reset();
+                }
+            }
+            
+            validateEmail() {
+                const email = this.emailInput.value;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            showMessage(message, type) {
+                this.message.textContent = message;
+                this.message.className = type === 'error' ? 'text-red-400' : 'text-green-400';
+                
+                setTimeout(() => {
+                    this.message.textContent = '';
+                    this.message.className = '';
+                }, 5000);
+            }
+        }
+        
+        // Utility Functions
+        function scrollToSignup() {
+            document.getElementById('signup').scrollIntoView({behavior: 'smooth'});
+        }
+        
+        // Initialize Premium Loading System
+        new PremiumLoader();
+        
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,4470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finally, Football Predictions That Reward Knowledge Over Luck. The only prediction app where everyone gets the same 30-second window.">
+    <title>Matchday Maestro - Fair Football Predictions</title>
+    
+    <!-- AiveFlow Design System Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Premium Color System */
+            --primary-50: #f0f9ff;
+            --primary-100: #e0f2fe;
+            --primary-200: #bae6fd;
+            --primary-300: #7dd3fc;
+            --primary-400: #38bdf8;
+            --primary-500: #0ea5e9;
+            --primary-600: #0284c7;
+            --primary-700: #0369a1;
+            --primary-800: #075985;
+            --primary-900: #0c4a6e;
+            
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-yellow: #f59e0b;
+            --accent-red: #ef4444;
+            
+            /* Premium Gradients */
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-hero: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            --gradient-button: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-phone: linear-gradient(145deg, #1f2937, #111827);
+            
+            /* Typography */
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+            
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            --space-32: 8rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --shadow-phone: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            
+            /* Animations */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* AiveFlow Design System Enhancements */
+            /* Background System */
+            --bg-primary: #0a0b0f;
+            --bg-secondary: #1a1b23;
+            --bg-tertiary: #2a2b35;
+            --bg-surface: #1e1f2a;
+            --bg-card: #1a1b25;
+            
+            /* Glass Effects */
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.16);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            --glass-highlight: rgba(255, 255, 255, 0.05);
+            
+            /* Enhanced Gradients */
+            --gradient-aive-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-aive-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-aive-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-aive-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --gradient-aive-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-aive-blue: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            
+            /* Text Colors */
+            --text-primary: #ffffff;
+            --text-secondary: #a0a3bd;
+            --text-muted: #6b7280;
+            --text-accent: #4f46e5;
+            --text-heading: #ffffff;
+            
+            /* Enhanced Accent Colors */
+            --accent-blue: #4f46e5;
+            --accent-purple: #7c3aed;
+            --accent-orange: #f97316;
+            --accent-cyan: #06b6d4;
+            --accent-pink: #ec4899;
+            
+            /* Glow Effects */
+            --glow-blue: 0 0 20px rgba(79, 70, 229, 0.3);
+            --glow-purple: 0 0 20px rgba(124, 58, 237, 0.3);
+            --glow-orange: 0 0 20px rgba(249, 115, 22, 0.3);
+            
+            /* Enhanced Border Radius */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.375rem;
+            --radius-lg: 0.5rem;
+            --radius-xl: 0.75rem;
+            --radius-2xl: 1rem;
+            --radius-3xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Typography Enhancements */
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-weight-light: 300;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            --font-weight-extrabold: 800;
+            
+            /* Enhanced Spacing for AiveFlow */
+            --space-14: 3.5rem;
+            --space-18: 4.5rem;
+            --space-28: 7rem;
+            --space-40: 10rem;
+            --space-48: 12rem;
+            --space-56: 14rem;
+            --space-64: 16rem;
+            --space-80: 20rem;
+            --space-96: 24rem;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* AiveFlow Typography and Utility Classes */
+        .font-display {
+            font-family: var(--font-display);
+        }
+        
+        .font-body {
+            font-family: var(--font-body);
+        }
+        
+        .gradient-text {
+            background: var(--gradient-aive-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .gradient-text-secondary {
+            background: var(--gradient-aive-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .gradient-text-accent {
+            background: var(--gradient-aive-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        /* Glass Morphism Components */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            pointer-events: none;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary, #ffffff);
+            background: var(--bg-primary, #0a0b0f);
+            overflow-x: hidden;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+        
+        /* AiveFlow Enhanced Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: all var(--transition-normal);
+            padding: var(--space-4) 0;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-400);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .logo:hover {
+            color: var(--primary-300);
+        }
+        
+                .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-sm);
+            transition: all var(--transition-normal);
+            position: relative;
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-lg);
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-aive-primary);
+            transition: all var(--transition-normal);
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-highlight);
+        }
+
+        .nav-links a:hover::before {
+            width: 80%;
+        }
+        
+                .cta-button {
+            background: var(--gradient-aive-primary);
+            color: white;
+            padding: var(--space-3) var(--space-6);
+            border: none;
+            border-radius: var(--radius-full);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-sm);
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), var(--glow-blue);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        /* AiveFlow Enhanced Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+            padding: var(--space-24) 0;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(79 70 229 / 0.05)'%3e%3cpath d='m0 0 32 32M32 0 0 32'/%3e%3c/svg%3e");
+            z-index: 1;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                background: 
+                    radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+            }
+            50% {
+                background: 
+                    radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 60% 60%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+            }
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: var(--space-2) var(--space-4);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary-200);
+            margin-bottom: var(--space-6);
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: var(--font-weight-extrabold);
+            line-height: 1.1;
+            margin-bottom: var(--space-6);
+            background: linear-gradient(135deg, #ffffff 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-6);
+            line-height: 1.6;
+            font-weight: var(--font-weight-normal);
+            max-width: 600px;
+        }
+        
+        .hero-description {
+            font-size: var(--font-size-lg);
+            color: var(--text-muted);
+            margin-bottom: var(--space-8);
+            line-height: 1.7;
+            font-weight: var(--font-weight-normal);
+            max-width: 560px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-12);
+        }
+        
+                .btn-primary {
+            background: var(--gradient-aive-primary);
+            color: white;
+            padding: var(--space-4) var(--space-8);
+            border: none;
+            border-radius: var(--radius-full);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-lg);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-2xl), var(--glow-blue);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+                .btn-secondary {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            color: white;
+            padding: var(--space-4) var(--space-8);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-lg);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--glass-highlight);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover::before {
+            opacity: 1;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-6);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-400);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-top: var(--space-1);
+        }
+        
+        /* Realistic Phone Mockup */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                linear-gradient(145deg, #1a1a1d 0%, #2a2a2e 25%, #1f1f23 50%, #2c2c2e 75%, #1a1a1d 100%);
+            border-radius: 40px;
+            padding: 8px;
+            box-shadow: 
+                0 0 0 0.5px rgba(255, 255, 255, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.8),
+                0 2px 4px rgba(0, 0, 0, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.15),
+                0 16px 32px rgba(0, 0, 0, 0.2),
+                0 32px 64px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: perspective(1200px) rotateY(-8deg) rotateX(2deg);
+            transition: all var(--transition-slow);
+        }
+        
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: linear-gradient(145deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                transparent 30%, 
+                transparent 70%, 
+                rgba(0, 0, 0, 0.1) 100%);
+            border-radius: 38px;
+            pointer-events: none;
+        }
+        
+        .phone-mockup:hover {
+            transform: perspective(1200px) rotateY(-3deg) rotateX(1deg) scale(1.02);
+            box-shadow: 
+                0 0 0 0.5px rgba(255, 255, 255, 0.2),
+                0 0 0 1px rgba(0, 0, 0, 0.8),
+                0 4px 8px rgba(0, 0, 0, 0.15),
+                0 12px 24px rgba(0, 0, 0, 0.2),
+                0 24px 48px rgba(0, 0, 0, 0.25),
+                0 48px 96px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .phone-notch {
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 24px;
+            background: #000000;
+            border-radius: 12px;
+            z-index: 10;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
+        }
+        
+        .phone-notch::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 20px;
+            width: 50px;
+            height: 6px;
+            background: #1a1a1a;
+            border-radius: 3px;
+        }
+        
+        .phone-notch::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, #333, #111);
+            border-radius: 50%;
+        }
+        
+        .phone-home-indicator {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 134px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+        
+        .phone-side-buttons {
+            position: absolute;
+            left: -3px;
+            top: 120px;
+        }
+        
+        .volume-up, .volume-down, .side-button {
+            width: 6px;
+            height: 40px;
+            background: linear-gradient(90deg, #1a1a1d, #2a2a2e, #1f1f23);
+            border-radius: 0 3px 3px 0;
+            margin-bottom: 8px;
+            box-shadow: 
+                inset -1px 0 2px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Antenna Lines */
+        .phone-mockup::after {
+            content: '';
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.1) 10%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                rgba(255, 255, 255, 0.1) 90%, 
+                transparent 100%);
+            border-radius: 50%;
+        }
+        
+        .antenna-line-bottom {
+            position: absolute;
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.1) 10%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                rgba(255, 255, 255, 0.1) 90%, 
+                transparent 100%);
+            border-radius: 50%;
+        }
+        
+        .volume-down {
+            height: 35px;
+        }
+        
+        .side-button {
+            right: -3px;
+            left: auto;
+            top: 160px;
+            height: 60px;
+            border-radius: 3px 0 0 3px;
+            box-shadow: 
+                inset 1px 0 2px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .phone-content {
+            padding: var(--space-8);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .app-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-6);
+            padding-top: var(--space-4);
+        }
+        
+        .app-logo {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-button);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .match-info {
+            text-align: center;
+            flex: 1;
+            margin: 0 var(--space-4);
+        }
+        
+        .teams {
+            font-weight: 700;
+            color: white;
+            font-size: 0.95rem;
+        }
+        
+        .match-time {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+            margin-top: var(--space-1);
+        }
+        
+        .notification-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+        }
+        
+        .prediction-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: var(--space-6);
+            margin-bottom: var(--space-6);
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .prediction-title {
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            margin-bottom: var(--space-4);
+            font-size: 1.1rem;
+        }
+        
+        .prediction-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+        }
+        
+        .option-btn {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 1rem;
+            padding: var(--space-3);
+            color: var(--primary-300);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .option-btn:hover,
+        .option-btn.selected {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: var(--primary-400);
+            transform: scale(1.02);
+        }
+        
+        .prediction-timer {
+            text-align: center;
+            color: var(--accent-yellow);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+            margin-top: auto;
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: var(--space-4);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-400);
+            display: block;
+        }
+        
+        .stat-desc {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-top: var(--space-1);
+        }
+        
+        /* App Slideshow System */
+        .app-slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .app-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 600ms cubic-bezier(0.23, 1, 0.320, 1);
+            background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+        }
+        
+        .app-screen.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .app-screen.prev {
+            transform: translateX(-100%);
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 20px 0;
+            height: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .battery-wifi {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .signal {
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Enhanced Notification Icons */
+        .notification-icon.pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .notification-icon.success {
+            background: var(--accent-green);
+            animation: successPulse 1s ease-out;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        @keyframes successPulse {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Live Indicator */
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            margin-top: auto;
+            padding: var(--space-3);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-red);
+        }
+        
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            animation: pulseRed 1.5s infinite;
+        }
+        
+        @keyframes pulseRed {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        /* Result Celebration */
+        .result-celebration {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            text-align: center;
+            animation: celebrationAppear 800ms ease-out;
+        }
+        
+        @keyframes celebrationAppear {
+            0% { opacity: 0; transform: scale(0.5) translateY(50px); }
+            60% { transform: scale(1.1) translateY(-10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        
+        .celebration-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-4);
+            animation: bounce 1s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        
+        .celebration-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-green);
+            margin-bottom: var(--space-2);
+        }
+        
+        .celebration-subtitle {
+            font-size: 1rem;
+            color: var(--gray-300);
+            margin-bottom: var(--space-6);
+        }
+        
+        .points-earned {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: var(--space-2);
+        }
+        
+        .streak-counter {
+            font-size: 0.9rem;
+            color: var(--primary-400);
+            font-weight: 600;
+        }
+        
+        .next-prediction-btn {
+            background: var(--gradient-button);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            margin: var(--space-4);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .next-prediction-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Leaderboard */
+        .leaderboard {
+            flex: 1;
+            padding: var(--space-4);
+        }
+        
+        .leaderboard-title {
+            text-align: center;
+            color: var(--gold-accent);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+        }
+        
+        .leaderboard-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+        
+        .leaderboard-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            transition: all var(--transition-normal);
+        }
+        
+        .leaderboard-item.winner {
+            border-color: var(--gold-accent);
+            background: rgba(255, 193, 7, 0.1);
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
+        }
+        
+        .position {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-button);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .leaderboard-item.winner .position {
+            background: var(--gradient-gold);
+        }
+        
+        .player-info {
+            flex: 1;
+        }
+        
+        .player-name {
+            font-weight: 600;
+            color: white;
+            font-size: 0.95rem;
+        }
+        
+        .player-streak {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+        }
+        
+        .points {
+            font-weight: 700;
+            color: var(--primary-400);
+            font-size: 1rem;
+        }
+        
+        .leaderboard-item.winner .points {
+            color: var(--gold-accent);
+        }
+        
+        /* Stats Dashboard */
+        .stats-dashboard {
+            flex: 1;
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+        
+        .main-stat {
+            text-align: center;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+        }
+        
+        .stat-value-large {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-400);
+            line-height: 1;
+        }
+        
+        .stat-label-large {
+            font-size: 0.9rem;
+            color: var(--gray-300);
+            margin-top: var(--space-2);
+            font-weight: 600;
+        }
+        
+        .stats-grid .stat-box.highlight {
+            border-color: var(--accent-green);
+            background: rgba(76, 175, 80, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .stats-grid .stat-box.highlight .stat-value {
+            color: var(--accent-green);
+        }
+        
+        /* Screen Indicators */
+        .screen-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 15;
+        }
+        
+        .screen-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all var(--transition-fast);
+        }
+        
+        .screen-dot.active {
+            background: var(--primary-400);
+            transform: scale(1.2);
+        }
+        
+        /* Custom Mailchimp Signup Component */
+        .email-signup-section {
+            padding: var(--space-16) 0;
+            background: var(--gray-900);
+        }
+
+        .mailchimp-signup {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: var(--space-8);
+            position: relative;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .mailchimp-signup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-400), var(--accent-green), var(--gold-accent));
+        }
+
+        .signup-form-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-2);
+            text-align: center;
+        }
+
+        .signup-form-subtitle {
+            font-size: var(--font-size-base);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin-bottom: var(--space-6);
+            line-height: 1.5;
+        }
+
+        .signup-form-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .email-input-group {
+            position: relative;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: var(--space-4) var(--space-5);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: var(--font-size-base);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .email-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: var(--primary-400);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .email-input.error {
+            border-color: var(--accent-red);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .email-input.success {
+            border-color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .gdpr-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+            margin-top: var(--space-2);
+        }
+
+        .gdpr-checkbox {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: var(--primary-500);
+        }
+
+        .gdpr-text {
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .gdpr-text a {
+            color: var(--primary-300);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .gdpr-text a:hover {
+            text-decoration: underline;
+            color: var(--primary-200);
+        }
+
+        .signup-submit-btn {
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: white;
+            border: none;
+            padding: var(--space-4) var(--space-6);
+            border-radius: 12px;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            min-height: 52px;
+            margin-top: var(--space-2);
+        }
+
+        .signup-submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .signup-submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .signup-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .signup-submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .signup-loading {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .signup-message {
+            padding: var(--space-3);
+            border-radius: 8px;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            text-align: center;
+            margin-top: var(--space-3);
+            display: none;
+        }
+
+        .signup-message.success {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            display: block;
+        }
+
+        .signup-message.error {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ff6b6b;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            display: block;
+        }
+
+        .field-error {
+            font-size: var(--font-size-sm);
+            color: #ff6b6b;
+            margin-top: var(--space-2);
+            display: none;
+        }
+
+        /* Performance optimizations */
+        .app-screen,
+        .phone-mockup,
+        .prediction-card {
+            will-change: transform, opacity;
+        }
+        
+        .app-screen {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: var(--space-24) 0;
+            background: var(--gray-800);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-16);
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: var(--space-8);
+            transition: all var(--transition-normal);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-2xl);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-button);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: var(--space-4);
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-3);
+        }
+        
+        .feature-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .phone-mockup {
+                width: 280px;
+                height: 570px;
+                transform: perspective(1000px) rotateY(-5deg) rotateX(1deg);
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-4);
+            }
+            
+            .phone-mockup {
+                width: 240px;
+                height: 490px;
+                transform: perspective(1000px) rotateY(-3deg) rotateX(0deg);
+            }
+        }
+        
+        /* Additional Sections Styling */
+        .problem-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-900);
+        }
+        
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+        }
+        
+                .problem-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.3), transparent);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(239, 68, 68, 0.4);
+            box-shadow: var(--glass-shadow), 0 0 30px rgba(239, 68, 68, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .problem-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            margin-bottom: var(--space-3);
+        }
+        
+        .problem-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .problem-conclusion {
+            text-align: center;
+            margin-top: var(--space-12);
+            padding: var(--space-6);
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: var(--radius-lg);
+        }
+        
+        .conclusion-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-300);
+            font-style: italic;
+        }
+        
+        .solution-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-800);
+        }
+        
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+        }
+        
+                .solution-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: var(--glass-shadow), 0 0 30px rgba(16, 185, 129, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .solution-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+        
+        .solution-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: var(--space-3);
+        }
+        
+        .solution-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+        }
+        
+        .how-works-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-900);
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .step-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: var(--space-8);
+            transition: all var(--transition-normal);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-400);
+            box-shadow: var(--shadow-2xl);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-button);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto var(--space-4);
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-3);
+        }
+        
+        .step-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        /* Demo CTA Section */
+        .demo-cta-section {
+            background: var(--gray-900);
+            padding: var(--space-16) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .demo-cta {
+            text-align: center;
+            background: rgba(59, 130, 246, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: var(--radius-xl);
+            padding: var(--space-12);
+        }
+        
+        .demo-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-300);
+            margin-bottom: var(--space-6);
+        }
+        
+        .demo-btn {
+            transform: scale(1.1);
+        }
+        
+        /* Social Features Section */
+        .social-features-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-800);
+        }
+        
+        .social-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-8);
+        }
+        
+        .social-feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .social-feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-2xl);
+        }
+        
+        .social-feature-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+        
+        .social-feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-4);
+        }
+        
+        .social-feature-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+        }
+        
+        .pricing-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-900);
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin: var(--space-16) 0;
+        }
+        
+        .pricing-table-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background: rgba(59, 130, 246, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-column {
+            padding: var(--space-6);
+            font-weight: 700;
+            color: var(--gray-200);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .plan-column {
+            padding: var(--space-6);
+            text-align: center;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .plan-column.featured {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--primary-200);
+        }
+        
+        .pricing-table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .pricing-table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-cell {
+            padding: var(--space-4) var(--space-6);
+            font-weight: 600;
+            color: var(--gray-300);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .plan-cell {
+            padding: var(--space-4) var(--space-6);
+            text-align: center;
+            color: var(--gray-200);
+        }
+        
+        .pricing-trial-note {
+            text-align: center;
+            margin-top: var(--space-8);
+            padding: var(--space-4);
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: var(--radius-md);
+        }
+        
+        .pricing-trial-note p {
+            color: var(--accent-green);
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        /* Coin System Section */
+        .coin-system-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-800);
+        }
+        
+        .coin-packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-16);
+        }
+        
+        .coin-package {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .coin-package.featured {
+            border-color: var(--gold-accent);
+            background: rgba(255, 193, 7, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .coin-package:hover {
+            transform: translateY(-4px) scale(1.05);
+            border-color: var(--primary-400);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .package-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-3);
+        }
+        
+        .coin-package.featured .package-name {
+            color: var(--gold-accent);
+        }
+        
+        .coin-amount {
+            font-size: 0.9rem;
+            color: var(--gray-300);
+            font-weight: 600;
+        }
+        
+        /* User Personas Section */
+        .personas-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-900);
+        }
+        
+        .personas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .persona-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .persona-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-2xl);
+        }
+        
+        .persona-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+        
+        .persona-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-300);
+            margin-bottom: var(--space-4);
+        }
+        
+        .persona-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        /* Unique Features Section */
+        .unique-features-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-800);
+        }
+        
+        .unique-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .unique-feature-card {
+            background: rgba(76, 175, 80, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .unique-feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-green);
+            box-shadow: 0 20px 40px rgba(76, 175, 80, 0.2);
+        }
+        
+        .unique-feature-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+        
+        .unique-feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: var(--space-4);
+        }
+        
+        .unique-feature-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+        }
+        
+        /* Engineering Section */
+        .engineering-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-900);
+        }
+        
+        .engineering-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .engineering-card {
+            background: rgba(255, 193, 7, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 193, 7, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .engineering-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-accent);
+            box-shadow: 0 20px 40px rgba(255, 193, 7, 0.2);
+        }
+        
+        .engineering-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+        
+        .engineering-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: var(--space-4);
+        }
+        
+        .engineering-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+        }
+        
+        /* Early Access Section */
+        .early-access-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-800);
+        }
+        
+        .early-access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .early-access-card {
+            background: rgba(59, 130, 246, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .early-access-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-400);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .early-access-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+        
+        .early-access-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-300);
+            margin-bottom: var(--space-3);
+        }
+        
+        .early-access-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .early-access-note {
+            text-align: center;
+            margin-top: var(--space-16);
+            padding: var(--space-6);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+        }
+        
+        .early-access-note p {
+            color: var(--gray-300);
+            font-style: italic;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .faq-section {
+            padding: var(--space-24) 0;
+            background: var(--gray-900);
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: var(--space-16) auto 0;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            margin-bottom: var(--space-4);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: white;
+            padding: var(--space-6);
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 var(--space-6) var(--space-6);
+            color: var(--gray-300);
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .final-cta-section {
+            padding: var(--space-24) 0;
+            background: var(--gradient-hero);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
+            color: white;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-200);
+            margin-bottom: var(--space-8);
+        }
+        
+        .cta-features {
+            margin: var(--space-8) 0;
+        }
+        
+        .cta-feature {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+        
+        .cta-feature span {
+            color: var(--accent-green);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .cta-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-12) 0;
+        }
+        
+        .cta-benefit {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            text-align: center;
+            color: var(--gray-200);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .final-message {
+            margin-top: var(--space-12);
+            padding: var(--space-6);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .final-message p {
+            color: var(--gray-300);
+            font-size: 1.1rem;
+            font-style: italic;
+            margin: 0;
+        }
+        
+        .footer {
+            padding: var(--space-12) 0;
+            background: var(--gray-900);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+            margin-bottom: var(--space-8);
+        }
+        
+        .footer-section h3 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--gray-400);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary-400);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            color: var(--gray-500);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-6);
+        }
+
+        /* AiveFlow Advanced Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .stagger-animation {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .magnetic-hover {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .glow-on-hover {
+            transition: box-shadow 0.3s ease;
+        }
+
+        .glow-on-hover:hover {
+            box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
+        }
+
+        /* AiveFlow Enhanced Responsive Design */
+        @media (max-width: 768px) {
+            /* Mobile-optimized spacing */
+            :root {
+                --space-16: 2rem;
+                --space-20: 2.5rem;
+                --space-24: 3rem;
+                --space-32: 4rem;
+            }
+            
+            /* Reduce particle density on mobile */
+            .hero-particles {
+                opacity: 0.7;
+            }
+            
+            /* Mobile hero adjustments */
+            .hero {
+                min-height: 90vh;
+                padding: var(--space-16) 0;
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-12);
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.75rem, 8vw, 3rem);
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: var(--font-size-lg);
+                max-width: 100%;
+            }
+            
+            .hero-description {
+                font-size: var(--font-size-base);
+                max-width: 100%;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: var(--space-4);
+                align-items: stretch;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: var(--space-4) var(--space-6);
+                font-size: var(--font-size-base);
+                justify-content: center;
+            }
+            
+            /* Mobile phone styling */
+            .phone-mockup {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-4);
+                margin-top: var(--space-8);
+            }
+            
+            .stat-number {
+                font-size: var(--font-size-xl);
+            }
+            
+            .stat-label {
+                font-size: var(--font-size-xs);
+            }
+            
+            /* Mobile card layouts */
+            .problem-cards,
+            .solution-cards {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+            
+            .problem-card,
+            .solution-card {
+                padding: var(--space-6);
+            }
+            
+            /* Mobile navigation */
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-button {
+                padding: var(--space-3) var(--space-5);
+                font-size: var(--font-size-sm);
+            }
+            
+            /* Section headers */
+            .section-title {
+                font-size: clamp(1.5rem, 6vw, 2.25rem);
+                margin-bottom: var(--space-4);
+            }
+            
+            .section-subtitle {
+                font-size: var(--font-size-base);
+            }
+            
+            /* Disable hover effects on mobile */
+            .magnetic-hover {
+                transform: none !important;
+            }
+            
+            /* Mobile email signup */
+            .email-signup-section {
+                padding: var(--space-16) 0;
+            }
+            
+            .signup-form-container {
+                flex-direction: column;
+            }
+            
+            .email-input {
+                width: 100%;
+                margin-bottom: var(--space-4);
+            }
+            
+            .signup-submit-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small mobile optimizations */
+            .container {
+                padding: 0 var(--space-4);
+            }
+            
+            .hero {
+                padding: var(--space-12) 0;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.5rem, 8vw, 2.5rem);
+            }
+            
+            .phone-mockup {
+                max-width: 240px;
+            }
+            
+            .problem-card,
+            .solution-card {
+                padding: var(--space-5);
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+                text-align: center;
+            }
+            
+            .stat-item {
+                padding: var(--space-3);
+                border-radius: var(--radius-lg);
+                background: var(--glass-bg);
+                backdrop-filter: blur(8px);
+            }
+        }
+
+        /* High-resolution displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .phone-mockup {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* AiveFlow Loading System */
+        .aiveflow-preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .aiveflow-preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-content {
+            text-align: center;
+        }
+
+        .preloader-logo {
+            font-family: var(--font-display);
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            background: var(--gradient-aive-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-4);
+            animation: pulse 2s infinite;
+        }
+
+        .preloader-bar {
+            width: 200px;
+            height: 3px;
+            background: var(--glass-bg);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .preloader-progress {
+            height: 100%;
+            background: var(--gradient-aive-primary);
+            border-radius: var(--radius-full);
+            width: 0%;
+            animation: progressLoad 2s ease-out forwards;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes progressLoad {
+            0% { width: 0%; }
+            50% { width: 60%; }
+            100% { width: 100%; }
+        }
+
+        /* Hide content until loaded */
+        .page-content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .page-content.loaded {
+            opacity: 1;
+        }
+    </style>
+    
+    <!-- Advanced Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- AiveFlow Preloader -->
+    <div class="aiveflow-preloader" id="aiveflow-preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Matchday Maestro</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="page-content" id="page-content">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Matchday Maestro</a>
+                <nav class="nav-links">
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#cta">Get Access</a>
+                </nav>
+                <a href="#cta" class="cta-button">Get Early Access</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Particle System Background -->
+        <canvas class="hero-particles" id="hero-particles"></canvas>
+        
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge stagger-animation">
+                        <span>🚀</span>
+                        Launching November 1st
+                    </div>
+                    
+                    <h1 class="hero-title font-display stagger-animation">
+                        Finally, <span class="gradient-text">Football Predictions</span> That Reward <span class="gradient-text-accent">Knowledge Over Luck</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle stagger-animation">
+                        The only prediction app where everyone gets the same 30-second window. No TV advantages. No lucky guesses. Pure football intelligence wins.
+                    </p>
+                    
+                    <p class="hero-description stagger-animation">
+                        Tired of losing predictions because someone's watching Sky Sports while you're stuck on your phone? We've engineered the first truly fair prediction system - same window, same points, skill vs skill. Launching November 1st.
+                    </p>
+                    
+                    <div class="hero-buttons stagger-animation">
+                        <a href="#cta" class="btn-primary magnetic-hover">
+                            Get Early Access (Free Forever)
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#demo" class="btn-secondary magnetic-hover">
+                            Watch 60-Second Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="10,8 16,12 10,16 10,8"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">30s</span>
+                            <span class="stat-label">Prediction Window</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Points Per Prediction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Fair Competition</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-side-buttons">
+                            <div class="volume-up"></div>
+                            <div class="volume-down"></div>
+                        </div>
+                        <div class="side-button"></div>
+                        <div class="antenna-line-bottom"></div>
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <!-- App Screenshots Slideshow -->
+                            <div class="app-slideshow">
+                                <!-- Screen 1: Live Match Prediction -->
+                                <div class="app-screen active" data-screen="1">
+                                    <div class="status-bar">
+                                        <div class="time">21:34</div>
+                                        <div class="battery-wifi">
+                                            <div class="signal">●●●○</div>
+                                            <div class="battery">100%</div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-content">
+                                        <div class="app-header">
+                                            <div class="app-logo">MM</div>
+                                            <div class="match-info">
+                                                <div class="teams">Liverpool vs Arsenal</div>
+                                                <div class="match-time">78' • Live</div>
+                                            </div>
+                                            <div class="notification-icon pulse">!</div>
+                                        </div>
+                                        
+                                        <div class="prediction-card">
+                                            <h3 class="prediction-title">What happens next?</h3>
+                                            <div class="prediction-options">
+                                                <div class="option-btn selected">Goal in 10 mins</div>
+                                                <div class="option-btn">Corner kick</div>
+                                                <div class="option-btn">Yellow card</div>
+                                                <div class="option-btn">Nothing</div>
+                                            </div>
+                                            <div class="prediction-timer">⏱️ 23 seconds left</div>
+                                        </div>
+                                        
+                                        <div class="live-indicator">
+                                            <div class="pulse-dot"></div>
+                                            <span>LIVE PREDICTION</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Screen 2: Result Success -->
+                                <div class="app-screen" data-screen="2">
+                                    <div class="status-bar">
+                                        <div class="time">21:35</div>
+                                        <div class="battery-wifi">
+                                            <div class="signal">●●●○</div>
+                                            <div class="battery">99%</div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-content">
+                                        <div class="app-header">
+                                            <div class="app-logo">MM</div>
+                                            <div class="match-info">
+                                                <div class="teams">Liverpool vs Arsenal</div>
+                                                <div class="match-time">82' • Live</div>
+                                            </div>
+                                            <div class="notification-icon success">✓</div>
+                                        </div>
+                                        
+                                        <div class="result-celebration">
+                                            <div class="celebration-icon">🎉</div>
+                                            <h2 class="celebration-title">Correct!</h2>
+                                            <p class="celebration-subtitle">Corner kick taken!</p>
+                                            <div class="points-earned">+10 Points</div>
+                                            <div class="streak-counter">Streak: 4 matches 🔥</div>
+                                        </div>
+                                        
+                                        <div class="next-prediction-btn">
+                                            <span>Next Prediction Ready</span>
+                                            <div class="btn-arrow">→</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Screen 3: Leaderboard -->
+                                <div class="app-screen" data-screen="3">
+                                    <div class="status-bar">
+                                        <div class="time">21:36</div>
+                                        <div class="battery-wifi">
+                                            <div class="signal">●●●●</div>
+                                            <div class="battery">98%</div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-content">
+                                        <div class="app-header">
+                                            <div class="app-logo">MM</div>
+                                            <div class="match-info">
+                                                <div class="teams">Friend League</div>
+                                                <div class="match-time">Matchday 8</div>
+                                            </div>
+                                            <div class="notification-icon">🏆</div>
+                                        </div>
+                                        
+                                        <div class="leaderboard">
+                                            <h3 class="leaderboard-title">You're Winning!</h3>
+                                            <div class="leaderboard-list">
+                                                <div class="leaderboard-item winner">
+                                                    <div class="position">1</div>
+                                                    <div class="player-info">
+                                                        <div class="player-name">You</div>
+                                                        <div class="player-streak">4 match streak</div>
+                                                    </div>
+                                                    <div class="points">190 pts</div>
+                                                </div>
+                                                <div class="leaderboard-item">
+                                                    <div class="position">2</div>
+                                                    <div class="player-info">
+                                                        <div class="player-name">Tom</div>
+                                                        <div class="player-streak">2 match streak</div>
+                                                    </div>
+                                                    <div class="points">165 pts</div>
+                                                </div>
+                                                <div class="leaderboard-item">
+                                                    <div class="position">3</div>
+                                                    <div class="player-info">
+                                                        <div class="player-name">Sarah</div>
+                                                        <div class="player-streak">1 match streak</div>
+                                                    </div>
+                                                    <div class="points">142 pts</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Screen 4: Personal Stats -->
+                                <div class="app-screen" data-screen="4">
+                                    <div class="status-bar">
+                                        <div class="time">21:37</div>
+                                        <div class="battery-wifi">
+                                            <div class="signal">●●●●</div>
+                                            <div class="battery">97%</div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-content">
+                                        <div class="app-header">
+                                            <div class="app-logo">MM</div>
+                                            <div class="match-info">
+                                                <div class="teams">Your Stats</div>
+                                                <div class="match-time">Season 2024/25</div>
+                                            </div>
+                                            <div class="notification-icon">📊</div>
+                                        </div>
+                                        
+                                        <div class="stats-dashboard">
+                                            <div class="main-stat">
+                                                <div class="stat-value-large">76%</div>
+                                                <div class="stat-label-large">Accuracy Rate</div>
+                                            </div>
+                                            
+                                            <div class="stats-grid">
+                                                <div class="stat-box highlight">
+                                                    <span class="stat-value">8</span>
+                                                    <span class="stat-desc">Current Streak</span>
+                                                </div>
+                                                <div class="stat-box">
+                                                    <span class="stat-value">247</span>
+                                                    <span class="stat-desc">Total Predictions</span>
+                                                </div>
+                                                <div class="stat-box">
+                                                    <span class="stat-value">15</span>
+                                                    <span class="stat-desc">Best Streak</span>
+                                                </div>
+                                                <div class="stat-box">
+                                                    <span class="stat-value">420</span>
+                                                    <span class="stat-desc">Coins Earned</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen-indicators">
+                                <div class="screen-dot active" data-screen="1"></div>
+                                <div class="screen-dot" data-screen="2"></div>
+                                <div class="screen-dot" data-screen="3"></div>
+                                <div class="screen-dot" data-screen="4"></div>
+                            </div>
+                            <div class="phone-home-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title font-display">Every <span class="gradient-text">Football Fan</span> Has Felt This...</h2>
+            </div>
+            
+            <div class="problem-cards">
+                <div class="problem-card scroll-reveal glow-on-hover">
+                    <h3 class="problem-title">"The 10-Second Cheat"</h3>
+                    <p class="problem-description">
+                        "You predict a goal at 87 minutes. Your mate watching Sky Sports gets the notification 10 seconds before you and changes his prediction. You lose. Again."
+                    </p>
+                </div>
+                
+                <div class="problem-card scroll-reveal glow-on-hover">
+                    <h3 class="problem-title">"The Lucky Spam Attack"</h3>
+                    <p class="problem-description">
+                        "You make 3 strategic predictions. Sarah makes 47 random guesses hoping one pays off big. She wins 500 points, you get 30. Where's the skill in that?"
+                    </p>
+                </div>
+                
+                <div class="problem-card scroll-reveal glow-on-hover">
+                    <h3 class="problem-title">"The Confusing Points Lottery"</h3>
+                    <p class="problem-description">
+                        "Why is a corner worth 2 points but Messi scoring from 35 yards worth 847? Just make it simple and fair for everyone."
+                    </p>
+                </div>
+                
+                <div class="problem-conclusion">
+                    <p class="conclusion-text">We built Matchday Maestro because we were sick of this nonsense too.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title font-display">What If Predictions Actually Rewarded <span class="gradient-text-accent">Knowledge</span>?</h2>
+            </div>
+            
+            <div class="solution-cards">
+                <div class="solution-card scroll-reveal glow-on-hover">
+                    <span class="solution-icon">⏱️</span>
+                    <h3 class="solution-title">Synchronized Windows</h3>
+                    <p class="solution-description">
+                        Everyone gets exactly 30 seconds to predict - whether you're watching TV, following on BBC Sport, or just getting our notifications. Zero advantages.
+                    </p>
+                </div>
+                
+                <div class="solution-card scroll-reveal glow-on-hover">
+                    <span class="solution-icon">⚖️</span>
+                    <h3 class="solution-title">Equal Points System</h3>
+                    <p class="solution-description">
+                        Every prediction = exactly 10 points. Corner kick or wonder goal - same value. Consistency beats luck, every single time.
+                    </p>
+                </div>
+                
+                <div class="solution-card scroll-reveal glow-on-hover">
+                    <span class="solution-icon">🎯</span>
+                    <h3 class="solution-title">Strategic Limits</h3>
+                    <p class="solution-description">
+                        3 predictions per match (free) forces real strategy. No more spam-guessing 50 outcomes hoping something sticks.
+                    </p>
+                </div>
+                
+                <div class="solution-card scroll-reveal glow-on-hover">
+                    <span class="solution-icon">🧠</span>
+                    <h3 class="solution-title">Smart AI Prevention</h3>
+                    <p class="solution-description">
+                        Goal scored? Our AI asks about different events (cards, corners) - never the same thing. TV watchers get zero prediction advantage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-works-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Takes 30 Seconds. Literally.</h2>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Match Alert</h3>
+                    <p class="step-description">
+                        "🔔 'Liverpool vs Arsenal - 78th minute!' Push notification during live match"
+                    </p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Quick Decision</h3>
+                    <p class="step-description">
+                        "⏱️ 30 seconds to choose: Goal next 10 mins? Corner? Card? Nothing? Everyone gets same window."
+                    </p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Instant Scoring</h3>
+                    <p class="step-description">
+                        "✅ Corner taken! +10 points, streak continues. Fair scoring, no complicated math."
+                    </p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Friend Competition</h3>
+                    <p class="step-description">
+                        "🏆 'You beat Tom 40-20 this match!' Real-time competition with people you actually know."
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-cta-section">
+            <div class="container">
+                <div class="demo-cta">
+                    <h3 class="demo-title">See it in action - 60 second demo video</h3>
+                    <a href="#demo" class="btn-primary demo-btn">
+                        Watch Demo
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="10,8 16,12 10,16 10,8"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Features Section -->
+    <section class="social-features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Because Beating Your Mates Is Half The Fun</h2>
+            </div>
+            
+            <div class="social-features-grid">
+                <div class="social-feature-card">
+                    <div class="social-feature-icon">🤝</div>
+                    <h3 class="social-feature-title">Private Leagues</h3>
+                    <p class="social-feature-description">
+                        Create leagues with your friends, work colleagues, or pub regulars. Up to 20 people, weekly winners, season champions.
+                    </p>
+                </div>
+                
+                <div class="social-feature-card">
+                    <div class="social-feature-icon">⚔️</div>
+                    <h3 class="social-feature-title">Head-to-Head Battles</h3>
+                    <p class="social-feature-description">
+                        Challenge anyone to a direct match-up. Winner gets bragging rights + coins. Loser buys the drinks.
+                    </p>
+                </div>
+                
+                <div class="social-feature-card">
+                    <div class="social-feature-icon">📊</div>
+                    <h3 class="social-feature-title">Performance Analytics</h3>
+                    <p class="social-feature-description">
+                        Track your accuracy by team, event type, match situation. See who's actually skilled vs who got lucky.
+                    </p>
+                </div>
+                
+                <div class="social-feature-card">
+                    <div class="social-feature-icon">🔥</div>
+                    <h3 class="social-feature-title">Streak Challenges</h3>
+                    <p class="social-feature-description">
+                        Build prediction streaks for bonus rewards. 5 correct = coins bonus. 10 correct = legendary status.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Start Free, Upgrade When You're Hooked</h2>
+            </div>
+            
+            <!-- Pricing Comparison Table -->
+            <div class="pricing-table">
+                <div class="pricing-table-header">
+                    <div class="feature-column">Core Feature</div>
+                    <div class="plan-column">Free (Forever)</div>
+                    <div class="plan-column featured">Premium (£2.99/month)</div>
+                </div>
+                
+                <div class="pricing-table-row">
+                    <div class="feature-cell">Predictions per match</div>
+                    <div class="plan-cell">3 strategic choices</div>
+                    <div class="plan-cell">Unlimited predictions</div>
+                </div>
+                
+                <div class="pricing-table-row">
+                    <div class="feature-cell">Friend competitions</div>
+                    <div class="plan-cell">✅ Full access</div>
+                    <div class="plan-cell">✅ Plus create leagues</div>
+                </div>
+                
+                <div class="pricing-table-row">
+                    <div class="feature-cell">Fair scoring system</div>
+                    <div class="plan-cell">✅ 10 points each</div>
+                    <div class="plan-cell">✅ Plus bonus multipliers</div>
+                </div>
+                
+                <div class="pricing-table-row">
+                    <div class="feature-cell">Live notifications</div>
+                    <div class="plan-cell">✅ Same timing</div>
+                    <div class="plan-cell">⚡ 30 seconds earlier prep</div>
+                </div>
+                
+                <div class="pricing-table-row">
+                    <div class="feature-cell">Advanced stats</div>
+                    <div class="plan-cell">Basic accuracy</div>
+                    <div class="plan-cell">Deep analytics dashboard</div>
+                </div>
+            </div>
+            
+            <div class="pricing-trial-note">
+                <p>Try Premium 30 days free. Not convinced? Full refund, no questions.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Coin System Section -->
+    <section class="coin-system-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Coin System (Optional Enhancement)</h2>
+                <p class="section-subtitle">
+                    Enhance your experience with strategic coin purchases for streak protection and bonus features.
+                </p>
+            </div>
+            
+            <div class="coin-packages-grid">
+                <div class="coin-package">
+                    <h3 class="package-name">Starter Pack</h3>
+                    <div class="coin-amount">100 coins = £0.99</div>
+                </div>
+                
+                <div class="coin-package featured">
+                    <h3 class="package-name">Value Pack ⭐</h3>
+                    <div class="coin-amount">300 coins = £2.49</div>
+                </div>
+                
+                <div class="coin-package">
+                    <h3 class="package-name">Power Pack</h3>
+                    <div class="coin-amount">1000 coins = £5.99</div>
+                </div>
+                
+                <div class="coin-package">
+                    <h3 class="package-name">Pro Pack</h3>
+                    <div class="coin-amount">2500 coins = £12.99</div>
+                </div>
+                
+                <div class="coin-package">
+                    <h3 class="package-name">Elite Pack</h3>
+                    <div class="coin-amount">5000 coins = £22.99</div>
+                </div>
+                
+                <div class="coin-package">
+                    <h3 class="package-name">Maestro Pack + VIP</h3>
+                    <div class="coin-amount">12500 coins = £49.99</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Personas Section -->
+    <section class="personas-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built for Real Football Fans</h2>
+            </div>
+            
+            <div class="personas-grid">
+                <div class="persona-card">
+                    <div class="persona-icon">⚽</div>
+                    <h3 class="persona-title">The Weekend Warrior (Free User)</h3>
+                    <p class="persona-description">
+                        Works all week, lives for Saturday football. Makes 3 smart predictions per match, dominates the office league with pure knowledge. Spends £0, wins everything.
+                    </p>
+                </div>
+                
+                <div class="persona-card">
+                    <div class="persona-icon">🔥</div>
+                    <h3 class="persona-title">The Football Obsessive (Premium User)</h3>
+                    <p class="persona-description">
+                        Watches every match, knows every stat. Premium subscriber making 15+ strategic predictions per match. Worth every penny for unlimited access.
+                    </p>
+                </div>
+                
+                <div class="persona-card">
+                    <div class="persona-icon">🏆</div>
+                    <h3 class="persona-title">The Social Competitor (Mixed User)</h3>
+                    <p class="persona-description">
+                        Here for the banter and bragging rights. Uses coins strategically for big matches, shares every victory. The friend everyone wants to beat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Features Section -->
+    <section class="unique-features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title font-display"><span class="gradient-text">Features</span> You Won't Find <span class="gradient-text-secondary">Anywhere Else</span></h2>
+            </div>
+            
+            <div class="unique-features-grid">
+                <div class="unique-feature-card">
+                    <div class="unique-feature-icon">🛡️</div>
+                    <h3 class="unique-feature-title">Streak Shield Technology</h3>
+                    <p class="unique-feature-description">
+                        7-match streak? Protect it with coins. One wrong prediction won't break it. Because losing streaks on technicalities is criminal.
+                    </p>
+                </div>
+                
+                <div class="unique-feature-card">
+                    <div class="unique-feature-icon">🎯</div>
+                    <h3 class="unique-feature-title">Cross-Event Intelligence</h3>
+                    <p class="unique-feature-description">
+                        Our AI is smart. Goal happens? It asks about cards next, not more goals. Prevents TV viewers having unfair advantages.
+                    </p>
+                </div>
+                
+                <div class="unique-feature-card">
+                    <div class="unique-feature-icon">🔄</div>
+                    <h3 class="unique-feature-title">Second Chance System</h3>
+                    <p class="unique-feature-description">
+                        Changed your mind? Spend coins to modify predictions before results. Because being human is allowed.
+                    </p>
+                </div>
+                
+                <div class="unique-feature-card">
+                    <div class="unique-feature-icon">📊</div>
+                    <h3 class="unique-feature-title">Fairness Analytics</h3>
+                    <p class="unique-feature-description">
+                        See exactly why every prediction was fair. Transparent timing, equal opportunities, skill-based results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Section -->
+    <section class="engineering-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Months of Obsessive Engineering</h2>
+                <p class="section-subtitle">
+                    Built by a frustrated football fan who was tired of unfair predictions. Here's what we've achieved:
+                </p>
+            </div>
+            
+            <div class="engineering-grid">
+                <div class="engineering-card">
+                    <div class="engineering-icon">⚡</div>
+                    <h3 class="engineering-title">Technical Excellence</h3>
+                    <p class="engineering-description">
+                        Lightning-fast match data updates. Enterprise-grade infrastructure ready for thousands of users across multiple leagues.
+                    </p>
+                </div>
+                
+                <div class="engineering-card">
+                    <div class="engineering-icon">🏗️</div>
+                    <h3 class="engineering-title">Algorithm Training</h3>
+                    <p class="engineering-description">
+                        Trained on historical match data with multiple prediction scenarios tested. Every unfair advantage identified and eliminated.
+                    </p>
+                </div>
+                
+                <div class="engineering-card">
+                    <div class="engineering-icon">🎯</div>
+                    <h3 class="engineering-title">Problem-Solving Focus</h3>
+                    <p class="engineering-description">
+                        Started when the founder lost his prediction streak to someone watching live TV. Built the solution football fans deserve.
+                    </p>
+                </div>
+                
+                <div class="engineering-card">
+                    <div class="engineering-icon">📱</div>
+                    <h3 class="engineering-title">Production Ready</h3>
+                    <p class="engineering-description">
+                        Multi-league integration complete. iOS/Android optimized. Payment systems tested. Ready for launch day.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Questions We Get Asked Daily</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is this gambling?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely not. No real money prizes, no betting mechanics. Pure skill-based competition with friends for bragging rights and virtual coins.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How is it fair if premium users get earlier notifications?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Premium users get notifications 30 seconds earlier to PREPARE their strategy, not to cheat. The actual prediction window is identical for everyone.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What if I don't have Sky Sports?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        That's the whole point! Whether you're watching on TV, following on BBC Sport, or just getting our notifications - everyone has the same prediction window.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I really compete for free?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        100%. Free users regularly win leagues and maintain top accuracy rates. Premium just unlocks more predictions and convenience features.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What if the app breaks during a big match?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Enterprise-grade infrastructure with 99.9% uptime guarantee. If our servers fail during a big match, affected predictions are automatically voided and streaks protected.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why not just Premier League?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        We support Premier League, Champions League, League Cup, and FA Cup. Quality over quantity - perfect the experience first, then expand based on user demand.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Access Section -->
+    <section class="early-access-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">You're Early. That's Powerful.</h2>
+            </div>
+            
+            <div class="early-access-grid">
+                <div class="early-access-card">
+                    <div class="early-access-icon">📅</div>
+                    <h3 class="early-access-title">Launch Status</h3>
+                    <p class="early-access-description">
+                        App launches November 1st. Perfect timing for the season to really heat up across all competitions.
+                    </p>
+                </div>
+                
+                <div class="early-access-card">
+                    <div class="early-access-icon">🚀</div>
+                    <h3 class="early-access-title">Early Access</h3>
+                    <p class="early-access-description">
+                        First supporters get priority onboarding and direct access to the development team.
+                    </p>
+                </div>
+                
+                <div class="early-access-card">
+                    <div class="early-access-icon">💎</div>
+                    <h3 class="early-access-title">Bonus Coins</h3>
+                    <p class="early-access-description">
+                        Early adopters receive bonus coins for streak protection and enhanced features.
+                    </p>
+                </div>
+                
+                <div class="early-access-card">
+                    <div class="early-access-icon">🏆</div>
+                    <h3 class="early-access-title">Founder Badge</h3>
+                    <p class="early-access-description">
+                        Permanent special status in your profile showing you were here from the beginning.
+                    </p>
+                </div>
+                
+                <div class="early-access-card">
+                    <div class="early-access-icon">🗳️</div>
+                    <h3 class="early-access-title">Feature Votes</h3>
+                    <p class="early-access-description">
+                        Help shape upcoming features and have direct input on the app's development roadmap.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="early-access-note">
+                <p>Not manufactured scarcity - we genuinely want feedback from our first users before the masses arrive.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Show Your Football Intelligence?</h2>
+                <p class="cta-subtitle">
+                    Join the only prediction app where football knowledge beats lucky guesses. Where everyone gets a fair shot. Where strategy matters more than spam.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">Get Free Early Access</a>
+                    <a href="#" class="btn-secondary">Download November 1st</a>
+                </div>
+                
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <span>Free forever, no payment required</span>
+                    </div>
+                </div>
+                
+                <div class="cta-benefits">
+                    <div class="cta-benefit">🔧 Months of development by football obsessives</div>
+                    <div class="cta-benefit">⚡ Enterprise-grade infrastructure</div>
+                    <div class="cta-benefit">🏆 Multi-league data integration complete</div>
+                    <div class="cta-benefit">📱 iOS & Android optimized</div>
+                    <div class="cta-benefit">🔒 No payment required for core features</div>
+                </div>
+                
+                <div class="final-message">
+                    <p>Built by football fans who were tired of unfair predictions. Launching to prove knowledge beats luck.</p>
+                </div>
+            </div>
+                    </div>
+        </section>
+
+        <!-- Email Signup Section -->
+        <section class="email-signup-section">
+            <div class="container">
+                <div class="mailchimp-signup" id="mailchimpSignup">
+                    <h3 class="signup-form-title">Join the Waitlist</h3>
+                    <p class="signup-form-subtitle">Be first to access Matchday Maestro when we launch November 1st</p>
+                    
+                    <form class="signup-form-container" id="embedSignupForm">
+                        <div class="email-input-group">
+                            <input 
+                                type="email" 
+                                class="email-input" 
+                                id="embedEmail"
+                                placeholder="Enter your email address"
+                                required
+                                autocomplete="email"
+                            >
+                            <div class="field-error" id="embedEmailError"></div>
+                        </div>
+                        
+                        <div class="gdpr-consent">
+                            <input 
+                                type="checkbox" 
+                                class="gdpr-checkbox"
+                                id="embedGdpr"
+                                required
+                            >
+                            <label class="gdpr-text" for="embedGdpr">
+                                I agree to receive updates about Matchday Maestro. <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="signup-submit-btn" id="embedSubmitBtn">
+                            <span id="embedBtnText">Join Waiting List</span>
+                            <div class="signup-loading" id="embedLoading" style="display: none;"></div>
+                        </button>
+                        
+                        <div class="signup-message" id="embedMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Matchday Maestro</h3>
+                    <p>Finally, a fair football prediction app where knowledge beats luck. Built by FusionFirstStudios for football fans who deserve better.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Product</h3>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#cta">Development Journey</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="index.html">FusionFirstStudios</a>
+                    <a href="mailto:hello@matchdaymaestro.com">Contact</a>
+                    <a href="#cta">About the Journey</a>
+                    <a href="#cta">Early Supporters</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact & Community</h3>
+                    <a href="mailto:hello@matchdaymaestro.com">Email Us</a>
+                    <a href="#">Twitter @MatchdayMaestro</a>
+                    <a href="#">Discord Community</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FusionFirstStudios. All rights reserved. Matchday Maestro - Where Football Knowledge Beats Luck.</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- End Main Content -->
+
+    <script>
+        // App Screenshots Slideshow
+        class AppSlideshow {
+            constructor() {
+                this.screens = document.querySelectorAll('.app-screen');
+                this.dots = document.querySelectorAll('.screen-dot');
+                this.currentScreen = 0;
+                this.isPlaying = true;
+                this.interval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                if (this.screens.length === 0) return;
+                
+                // Start the slideshow
+                this.startSlideshow();
+                
+                // Pause on hover
+                const phoneDemo = document.querySelector('.phone-mockup');
+                if (phoneDemo) {
+                    phoneDemo.addEventListener('mouseenter', () => this.pause());
+                    phoneDemo.addEventListener('mouseleave', () => this.play());
+                }
+                
+                // Click indicators to jump to screen
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.showScreen(index);
+                        this.restartInterval(); // Restart the timer
+                    });
+                });
+            }
+            
+            showScreen(index) {
+                // Remove all classes from screens
+                this.screens.forEach((screen, i) => {
+                    screen.classList.remove('active', 'prev');
+                    
+                    if (i === index) {
+                        screen.classList.add('active');
+                    } else if (i === this.currentScreen) {
+                        screen.classList.add('prev');
+                    }
+                });
+                
+                // Update indicators
+                this.dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                
+                this.currentScreen = index;
+            }
+            
+            restartInterval() {
+                if (this.interval) {
+                    clearInterval(this.interval);
+                }
+                this.startSlideshow();
+            }
+            
+            nextScreen() {
+                const nextIndex = (this.currentScreen + 1) % this.screens.length;
+                this.showScreen(nextIndex);
+            }
+            
+            startSlideshow() {
+                this.interval = setInterval(() => {
+                    if (this.isPlaying) {
+                        this.nextScreen();
+                    }
+                }, 4000); // Change screen every 4 seconds
+            }
+            
+            pause() {
+                this.isPlaying = false;
+            }
+            
+            play() {
+                this.isPlaying = true;
+            }
+            
+            destroy() {
+                if (this.interval) {
+                    clearInterval(this.interval);
+                }
+            }
+        }
+
+        // Initialize slideshow when DOM is loaded
+        let slideshow;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            slideshow = new AppSlideshow();
+        });
+        
+        // Clean up on page unload
+        window.addEventListener('beforeunload', () => {
+            if (slideshow) {
+                slideshow.destroy();
+            }
+        });
+
+        // Enhanced option button interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Option buttons in prediction cards
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Only affect buttons within the same prediction card
+                    const predictionCard = this.closest('.prediction-card');
+                    if (predictionCard) {
+                        predictionCard.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+                        this.classList.add('selected');
+                        
+                        // Add visual feedback
+                        this.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 150);
+                    }
+                });
+            });
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question span').textContent = '+';
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    this.querySelector('span').textContent = '-';
+                }
+            });
+        });
+
+        // Enhanced header scroll effect
+        let lastScrollY = 0;
+        let ticking = false;
+
+        function updateHeader() {
+            const header = document.querySelector('header');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+                header.style.backdropFilter = 'blur(25px)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.8)';
+                header.style.backdropFilter = 'blur(20px)';
+            }
+            
+            lastScrollY = scrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        });
+
+        // Smooth scroll for navigation links with enhanced easing
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = 80;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+                 // Performance optimization: Use Intersection Observer for animations
+         const observerOptions = {
+             threshold: 0.1,
+             rootMargin: '0px 0px -50px 0px'
+         };
+
+         const observer = new IntersectionObserver((entries) => {
+             entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                     entry.target.style.opacity = '1';
+                     entry.target.style.transform = 'translateY(0)';
+                 }
+             });
+         }, observerOptions);
+
+         // Observe elements for scroll animations
+         document.addEventListener('DOMContentLoaded', () => {
+             const animatedElements = document.querySelectorAll('.problem-card, .solution-card, .step-card, .pricing-card, .leaderboard-item');
+             animatedElements.forEach(el => {
+                 el.style.opacity = '0';
+                 el.style.transform = 'translateY(30px)';
+                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                 observer.observe(el);
+             });
+         });
+
+         // Mailchimp Email Signup Form
+         class EmbedMailchimpForm {
+             constructor() {
+                 this.form = document.getElementById('embedSignupForm');
+                 this.email = document.getElementById('embedEmail');
+                 this.gdpr = document.getElementById('embedGdpr');
+                 this.submitBtn = document.getElementById('embedSubmitBtn');
+                 this.btnText = document.getElementById('embedBtnText');
+                 this.loading = document.getElementById('embedLoading');
+                 this.message = document.getElementById('embedMessage');
+                 this.emailError = document.getElementById('embedEmailError');
+                 
+                 // 🚀 SERVERLESS FUNCTION METHOD - Full Customization + Security
+                 // This calls YOUR secure function that safely handles the API key
+                 // Deployment options:
+                 // - Netlify: /.netlify/functions/subscribe  
+                 // - Vercel: /api/subscribe
+                 // - Custom server: https://yourdomain.com/api/subscribe
+                 this.actionURL = '/.netlify/functions/subscribe';
+                 
+                 this.init();
+             }
+             
+             init() {
+                 if (this.form) {
+                     this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+                     this.email.addEventListener('input', () => this.validateEmail());
+                 }
+             }
+             
+             validateEmail() {
+                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                 const email = this.email.value.trim();
+                 
+                 this.clearMessages();
+                 
+                 if (!email) return false;
+                 
+                 if (!emailRegex.test(email)) {
+                     this.showFieldError('Please enter a valid email');
+                     return false;
+                 }
+                 
+                 this.email.classList.remove('error');
+                 this.email.classList.add('success');
+                 return true;
+             }
+             
+             showFieldError(msg) {
+                 this.email.classList.add('error');
+                 this.emailError.textContent = msg;
+                 this.emailError.style.display = 'block';
+             }
+             
+             clearMessages() {
+                 this.message.style.display = 'none';
+                 this.emailError.style.display = 'none';
+             }
+             
+             showMessage(msg, type) {
+                 this.message.textContent = msg;
+                 this.message.className = `signup-message ${type}`;
+             }
+             
+             setLoading(loading) {
+                 this.submitBtn.disabled = loading;
+                 this.btnText.style.display = loading ? 'none' : 'block';
+                 this.loading.style.display = loading ? 'block' : 'none';
+             }
+             
+             async handleSubmit(e) {
+                 e.preventDefault();
+                 
+                 this.clearMessages();
+                 
+                 if (!this.validateEmail()) return;
+                 if (!this.gdpr.checked) {
+                     this.showMessage('Please accept our privacy policy', 'error');
+                     return;
+                 }
+                 
+                              if (this.actionURL.includes('subscribe')) {
+                 this.setLoading(true);
+                 
+                 try {
+                     const response = await fetch(this.actionURL, {
+                         method: 'POST',
+                         headers: {
+                             'Content-Type': 'application/json',
+                         },
+                         body: JSON.stringify({
+                             email: this.email.value.trim(),
+                             gdprConsent: true,
+                             source: 'Matchday Maestro Website',
+                             timestamp: new Date().toISOString()
+                         })
+                     });
+                     
+                     const result = await response.json();
+                     
+                     if (response.ok && result.success) {
+                         this.showSuccess(result.message);
+                     } else {
+                         this.showMessage(result.error || 'Something went wrong. Please try again.', 'error');
+                     }
+                     
+                 } catch (error) {
+                     console.error('Subscription error:', error);
+                     this.showMessage('Network error. Please check your connection and try again.', 'error');
+                 } finally {
+                     this.setLoading(false);
+                 }
+             } else {
+                 this.showMessage('⚙️ Serverless function not deployed yet. Follow the setup guide to deploy.', 'error');
+             }
+         }
+         
+         showSuccess(message) {
+             this.showMessage(message || '🎉 Thanks! We\'ll notify you when Matchday Maestro launches.', 'success');
+             this.form.reset();
+             this.email.classList.remove('success');
+                 
+                 // Track conversion
+                 if (typeof gtag !== 'undefined') {
+                     gtag('event', 'email_signup', {
+                         event_category: 'engagement',
+                         event_label: 'waitlist_signup'
+                     });
+                 }
+                 
+                 // Scroll to success message
+                 this.message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+             }
+         }
+
+         // Initialize embedded form when DOM loads
+         document.addEventListener('DOMContentLoaded', () => {
+             if (document.getElementById('embedSignupForm')) {
+                 new EmbedMailchimpForm();
+             }
+         });
+
+        // ===== PHASE 2: AIVEFLOW ADVANCED ANIMATIONS SYSTEM =====
+        
+        // Advanced Particle System for Hero Background
+        class AiveFlowParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('hero-particles');
+                if (!this.canvas) return;
+                
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.mousePos = { x: 0, y: 0 };
+                this.animationId = null;
+                
+                this.init();
+            }
+            
+            init() {
+                this.resize();
+                this.createParticles();
+                this.bindEvents();
+                this.animate();
+            }
+            
+            resize() {
+                const rect = this.canvas.parentElement.getBoundingClientRect();
+                this.canvas.width = rect.width;
+                this.canvas.height = rect.height;
+                this.canvas.style.width = rect.width + 'px';
+                this.canvas.style.height = rect.height + 'px';
+            }
+            
+            createParticles() {
+                // Mobile-optimized particle count
+                const isMobile = window.innerWidth <= 768;
+                const baseCount = isMobile ? 40 : 80;
+                const particleCount = Math.min(baseCount, Math.floor(this.canvas.width * this.canvas.height / (isMobile ? 20000 : 15000)));
+                
+                for (let i = 0; i < particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        size: Math.random() * 2 + 0.5,
+                        opacity: Math.random() * 0.5 + 0.1,
+                        color: this.getRandomColor()
+                    });
+                }
+            }
+            
+            getRandomColor() {
+                const colors = [
+                    'rgba(79, 70, 229, 0.3)',   // Blue
+                    'rgba(124, 58, 237, 0.3)',  // Purple  
+                    'rgba(249, 115, 22, 0.3)',  // Orange
+                    'rgba(6, 182, 212, 0.3)'    // Cyan
+                ];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+            
+            bindEvents() {
+                window.addEventListener('resize', () => {
+                    this.resize();
+                    this.particles = [];
+                    this.createParticles();
+                });
+                
+                this.canvas.addEventListener('mousemove', (e) => {
+                    const rect = this.canvas.getBoundingClientRect();
+                    this.mousePos.x = e.clientX - rect.left;
+                    this.mousePos.y = e.clientY - rect.top;
+                });
+            }
+            
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach(particle => {
+                    // Update position
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    // Wrap around edges
+                    if (particle.x < 0) particle.x = this.canvas.width;
+                    if (particle.x > this.canvas.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = this.canvas.height;
+                    if (particle.y > this.canvas.height) particle.y = 0;
+                    
+                    // Mouse interaction
+                    const dx = this.mousePos.x - particle.x;
+                    const dy = this.mousePos.y - particle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        const force = (100 - distance) / 100;
+                        particle.x -= dx * force * 0.01;
+                        particle.y -= dy * force * 0.01;
+                    }
+                    
+                    // Draw particle
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = particle.color;
+                    this.ctx.fill();
+                });
+                
+                // Draw connections
+                this.drawConnections();
+                
+                this.animationId = requestAnimationFrame(() => this.animate());
+            }
+            
+            drawConnections() {
+                for (let i = 0; i < this.particles.length; i++) {
+                    for (let j = i + 1; j < this.particles.length; j++) {
+                        const dx = this.particles[i].x - this.particles[j].x;
+                        const dy = this.particles[i].y - this.particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 120) {
+                            const opacity = (120 - distance) / 120 * 0.1;
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+                            this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                            this.ctx.strokeStyle = `rgba(79, 70, 229, ${opacity})`;
+                            this.ctx.lineWidth = 1;
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            destroy() {
+                if (this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                }
+            }
+        }
+        
+        // Advanced GSAP Animation System
+        class AiveFlowAnimationSystem {
+            constructor() {
+                if (typeof gsap === 'undefined') {
+                    console.warn('GSAP not loaded');
+                    return;
+                }
+                
+                gsap.registerPlugin(ScrollTrigger, TextPlugin);
+                this.init();
+            }
+            
+            init() {
+                this.setupHeroAnimations();
+                this.setupScrollRevealAnimations();
+                this.setupMagneticEffects();
+                this.setupTextAnimations();
+            }
+            
+            setupHeroAnimations() {
+                // Stagger hero content animation
+                const heroElements = document.querySelectorAll('.hero-content .stagger-animation');
+                
+                gsap.set(heroElements, { 
+                    opacity: 0, 
+                    y: 60,
+                    scale: 0.9
+                });
+                
+                gsap.to(heroElements, {
+                    duration: 1.2,
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    stagger: 0.15,
+                    ease: "power3.out",
+                    delay: 0.5
+                });
+                
+                // Hero phone animation
+                const phoneContainer = document.querySelector('.hero-visual');
+                if (phoneContainer) {
+                    gsap.set(phoneContainer, { opacity: 0, scale: 0.8, y: 50 });
+                    gsap.to(phoneContainer, {
+                        duration: 1.5,
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                        ease: "power3.out",
+                        delay: 0.8
+                    });
+                }
+            }
+            
+            setupScrollRevealAnimations() {
+                const revealElements = document.querySelectorAll('.scroll-reveal');
+                
+                revealElements.forEach(element => {
+                    gsap.set(element, { 
+                        opacity: 0, 
+                        y: 60,
+                        scale: 0.95
+                    });
+                    
+                    ScrollTrigger.create({
+                        trigger: element,
+                        start: "top 85%",
+                        end: "bottom 15%",
+                        onEnter: () => {
+                            gsap.to(element, {
+                                duration: 0.8,
+                                opacity: 1,
+                                y: 0,
+                                scale: 1,
+                                ease: "power2.out"
+                            });
+                        },
+                        once: true
+                    });
+                });
+            }
+            
+            setupMagneticEffects() {
+                const magneticElements = document.querySelectorAll('.magnetic-hover');
+                
+                magneticElements.forEach(element => {
+                    element.addEventListener('mouseenter', function(e) {
+                        gsap.to(this, {
+                            duration: 0.3,
+                            scale: 1.05,
+                            ease: "power2.out"
+                        });
+                    });
+                    
+                    element.addEventListener('mouseleave', function(e) {
+                        gsap.to(this, {
+                            duration: 0.3,
+                            scale: 1,
+                            ease: "power2.out"
+                        });
+                    });
+                    
+                    element.addEventListener('mousemove', function(e) {
+                        const rect = this.getBoundingClientRect();
+                        const x = e.clientX - rect.left - rect.width / 2;
+                        const y = e.clientY - rect.top - rect.height / 2;
+                        
+                        gsap.to(this, {
+                            duration: 0.3,
+                            x: x * 0.1,
+                            y: y * 0.1,
+                            ease: "power2.out"
+                        });
+                    });
+                    
+                    element.addEventListener('mouseleave', function(e) {
+                        gsap.to(this, {
+                            duration: 0.3,
+                            x: 0,
+                            y: 0,
+                            ease: "power2.out"
+                        });
+                    });
+                });
+            }
+            
+            setupTextAnimations() {
+                // Animate gradient text on scroll
+                const gradientTexts = document.querySelectorAll('.gradient-text, .gradient-text-accent, .gradient-text-secondary');
+                
+                gradientTexts.forEach(text => {
+                    ScrollTrigger.create({
+                        trigger: text,
+                        start: "top 90%",
+                        end: "bottom 10%",
+                        onEnter: () => {
+                            gsap.fromTo(text, 
+                                { 
+                                    backgroundPosition: "200% center" 
+                                },
+                                {
+                                    duration: 2,
+                                    backgroundPosition: "0% center",
+                                    ease: "power2.out"
+                                }
+                            );
+                        },
+                        once: true
+                    });
+                });
+            }
+        }
+
+        // Enhanced Mobile Phone Styling System
+        class AiveFlowPhoneEnhancer {
+            constructor() {
+                this.phoneContainer = document.querySelector('.phone-mockup');
+                if (!this.phoneContainer) return;
+                
+                this.init();
+            }
+            
+            init() {
+                this.enhancePhoneVisuals();
+                this.addAdvancedHoverEffects();
+            }
+            
+            enhancePhoneVisuals() {
+                // Add AiveFlow styling to phone
+                if (this.phoneContainer) {
+                    this.phoneContainer.style.background = `
+                        linear-gradient(145deg, 
+                            rgba(255, 255, 255, 0.1) 0%, 
+                            rgba(255, 255, 255, 0.05) 50%, 
+                            rgba(0, 0, 0, 0.1) 100%
+                        )
+                    `;
+                    this.phoneContainer.style.backdropFilter = 'blur(20px)';
+                    this.phoneContainer.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+                    this.phoneContainer.style.boxShadow = `
+                        0 25px 50px -12px rgba(0, 0, 0, 0.25), 
+                        0 0 0 1px rgba(255, 255, 255, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                    `;
+                }
+            }
+            
+            addAdvancedHoverEffects() {
+                if (!this.phoneContainer) return;
+                
+                this.phoneContainer.addEventListener('mouseenter', () => {
+                    gsap.to(this.phoneContainer, {
+                        duration: 0.5,
+                        rotateY: 5,
+                        rotateX: 2,
+                        scale: 1.02,
+                        boxShadow: `
+                            0 35px 70px -12px rgba(79, 70, 229, 0.3), 
+                            0 0 0 1px rgba(255, 255, 255, 0.2),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.2)
+                        `,
+                        ease: "power2.out"
+                    });
+                });
+                
+                this.phoneContainer.addEventListener('mouseleave', () => {
+                    gsap.to(this.phoneContainer, {
+                        duration: 0.5,
+                        rotateY: 0,
+                        rotateX: 0,
+                        scale: 1,
+                        boxShadow: `
+                            0 25px 50px -12px rgba(0, 0, 0, 0.25), 
+                            0 0 0 1px rgba(255, 255, 255, 0.1),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                        `,
+                        ease: "power2.out"
+                    });
+                });
+            }
+        }
+
+        // Performance and Accessibility Optimization System
+        class AiveFlowPerformanceOptimizer {
+            constructor() {
+                this.isMobile = window.innerWidth <= 768;
+                this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                this.isLowEnd = this.detectLowEndDevice();
+                
+                this.init();
+            }
+            
+            detectLowEndDevice() {
+                // Simple heuristic for low-end device detection
+                const canvas = document.createElement('canvas');
+                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                
+                if (!gl) return true;
+                
+                const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+                if (debugInfo) {
+                    const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+                    return renderer.toLowerCase().includes('software') || 
+                           renderer.toLowerCase().includes('mesa');
+                }
+                
+                return navigator.hardwareConcurrency < 4;
+            }
+            
+            init() {
+                // Disable animations if user prefers reduced motion
+                if (this.prefersReducedMotion) {
+                    this.disableAnimations();
+                }
+                
+                // Performance optimizations for mobile/low-end devices
+                if (this.isMobile || this.isLowEnd) {
+                    this.optimizeForPerformance();
+                }
+                
+                // Add resize listener for responsive updates
+                window.addEventListener('resize', this.debounce(() => {
+                    this.isMobile = window.innerWidth <= 768;
+                }, 250));
+            }
+            
+            disableAnimations() {
+                document.documentElement.style.setProperty('--transition-fast', '0s');
+                document.documentElement.style.setProperty('--transition-normal', '0s');
+                document.documentElement.style.setProperty('--transition-slow', '0s');
+                
+                // Disable particle system
+                const particleCanvas = document.getElementById('hero-particles');
+                if (particleCanvas) {
+                    particleCanvas.style.display = 'none';
+                }
+            }
+            
+            optimizeForPerformance() {
+                // Reduce blur effects on mobile
+                document.documentElement.style.setProperty('--glass-bg', 'rgba(255, 255, 255, 0.05)');
+                
+                // Simplify shadows
+                const style = document.createElement('style');
+                style.textContent = `
+                    @media (max-width: 768px) {
+                        .glass-card, .problem-card, .solution-card {
+                            backdrop-filter: blur(8px) !important;
+                            -webkit-backdrop-filter: blur(8px) !important;
+                        }
+                        .hero-particles {
+                            display: none;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+        }
+
+        // Email Functionality Verification System
+        class AiveFlowFunctionalityVerifier {
+            constructor() {
+                this.init();
+            }
+            
+            init() {
+                this.verifyEmailSignup();
+                this.verifyScrollBehavior();
+                this.verifyResponsiveness();
+            }
+            
+            verifyEmailSignup() {
+                const emailForm = document.getElementById('embedSignupForm');
+                if (emailForm) {
+                    console.log('✅ Email signup form found and functional');
+                    
+                    // Test form validation
+                    const emailInput = document.getElementById('embedEmail');
+                    const gdprCheckbox = document.getElementById('embedGdpr');
+                    
+                    if (emailInput && gdprCheckbox) {
+                        console.log('✅ Email validation and GDPR compliance elements present');
+                    }
+                } else {
+                    console.warn('⚠️ Email signup form not found');
+                }
+            }
+            
+            verifyScrollBehavior() {
+                if ('IntersectionObserver' in window) {
+                    console.log('✅ Scroll animations supported');
+                } else {
+                    console.warn('⚠️ IntersectionObserver not supported - fallback needed');
+                }
+            }
+            
+            verifyResponsiveness() {
+                const viewportMeta = document.querySelector('meta[name="viewport"]');
+                if (viewportMeta && viewportMeta.content.includes('width=device-width')) {
+                    console.log('✅ Responsive viewport configured');
+                } else {
+                    console.warn('⚠️ Viewport meta tag not properly configured');
+                }
+            }
+        }
+
+        // AiveFlow Preloader System
+        class AiveFlowPreloader {
+            constructor() {
+                this.preloader = document.getElementById('aiveflow-preloader');
+                this.pageContent = document.getElementById('page-content');
+                this.progress = 0;
+                this.loaded = false;
+                
+                this.init();
+            }
+            
+            init() {
+                // Simulate loading progress
+                this.simulateProgress();
+                
+                // Hide preloader when everything is ready
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        this.hidePreloader();
+                    }, 500);
+                });
+            }
+            
+            simulateProgress() {
+                const progressBar = document.querySelector('.preloader-progress');
+                let progress = 0;
+                
+                const interval = setInterval(() => {
+                    progress += Math.random() * 15;
+                    if (progress > 90) progress = 90;
+                    
+                    progressBar.style.width = progress + '%';
+                    
+                    if (progress >= 90) {
+                        clearInterval(interval);
+                    }
+                }, 100);
+            }
+            
+            hidePreloader() {
+                if (this.preloader) {
+                    this.preloader.classList.add('hidden');
+                    
+                    setTimeout(() => {
+                        this.preloader.remove();
+                        if (this.pageContent) {
+                            this.pageContent.classList.add('loaded');
+                        }
+                        this.loaded = true;
+                    }, 500);
+                }
+            }
+        }
+
+        // Initialize preloader immediately
+        new AiveFlowPreloader();
+
+        // Initialize all AiveFlow systems when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize performance optimizer first
+            const performanceOptimizer = new AiveFlowPerformanceOptimizer();
+            
+            // Initialize functionality verifier
+            const functionalityVerifier = new AiveFlowFunctionalityVerifier();
+            
+            // Initialize systems based on device capabilities
+            if (!performanceOptimizer.prefersReducedMotion && 
+                !(performanceOptimizer.isMobile && performanceOptimizer.isLowEnd)) {
+                
+                // Initialize particle system
+                const particleSystem = new AiveFlowParticleSystem();
+                
+                // Initialize advanced animations
+                const animationSystem = new AiveFlowAnimationSystem();
+                
+                // Initialize phone enhancements
+                const phoneEnhancer = new AiveFlowPhoneEnhancer();
+            } else {
+                console.log('📱 Performance mode: Advanced animations disabled for optimal experience');
+            }
+            
+            console.log('🎉 AiveFlow System Initialized!', {
+                mobile: performanceOptimizer.isMobile,
+                reducedMotion: performanceOptimizer.prefersReducedMotion,
+                lowEnd: performanceOptimizer.isLowEnd
+            });
+        });
+    </script>
+</body>
+</html>

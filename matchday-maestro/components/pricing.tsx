@@ -11,8 +11,10 @@ export function Pricing() {
     { feature: "AI Autopilot strategies", free: "Basic only (40-45% accuracy)", premium: "All 4 strategies (60-70% accuracy)", highlight: true },
     { feature: "Private league size", free: "10 members", premium: "100 members", highlight: true },
     { feature: "Competitions tracked", free: "Premier League only", premium: "All 6 major leagues", highlight: true },
+    { feature: "Target Man games", free: "1 game/week", premium: "1 game/day", highlight: true },
     { feature: "Advanced analytics", free: "Basic accuracy stats", premium: "Deep analytics dashboard", highlight: true },
-    { feature: "Weekly Quiz entry", free: "(150) coin entry", premium: "Free Entry", highlight: true },
+    { feature: "Weekly Quiz entry", free: "150 coin entry", premium: "Free Entry", highlight: true },
+    { feature: "Achievements to unlock", free: "57 achievements", premium: "57 + exclusive badges", highlight: true },
     { feature: "Profile Customization", free: "10 basic avatars", premium: "20 premium avatars + badge", highlight: true },
   ]
 
@@ -78,7 +80,7 @@ export function Pricing() {
         style={{ transitionDelay: "0.4s" }}
       >
         <p className="text-[#10b981] font-semibold">
-          Try Premium 30 days free. Not convinced? Full refund, no questions.
+          Try Premium 7 days free. Not convinced? Full refund, no questions.
         </p>
       </div>
     </section>

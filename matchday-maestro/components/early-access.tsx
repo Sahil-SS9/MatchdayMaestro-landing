@@ -1,35 +1,36 @@
 "use client"
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
+import { Gift, Trophy, Rocket, Vote, Zap } from "lucide-react"
 
 export function EarlyAccess() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
-  const benefits = [
+  const benefits: { icon: ReactNode; title: string; desc: string }[] = [
     {
-      icon: "🎁",
+      icon: <Gift className="w-12 h-12 text-[#00C896]" />,
       title: "500 Free Coins",
       desc: "First 500 users get a massive coin bonus at launch to unlock premium features instantly.",
     },
     {
-      icon: "🏆",
+      icon: <Trophy className="w-12 h-12 text-[#F59E0B]" />,
       title: "Founder Badge",
       desc: "Permanent special status showing you were here from day one. Limited to first 500 only.",
     },
     {
-      icon: "🚀",
+      icon: <Rocket className="w-12 h-12 text-purple-400" />,
       title: "Priority Access",
       desc: "Skip the line and get immediate access when we launch. No waiting.",
     },
     {
-      icon: "🗳️",
+      icon: <Vote className="w-12 h-12 text-blue-400" />,
       title: "Shape the Future",
       desc: "Direct input on features, leagues, and improvements. Your feedback builds the roadmap.",
     },
     {
-      icon: "⚡",
+      icon: <Zap className="w-12 h-12 text-[#00C896]" />,
       title: "Exclusive Updates",
       desc: "Behind-the-scenes development updates and early feature previews before anyone else.",
     },
@@ -72,7 +73,7 @@ export function EarlyAccess() {
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
               <CardHeader>
-                <div className="text-5xl mb-2">{benefit.icon}</div>
+                <div className="mb-2 flex justify-center">{benefit.icon}</div>
                 <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
               </CardHeader>
               <CardContent>
@@ -91,7 +92,7 @@ export function EarlyAccess() {
               style={{ transitionDelay: `${(i + 2) * 0.1}s` }}
             >
               <CardHeader>
-                <div className="text-5xl mb-2">{benefit.icon}</div>
+                <div className="mb-2 flex justify-center">{benefit.icon}</div>
                 <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
               </CardHeader>
               <CardContent>

@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "Pricing - Free & Premium Plans | Matchday Maestro",
+  description: "Start free with 3 predictions per match, AI Autopilot, and daily quizzes. Premium at £2.99/month unlocks 5 predictions, exclusive features, and more.",
+  openGraph: {
+    title: "Pricing - Free & Premium Plans",
+    description: "Free tier with full features. Premium at £2.99/month for serious competitors. 7-day free trial.",
+  },
+}
 import { Footer } from "@/components/footer"
 import { Pricing as PricingSection } from "@/components/pricing"
 import { CoinToolkit } from "@/components/coin-toolkit"

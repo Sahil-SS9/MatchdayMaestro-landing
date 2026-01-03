@@ -1,5 +1,23 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+import { Smartphone, Timer, Target, Zap, ShieldCheck, Ban } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "Matchday Maestro - Fair Football Predictions That Reward Knowledge",
+  description: "The only prediction app where everyone gets the same 30-second window. Live predictions, AI Autopilot, Target Man trivia, battles with friends. Join the waitlist.",
+  keywords: ["football predictions", "premier league", "live predictions", "football trivia", "AI predictions", "fantasy football alternative"],
+  openGraph: {
+    title: "Matchday Maestro - Fair Football Predictions",
+    description: "Finally, football predictions that reward knowledge over luck. Live event detection, fair windows, transparent scoring.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matchday Maestro - Fair Football Predictions",
+    description: "The only prediction app where everyone gets the same 30-second window.",
+  },
+}
 import { Hero } from "@/components/hero"
 import { InfiniteScrollMarquee } from "@/components/infinite-scroll-marquee"
 import { ProblemSection } from "@/components/problem-section"
@@ -16,17 +34,17 @@ import { AnimatedStadiumBackground } from "@/components/animated-stadium-backgro
 export default function Page() {
   const howItWorksSteps = [
     {
-      icon: "📱",
+      icon: <Smartphone className="w-12 h-12" />,
       title: "Live Event Detection",
       description: "We react to the match as it actually unfolds - goals, cards, momentum shifts. The second something happens, you get a prediction opportunity. No waiting for TV broadcasts to catch up."
     },
     {
-      icon: "⏱️",
+      icon: <Timer className="w-12 h-12" />,
       title: "Fair 30-Second Windows",
       description: "Everyone gets notified simultaneously. Same 30 seconds to respond. Whether you're watching Sky Sports or just got a push notification - nobody gets an unfair head start."
     },
     {
-      icon: "🎯",
+      icon: <Target className="w-12 h-12" />,
       title: "10 Points = 10 Points",
       description: "No matter if you're free or premium. Everyone earns the same points per correct prediction. Premium wins through volume (5 vs 3 predictions per match), not rigged scoring."
     }
@@ -45,7 +63,72 @@ export default function Page() {
       <FeatureTeasers />
       <PricingToggle />
       <EarlyAccess />
-      
+
+      {/* Upcoming Features */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#9333EA]/20 to-[#EC4899]/20 border border-[#9333EA]/40 text-sm font-semibold text-[#EC4899] mb-4">
+              Coming Soon
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white font-display">
+              What's Next?
+            </h2>
+            <p className="text-white/60 mt-2">More ways to compete, more games to master</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Lightning Round Battles */}
+            <div className="liquid-glass rounded-2xl p-6 border border-[#F59E0B]/30 hover:border-[#F59E0B]/60 transition-all group">
+              <div className="flex items-center gap-3 mb-4">
+                <Zap className="w-10 h-10 text-[#F59E0B]" />
+                <div>
+                  <span className="text-xs px-2 py-0.5 bg-[#F59E0B]/20 border border-[#F59E0B]/40 rounded text-[#F59E0B]">
+                    Battles
+                  </span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Lightning Round</h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                New battle mode with rapid-fire predictions. 60-second windows, escalating multipliers, winner takes all.
+              </p>
+            </div>
+
+            {/* Gloves Up */}
+            <div className="liquid-glass rounded-2xl p-6 border border-[#00C896]/30 hover:border-[#00C896]/60 transition-all group">
+              <div className="flex items-center gap-3 mb-4">
+                <ShieldCheck className="w-10 h-10 text-[#00C896]" />
+                <div>
+                  <span className="text-xs px-2 py-0.5 bg-[#00C896]/20 border border-[#00C896]/40 rounded text-[#00C896]">
+                    New Game
+                  </span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Gloves Up</h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                A goalkeeper-themed mini-game. Test your reflexes and shot-stopping knowledge in this fast-paced challenge.
+              </p>
+            </div>
+
+            {/* Ruled Out */}
+            <div className="liquid-glass rounded-2xl p-6 border border-[#EF4444]/30 hover:border-[#EF4444]/60 transition-all group">
+              <div className="flex items-center gap-3 mb-4">
+                <Ban className="w-10 h-10 text-[#EF4444]" />
+                <div>
+                  <span className="text-xs px-2 py-0.5 bg-[#EF4444]/20 border border-[#EF4444]/40 rounded text-[#EF4444]">
+                    New Game
+                  </span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Ruled Out</h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                VAR-style decision making. Watch the replay, make the call. Will you rule it out or let it stand?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Learn More CTA - FAQ */}
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-3xl text-center">

@@ -90,17 +90,30 @@ export function FAQ() {
         Questions We Get Asked Daily
       </h2>
 
-      <div className="mt-10 max-w-3xl mx-auto space-y-4">
+      <div className="mt-10 max-w-3xl mx-auto space-y-4" role="region" aria-label="Frequently Asked Questions">
         {faqs.map((faq, i) => (
           <div key={i} className="liquid-glass rounded-xl overflow-hidden">
-            <button
-              onClick={() => setOpenFaq(openFaq === i ? null : i)}
-              className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+            <h3>
+              <button
+                id={`faq-button-${i}`}
+                aria-expanded={openFaq === i}
+                aria-controls={`faq-content-${i}`}
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00C896] focus-visible:ring-inset"
+              >
+                <span className="font-semibold text-lg pr-4">{faq.question}</span>
+                {openFaq === i ? <Minus className="w-5 h-5 flex-shrink-0" aria-hidden="true" /> : <Plus className="w-5 h-5 flex-shrink-0" aria-hidden="true" />}
+              </button>
+            </h3>
+            <div
+              id={`faq-content-${i}`}
+              role="region"
+              aria-labelledby={`faq-button-${i}`}
+              hidden={openFaq !== i}
+              className={openFaq === i ? "px-6 pb-6 text-white/70 leading-relaxed" : "hidden"}
             >
-              <span className="font-semibold text-lg pr-4">{faq.question}</span>
-              {openFaq === i ? <Minus className="w-5 h-5 flex-shrink-0" /> : <Plus className="w-5 h-5 flex-shrink-0" />}
-            </button>
-            {openFaq === i && <div className="px-6 pb-6 text-white/70 leading-relaxed">{faq.answer}</div>}
+              {faq.answer}
+            </div>
           </div>
         ))}
       </div>

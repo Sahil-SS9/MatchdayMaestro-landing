@@ -1,6 +1,16 @@
+import type { Metadata } from "next"
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
 import { AnimatedStadiumBackground } from "@/components/animated-stadium-background"
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Matchday Maestro",
+  description: "Terms and conditions for using Matchday Maestro. Read our service agreement, usage policies, and legal information.",
+  openGraph: {
+    title: "Terms of Service - Matchday Maestro",
+    description: "Service terms, usage policies, and legal information for Matchday Maestro users.",
+  },
+}
 
 export default function TermsPage() {
   return (

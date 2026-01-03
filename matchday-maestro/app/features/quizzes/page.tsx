@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "Daily & Weekly Quizzes - Football Trivia | Matchday Maestro",
+  description: "2,500+ football questions covering Premier League history, tactics, player statistics and trivia. Daily challenges and weekly competitions with leaderboards.",
+  openGraph: {
+    title: "Daily & Weekly Quizzes - Football Trivia",
+    description: "Test your football knowledge with 2,500+ questions. Earn coins and climb quiz leaderboards.",
+  },
+}
 import { Footer } from "@/components/footer"
 import { AnimatedStadiumBackground } from "@/components/animated-stadium-background"
 import { ScrollAnimations } from "@/components/scroll-animations"
@@ -21,7 +31,7 @@ export default function QuizzesPage() {
               Daily & Weekly Quizzes
             </h1>
             <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              9,000+ football questions. Test your knowledge, earn coins, and climb quiz leaderboards.
+              2,500+ football questions. Test your knowledge, earn coins, and climb quiz leaderboards.
             </p>
           </div>
 
@@ -30,7 +40,7 @@ export default function QuizzesPage() {
             <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10 bg-[#F97316]/10">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">What Are Daily & Weekly Quizzes?</h2>
               <p className="text-lg text-white/70 leading-relaxed mb-6">
-                Our comprehensive quiz competition system features a premium database of 9,000+ football questions covering Premier League history, tactics, player statistics, and football trivia. Questions are categorized by difficulty levels (casual to expert) to accommodate both casual fans and football encyclopedia enthusiasts.
+                Our comprehensive quiz competition system features a premium database of 2,500+ football questions covering Premier League history, tactics, player statistics, and football trivia. Questions are categorized by difficulty levels (casual to expert) to accommodate both casual fans and football encyclopedia enthusiasts.
               </p>
               <p className="text-lg text-white/70 leading-relaxed">
                 The quiz system integrates seamlessly with the coin economy—correct answers award coins (typically 5-15 coins per question depending on difficulty), creating another way to build your coin balance while testing your football knowledge.

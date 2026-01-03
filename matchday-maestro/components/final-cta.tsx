@@ -102,14 +102,20 @@ export function FinalCTA() {
           <p className="text-white/70">Be first to access Matchday Maestro when we launch December 15th</p>
 
           <div className="space-y-4">
-            <Input
-              type="email"
-              placeholder="Enter your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="h-14 text-lg bg-white/5 border-white/10 focus:border-[#00C896]"
-            />
+            <div>
+              <label htmlFor="email-input" className="sr-only">Email address</label>
+              <Input
+                id="email-input"
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                aria-describedby="email-description"
+                className="h-14 text-lg bg-white/5 border-white/10 focus:border-[#00C896]"
+              />
+              <p id="email-description" className="sr-only">We'll send you updates about Matchday Maestro launch</p>
+            </div>
 
             <div className="flex items-start gap-3 text-left">
               <Checkbox
@@ -137,7 +143,7 @@ export function FinalCTA() {
             type="submit"
             size="lg"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-[#00C896] to-[#10b981] hover:from-[#00b382] hover:to-[#0ea370] text-lg py-6 rounded-full"
+            className="w-full bg-[#00C896] hover:bg-[#00b382] text-black text-lg py-6 rounded-full"
           >
             {isSubmitting ? "Joining..." : "Join Waiting List"}
           </Button>

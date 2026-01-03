@@ -1,27 +1,28 @@
 "use client"
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
+import { Lock, RefreshCw, Dice6 } from "lucide-react"
 
 export function ProblemSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
-  const flaws = [
+  const flaws: { icon: ReactNode; title: string; desc: string; problem: string }[] = [
     {
-      emoji: "⏰🔒",
+      icon: <Lock className="w-10 h-10 text-red-400" />,
       title: "The Pre-Match Prison",
       desc: '"Liverpool just scored. City are pushing forward desperately. You KNOW a goal is coming in the next 5 minutes... but you can\'t predict it because you had to submit everything before kick-off."',
       problem: "Most prediction apps lock you into pre-match predictions. You miss the entire 90 minutes of live drama—can't react to momentum shifts, injuries, or red cards. The exciting parts when outcomes become predictable? You're locked out.",
     },
     {
-      emoji: "🔁😴",
+      icon: <RefreshCw className="w-10 h-10 text-red-400" />,
       title: "The Boring Question Loop",
       desc: '"Week 1: Who wins? Week 2: Who wins? Week 3: Who wins? Week 38: Who wins? It\'s the same prediction every single match for 9 months straight."',
       problem: "Most apps ask identical questions every match regardless of context. Man City vs Liverpool title decider? Same questions as a relegation battle. 0-0 at 89 minutes? Same as a 4-3 thriller. No variety = stale after 10 weeks.",
     },
     {
-      emoji: "🎰🤯",
+      icon: <Dice6 className="w-10 h-10 text-red-400" />,
       title: "The Impossible Jackpot",
       desc: '"Predict 6 EXACT scores correctly. AND guess the minute of first goal. AND hope nobody else got the same scores so you don\'t split the prize. It\'s basically the lottery with football knowledge."',
       problem: "Apps requiring exact score predictions across 6 matches need lottery-level luck. 15-20 likely scorelines per match means 11.4 MILLION possible combinations. This rewards luck, not football intelligence.",
@@ -63,7 +64,7 @@ export function ProblemSection() {
             style={{ transitionDelay: `${i * 0.15}s` }}
           >
             <CardHeader>
-              <div className="text-4xl mb-3">{flaw.emoji}</div>
+              <div className="mb-3">{flaw.icon}</div>
               <h3 className="text-xl text-red-400 font-semibold mb-2">{flaw.title}</h3>
               <p className="text-white/70 italic leading-relaxed text-sm">{flaw.desc}</p>
             </CardHeader>

@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "FAQ - Frequently Asked Questions | Matchday Maestro",
+  description: "Get answers to common questions about Matchday Maestro. How predictions work, subscription details, coin economy, and everything you need to know.",
+  openGraph: {
+    title: "FAQ - Frequently Asked Questions",
+    description: "Everything you need to know about Matchday Maestro. Predictions, subscriptions, coins, and more.",
+  },
+}
 import { Footer } from "@/components/footer"
 import { FAQ as FAQSection } from "@/components/faq"
 import { AnimatedStadiumBackground } from "@/components/animated-stadium-background"

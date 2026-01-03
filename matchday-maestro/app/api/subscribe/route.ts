@@ -38,11 +38,18 @@ export async function POST(request: NextRequest) {
     const MAILCHIMP_SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX // e.g., 'us1'
 
     if (!MAILCHIMP_API_KEY || !MAILCHIMP_LIST_ID || !MAILCHIMP_SERVER_PREFIX) {
-      console.warn('Mailchimp environment variables not configured. Using mock response.')
-      // For development/testing, return success without actual Mailchimp call
+      // In production, fail gracefully - configuration is required
+      if (process.env.NODE_ENV === 'production') {
+        console.error('Mailchimp environment variables not configured in production')
+        return NextResponse.json(
+          { error: 'Service temporarily unavailable. Please try again later.' },
+          { status: 503 }
+        )
+      }
+      // Development mode only
+      console.warn('Mailchimp not configured - using mock response (dev mode)')
       return NextResponse.json({
-        message: 'Successfully subscribed to waiting list (development mode)',
-        email: email
+        message: 'Successfully subscribed to waiting list!'
       })
     }
 
@@ -92,8 +99,7 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({
-      message: 'Successfully subscribed to waiting list!',
-      email: email
+      message: 'Successfully subscribed to waiting list!'
     })
 
   } catch (error) {

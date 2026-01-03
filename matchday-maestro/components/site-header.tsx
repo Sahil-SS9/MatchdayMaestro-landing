@@ -23,6 +23,7 @@ export function SiteHeader() {
     { href: "/features/ai-autopilot", label: "AI Autopilot" },
     { href: "/features/coin-toolkit", label: "Coin Toolkit" },
     { href: "/features/battles-leagues", label: "Battles & Leagues" },
+    { href: "/features/target-man", label: "Target Man" },
     { href: "/features/quizzes", label: "Daily & Weekly Quizzes" },
     { href: "/features/live-tracking", label: "Live Match Tracking" },
   ]

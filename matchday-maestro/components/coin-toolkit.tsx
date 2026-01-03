@@ -5,10 +5,10 @@ import { Shield, Zap, RotateCcw, Dices, Brain } from "lucide-react"
 
 export function CoinToolkit() {
   const coinFeatures = [
-    { icon: Shield, name: "Streak Shield", cost: "50 coins", color: "#3B82F6", description: "Protect your hard-earned streak. One wrong prediction forgiven.", useCase: "When you have got a 10-streak going and the match is unpredictable, shield your streak and keep the bonuses rolling." },
-    { icon: Zap, name: "Double Points", cost: "50 coins", color: "#F59E0B", description: "Your next 3 predictions are worth 20 points each instead of 10.", useCase: "Feeling confident? Use this when you are sure about upcoming events. High risk, massive reward." },
-    { icon: RotateCcw, name: "Second Chance", cost: "50 coins", color: "#EC4899", description: "Cancel a submitted prediction before the outcome is known. Adapt mid-match.", useCase: "Lineup changes? Red card? Momentum shift? React to last-minute changes." },
-    { icon: Dices, name: "Lucky Dip", cost: "50 coins", color: "#10B981", description: "AI analyzes the match data and suggests the statistical best bet.", useCase: "When you are stuck between two outcomes, let machine learning make the call." },
+    { icon: Shield, name: "Streak Shield", cost: "100 coins", color: "#3B82F6", description: "Protect your hard-earned streak. One wrong prediction forgiven.", useCase: "When you have got a 10-streak going and the match is unpredictable, shield your streak and keep the bonuses rolling." },
+    { icon: Zap, name: "Double Points", cost: "125 coins", color: "#F59E0B", description: "Your next 3 predictions are worth 20 points each instead of 10.", useCase: "Feeling confident? Use this when you are sure about upcoming events. High risk, massive reward." },
+    { icon: RotateCcw, name: "Second Chance", cost: "90 coins", color: "#EC4899", description: "Cancel a submitted prediction before the outcome is known. Adapt mid-match.", useCase: "Lineup changes? Red card? Momentum shift? React to last-minute changes." },
+    { icon: Dices, name: "Lucky Dip", cost: "75 coins", color: "#10B981", description: "AI analyzes the match data and suggests the statistical best bet.", useCase: "When you are stuck between two outcomes, let machine learning make the call." },
     { icon: Brain, name: "AI Autopilot", cost: "FREE (Basic) / PREMIUM (Advanced)", color: "#00C896", description: "Set your strategy, let AI predict for you. Never miss a match opportunity.", useCase: "Stuck in a meeting? At dinner? AI has your back with up to 5 predictions per match.", featured: true },
   ]
 

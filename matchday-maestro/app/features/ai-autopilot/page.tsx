@@ -1,6 +1,16 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "AI Autopilot - Automated Football Predictions | Matchday Maestro",
+  description: "Let AI make predictions for you 24/7. Choose from 4 strategies: Smart Assistant, The Conservative, The Optimist, or The Statistician. Earn points while you sleep.",
+  openGraph: {
+    title: "AI Autopilot - Automated Football Predictions",
+    description: "Your tireless teammate that plays for you 24/7. Choose your strategy and let AI earn points around the clock.",
+  },
+}
 import { Footer } from "@/components/footer"
 import { AnimatedStadiumBackground } from "@/components/animated-stadium-background"
 import { ScrollAnimations } from "@/components/scroll-animations"
@@ -56,26 +66,24 @@ export default function AIAutopilotPage() {
               
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="liquid-glass rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-bold mb-3">Basic Strategy (FREE)</h3>
+                  <h3 className="text-xl font-bold mb-3">Smart Assistant (Basic) - FREE</h3>
                   <p className="text-white/70 text-sm mb-3">
                     Conservative, low-risk predictions focused on high-probability outcomes. Perfect for free users who want automated assistance.
                   </p>
-                  <div className="text-sm">
-                    <span className="font-semibold text-[#00C896]">40-45%</span>{" "}
-                    <span className="text-white/60">success rate</span>
+                  <div className="text-sm text-white/60">
+                    Baseline performance for all users
                   </div>
                 </div>
-                
+
                 <div className="liquid-glass rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl font-bold mb-3">Premium Strategies</h3>
                   <ul className="space-y-2 text-white/70 text-sm">
-                    <li><strong>Conservative:</strong> Balanced approach with 65%+ confidence threshold</li>
-                    <li><strong>Optimist:</strong> Aggressive high-reward strategy</li>
-                    <li><strong>Statistical:</strong> Purely data-driven decisions using advanced analytics</li>
+                    <li><strong>The Conservative:</strong> Safe predictions with 70%+ confidence threshold. Protects your streak.</li>
+                    <li><strong>The Optimist:</strong> Aggressive high-reward strategy for bigger wins</li>
+                    <li><strong>The Statistician:</strong> Purely data-driven decisions using advanced analytics</li>
                   </ul>
-                  <div className="text-sm mt-3">
-                    <span className="font-semibold text-[#00C896]">60-70%</span>{" "}
-                    <span className="text-white/60">success rate</span>
+                  <div className="text-sm mt-3 text-white/60">
+                    Premium strategies outperform Basic by 15-30%
                   </div>
                 </div>
               </div>
@@ -119,7 +127,7 @@ export default function AIAutopilotPage() {
                   <div>
                     <h3 className="font-bold mb-2">Pick Your Strategy</h3>
                     <p className="text-white/70">
-                      Choose from Basic (free), Conservative, Optimist, or Statistical strategies. Each one plays differently—some are safer, some go for bigger wins.
+                      Choose from Smart Assistant (free), The Conservative, The Optimist, or The Statistician. Each one plays differently—some are safer, some go for bigger wins.
                     </p>
                   </div>
                 </div>

@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "Battles & Leagues - Social Competition | Matchday Maestro",
+  description: "Challenge friends to head-to-head prediction battles. Create or join private leagues. Wager coins, climb leaderboards, and prove you know football best.",
+  openGraph: {
+    title: "Battles & Leagues - Social Competition",
+    description: "Head-to-head battles with coin wagering. Private leagues with friends. Real-time competition.",
+  },
+}
 import { Footer } from "@/components/footer"
 import { AnimatedStadiumBackground } from "@/components/animated-stadium-background"
 import { ScrollAnimations } from "@/components/scroll-animations"

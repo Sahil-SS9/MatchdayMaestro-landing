@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "How It Works - Fair Football Predictions | Matchday Maestro",
+  description: "Learn how Matchday Maestro works. Live event detection, fair 30-second windows, and transparent scoring. Football predictions that reward knowledge over luck.",
+  openGraph: {
+    title: "How It Works - Fair Football Predictions",
+    description: "Live match alerts, quick decisions, instant scoring, and friend competition. Simple, fair, fun.",
+  },
+}
 import { Footer } from "@/components/footer"
 import { AIAutopilotHero } from "@/components/ai-autopilot-hero"
 import { HowItWorks as HowItWorksSection } from "@/components/how-it-works"

@@ -1,31 +1,33 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Circle, Bot, Brain, Smartphone, Lock } from "lucide-react"
+import type { ReactNode } from "react"
 
 // OPTION: Clean Horizontal Process Flow (Recommended)
 export function ReverseTimeline() {
-  const steps = [
+  const steps: { time: string; icon: ReactNode; title: string; description: string }[] = [
     {
       time: "87:00",
-      icon: "⚽",
+      icon: <Circle className="w-8 h-8 fill-current" />,
       title: "Goal Scored",
       description: "Salah scores for Liverpool"
     },
     {
       time: "87:05",
-      icon: "🤖",
+      icon: <Bot className="w-8 h-8" />,
       title: "AI Detects",
       description: "Event processed instantly"
     },
     {
       time: "87:08",
-      icon: "🧠",
+      icon: <Brain className="w-8 h-8" />,
       title: "Analyzes",
       description: "541,000+ historical events"
     },
     {
       time: "87:10",
-      icon: "📱",
+      icon: <Smartphone className="w-8 h-8" />,
       title: "Sends Question",
       description: '"Card next?" Not "Goal next?"'
     }
@@ -34,8 +36,9 @@ export function ReverseTimeline() {
   return (
     <section className="relative w-full py-16 px-4 bg-gradient-to-b from-transparent via-[#00C896]/5 to-transparent">
       <div className="container mx-auto max-w-5xl">
-        <h3 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
-          🔐 The Reverse Timeline Secret
+        <h3 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white flex items-center justify-center gap-3">
+          <Lock className="w-8 h-8 text-[#00C896]" />
+          The Reverse Timeline Secret
         </h3>
         <p className="text-center text-white/70 mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
           After a goal, we ask about <span className="text-[#00C896] font-semibold">DIFFERENT events</span>.
@@ -94,7 +97,7 @@ export function ReverseTimeline() {
                   
                   {/* Icon container */}
                   <div className="relative w-28 h-28 rounded-full border-2 border-[#00C896]/40 bg-gradient-to-br from-[#0a0f14] to-[#0f1520] flex flex-col items-center justify-center shadow-[0_0_24px_rgba(0,200,150,0.15)]">
-                    <span className="text-4xl mb-1">{step.icon}</span>
+                    <div className="text-[#00C896] mb-1">{step.icon}</div>
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#00C896]">{step.time}</span>
                   </div>
                 </div>

@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, type ReactNode } from "react"
 
 type FeatureItem = {
-  icon: string
+  icon: ReactNode
   title: string
   description: string
 }
@@ -70,7 +70,7 @@ function FeatureCard({ item, index }: { item: FeatureItem; index: number }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="liquid-glass rounded-2xl p-6 border border-white/10 hover:border-[#00C896]/30 transition-all"
     >
-      <div className="text-5xl mb-4 text-center">{item.icon}</div>
+      <div className="mb-4 flex justify-center text-[#00C896]">{item.icon}</div>
       <h3 className="text-xl font-bold text-white mb-3 text-center">
         {item.title}
       </h3>

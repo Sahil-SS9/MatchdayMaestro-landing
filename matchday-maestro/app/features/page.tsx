@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "Features - Everything in Matchday Maestro",
+  description: "Live predictions, AI Autopilot, Target Man trivia, battles & leagues, coin toolkit power-ups, and daily quizzes. Discover all the ways to compete.",
+  openGraph: {
+    title: "Features - Everything in Matchday Maestro",
+    description: "Live predictions, AI Autopilot, battles, leagues, quizzes, and more. The complete football prediction experience.",
+  },
+}
 import { Footer } from "@/components/footer"
 import { AnimatedStadiumBackground } from "@/components/animated-stadium-background"
 import { ScrollAnimations } from "@/components/scroll-animations"
@@ -66,6 +76,28 @@ export default function FeaturesPage() {
                   </div>
                 </div>
 
+                <div className="liquid-glass rounded-xl p-6 border border-white/10 mb-6">
+                  <h3 className="text-lg font-bold mb-4">AI Insights Dashboard</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#00C896] mb-2">Personal Analytics</h4>
+                      <ul className="space-y-1 text-white/70 text-sm">
+                        <li>• Accuracy tracking (daily/weekly/monthly/all-time)</li>
+                        <li>• Best & worst prediction types</li>
+                        <li>• Optimal prediction windows</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#00C896] mb-2">Competitive Edge</h4>
+                      <ul className="space-y-1 text-white/70 text-sm">
+                        <li>• Percentile ranking vs other users</li>
+                        <li>• League-specific performance</li>
+                        <li>• Trend analysis & recommendations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex gap-4 flex-wrap">
                   <span className="px-4 py-2 bg-white/10 rounded-full text-sm text-white/80">
                     Auto-pauses when you're active
@@ -88,41 +120,73 @@ export default function FeaturesPage() {
                   <div className="flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Coin Toolkit</h2>
                     <p className="text-xl text-white/70 mb-6">
-                      9 ways to bend the game in your favor. Strategic powerups that give you the edge.
+                      14 power-ups across 6 categories. From free daily rewards to premium exclusives - strategic tools to dominate your league.
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  {[
-                    { name: "Streak Shield", cost: 80, desc: "Protect your streak from one wrong answer" },
-                    { name: "Double Points", cost: 100, desc: "2x points on your next 3 predictions" },
-                    { name: "Second Chance", cost: 50, desc: "Modify a prediction after submission" },
-                    { name: "Lightning Round", cost: 120, desc: "Chain 5 correct for 5x multiplier" },
-                    { name: "Extra Prediction", cost: 50, desc: "Bypass tier limits for one match" },
-                    { name: "Double Coin Rewards", cost: 100, desc: "Double all coin earnings for 24h" },
-                    { name: "Lucky Dip", cost: 50, desc: "Let AI make the prediction for you" },
-                    { name: "Prediction Steal", cost: "Varies", desc: "View top predictions before deadline" },
-                    { name: "Golden Ticket", cost: "Premium", desc: "Premium feature access" },
-                  ].map((powerup, idx) => (
-                    <div key={idx} className="liquid-glass rounded-xl p-4 border border-white/10">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-base font-bold">{powerup.name}</h3>
-                        <span className="text-xs px-2 py-1 bg-[#F59E0B]/20 border border-[#F59E0B]/40 rounded text-[#F59E0B]">
-                          {powerup.cost} coins
-                        </span>
+                {/* Free Engagement */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
+                    <span>🎁</span> Free Rewards
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      { name: "Daily Bonus", cost: "FREE", desc: "+10 coins for your first prediction each day" },
+                      { name: "Streak Rewards", cost: "FREE", desc: "+2 to +10 coins for consecutive correct predictions" },
+                    ].map((powerup, idx) => (
+                      <div key={idx} className="liquid-glass rounded-xl p-4 border border-green-500/20">
+                        <div className="flex justify-between items-start mb-2">
+                          <h4 className="text-base font-bold">{powerup.name}</h4>
+                          <span className="text-xs px-2 py-1 bg-green-500/20 border border-green-500/40 rounded text-green-400">
+                            {powerup.cost}
+                          </span>
+                        </div>
+                        <p className="text-white/60 text-xs">{powerup.desc}</p>
                       </div>
-                      <p className="text-white/60 text-xs">{powerup.desc}</p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+
+                {/* Paid Power-ups */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
+                    <span>✨</span> Power-ups (75-750 coins)
+                  </h3>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {[
+                      { name: "Lucky Dip", cost: 75, desc: "AI suggests the optimal prediction" },
+                      { name: "Second Chance", cost: 90, desc: "Modify a prediction after submission" },
+                      { name: "Streak Shield", cost: 100, desc: "Protect your streak (3 charges)" },
+                      { name: "Double Points (3)", cost: 125, desc: "2x points on next 3 predictions" },
+                      { name: "Extra Prediction", cost: 125, desc: "Bypass tier limits for one match" },
+                      { name: "Bounce Back", cost: 150, desc: "After 2 wrong, next correct = 3x" },
+                      { name: "Double Coin Rewards", cost: 150, desc: "2x coins earned for 24h" },
+                      { name: "Mystery Box", cost: 150, desc: "Random power-up with tiered odds" },
+                      { name: "Double Points (5)", cost: 175, desc: "2x points on next 5 predictions" },
+                      { name: "Prediction Steal", cost: 300, desc: "View top user predictions (Premium)" },
+                      { name: "Lightning Round", cost: 400, desc: "Chain 5 for up to 5x multiplier" },
+                      { name: "Golden Ticket", cost: 750, desc: "2x points + 2x coins for 7 days" },
+                    ].map((powerup, idx) => (
+                      <div key={idx} className="liquid-glass rounded-xl p-4 border border-white/10">
+                        <div className="flex justify-between items-start mb-2">
+                          <h4 className="text-base font-bold">{powerup.name}</h4>
+                          <span className="text-xs px-2 py-1 bg-[#F59E0B]/20 border border-[#F59E0B]/40 rounded text-[#F59E0B]">
+                            {powerup.cost} coins
+                          </span>
+                        </div>
+                        <p className="text-white/60 text-xs">{powerup.desc}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="text-center">
                   <Link
-                    href="/pricing"
+                    href="/features/coin-toolkit"
                     className="inline-flex items-center gap-2 text-[#F59E0B] hover:text-[#F59E0B]/80 font-semibold"
                   >
-                    View Coin Packages →
+                    View Full Coin Toolkit →
                   </Link>
                 </div>
               </div>
@@ -174,7 +238,7 @@ export default function FeaturesPage() {
                   <div className="flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Daily & Weekly Quizzes</h2>
                     <p className="text-xl text-white/70 mb-6">
-                      9,000+ football questions. Test your knowledge, earn coins, and climb quiz leaderboards.
+                      2,500+ football questions. Test your knowledge, earn coins, and climb quiz leaderboards.
                     </p>
                   </div>
                 </div>
@@ -239,6 +303,98 @@ export default function FeaturesPage() {
                 </div>
               </div>
             </section>
+
+            {/* Target Man */}
+            <section id="target-man" className="scroll-mt-20">
+              <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10">
+                <div className="flex items-start gap-6 mb-6">
+                  <span className="text-6xl flex-shrink-0">🎯</span>
+                  <div className="flex-1">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Target Man</h2>
+                    <p className="text-xl text-white/70 mb-6">
+                      A darts-inspired football trivia game. Name players to hit your target score and prove your knowledge.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="liquid-glass rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3">How It Works</h3>
+                    <ul className="space-y-2 text-white/70 text-sm">
+                      <li>• Start with 501 points</li>
+                      <li>• Name footballers to reduce your score</li>
+                      <li>• Player stats determine point deduction</li>
+                      <li>• Get to exactly 0 (or -10) to checkout and win</li>
+                      <li>• 17+ stat categories to master</li>
+                    </ul>
+                  </div>
+                  <div className="liquid-glass rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3">Game Modes</h3>
+                    <ul className="space-y-2 text-white/70 text-sm">
+                      <li>• <strong>Normal:</strong> 10 turns, max 180 stat value</li>
+                      <li>• <strong>Hard:</strong> 5 turns, max 120 stat value</li>
+                      <li>• <strong>Multiplayer:</strong> Challenge friends, wager coins</li>
+                      <li>• Hints available: Club, Nationality, Position</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 flex-wrap">
+                  <span className="px-4 py-2 bg-white/10 rounded-full text-sm text-white/80">
+                    Premium: 1 game/day
+                  </span>
+                  <span className="px-4 py-2 bg-white/10 rounded-full text-sm text-white/80">
+                    Free: 1 game/week
+                  </span>
+                  <span className="px-4 py-2 bg-[#00C896]/20 border border-[#00C896]/40 rounded-full text-sm text-[#00C896]">
+                    Extra games: 100 coins
+                  </span>
+                </div>
+              </div>
+            </section>
+
+            {/* Achievements System */}
+            <section id="achievements" className="scroll-mt-20">
+              <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10">
+                <div className="flex items-start gap-6 mb-6">
+                  <span className="text-6xl flex-shrink-0">🏆</span>
+                  <div className="flex-1">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">57 Achievements</h2>
+                    <p className="text-xl text-white/70 mb-6">
+                      Unlock achievements across 10 categories. Progress from Bronze to Legendary tier.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+                  {[
+                    { name: "Predictions", count: 11, icon: "🎯" },
+                    { name: "Battles", count: 6, icon: "⚔️" },
+                    { name: "Target Man", count: 7, icon: "🎯" },
+                    { name: "Quizzes", count: 6, icon: "📝" },
+                    { name: "Leagues", count: 6, icon: "🏟️" },
+                    { name: "Autopilot", count: 5, icon: "🤖" },
+                    { name: "Coins", count: 5, icon: "💰" },
+                    { name: "Social", count: 4, icon: "👥" },
+                    { name: "Cross-Feature", count: 4, icon: "🔗" },
+                    { name: "Special", count: 3, icon: "⭐" },
+                  ].map((cat, idx) => (
+                    <div key={idx} className="liquid-glass rounded-xl p-4 border border-white/10 text-center">
+                      <div className="text-2xl mb-2">{cat.icon}</div>
+                      <h3 className="text-sm font-bold">{cat.name}</h3>
+                      <span className="text-xs text-[#00C896]">{cat.count} achievements</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex gap-4 flex-wrap justify-center">
+                  <span className="px-4 py-2 bg-amber-700/20 border border-amber-600/40 rounded-full text-sm text-amber-400">Bronze</span>
+                  <span className="px-4 py-2 bg-gray-400/20 border border-gray-400/40 rounded-full text-sm text-gray-300">Silver</span>
+                  <span className="px-4 py-2 bg-yellow-500/20 border border-yellow-500/40 rounded-full text-sm text-yellow-400">Gold</span>
+                  <span className="px-4 py-2 bg-purple-500/20 border border-purple-500/40 rounded-full text-sm text-purple-400">Legendary</span>
+                </div>
+              </div>
+            </section>
           </div>
 
           {/* CTA Section */}
@@ -257,4 +413,5 @@ export default function FeaturesPage() {
     </main>
   )
 }
+
 

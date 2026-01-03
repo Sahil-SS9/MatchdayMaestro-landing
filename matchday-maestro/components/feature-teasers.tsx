@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { Bot, Coins, Swords, Target, ClipboardList, Activity } from "lucide-react"
 
 export function FeatureTeasers() {
   return (
@@ -9,97 +9,108 @@ export function FeatureTeasers() {
       <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-12">
         More Than Just Predictions
       </h2>
-      
-      {/* Improved Bento Grid Layout - Full Square */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-        {/* Large card - AI Autopilot (spans 2 columns, 2 rows) */}
+
+      {/* Bento Grid - Rounded Square Container */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto rounded-3xl overflow-hidden bg-white/[0.01] border border-white/[0.04] p-4">
+
+        {/* AI Autopilot - Large (2 cols, 2 rows) */}
         <Link
           href="/features/ai-autopilot"
-          className="md:col-span-2 md:row-span-2 group relative overflow-hidden liquid-glass rounded-3xl p-8 border border-white/10 hover:border-[#00C896]/50 transition-all duration-300 hover:scale-[1.02]"
+          className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-[#00C896]/30 transition-all duration-300 p-8"
         >
           <div className="relative z-10 h-full flex flex-col">
-            <span className="text-6xl block mb-4">🤖</span>
+            <Bot className="w-14 h-14 text-[#00C896] mb-4" />
             <h3 className="text-3xl font-bold text-white mb-3">AI Autopilot</h3>
             <p className="text-white/70 text-lg leading-relaxed mb-6 flex-grow">
-              Your tireless mate who plays for you 24/7. Even while you sleep. 
+              Your tireless mate who plays for you 24/7. Even while you sleep.
               Choose your strategy and let AI earn points around the clock.
             </p>
-            <div className="flex gap-4 flex-wrap mb-6">
-              <span className="px-4 py-2 bg-white/10 rounded-full text-sm text-white/80">
+            <div className="flex gap-3 flex-wrap mb-6">
+              <span className="px-3 py-1.5 bg-white/[0.05] border border-white/[0.08] rounded-full text-sm text-white/80">
                 Basic: FREE
               </span>
-              <span className="px-4 py-2 bg-[#00C896]/20 border border-[#00C896]/40 rounded-full text-sm text-[#00C896]">
+              <span className="px-3 py-1.5 bg-[#00C896]/10 border border-[#00C896]/30 rounded-full text-sm text-[#00C896]">
                 Advanced: Premium
               </span>
             </div>
-            <div className="text-[#00C896] group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 font-semibold">
+            <div className="text-[#00C896] group-hover:translate-x-1 transition-transform inline-flex items-center gap-2 font-semibold text-sm">
               Learn More →
             </div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#00C896]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Link>
 
-        {/* Coin Toolkit - 2 columns wide */}
+        {/* Coin Toolkit - Medium (2 cols) */}
         <Link
           href="/features/coin-toolkit"
-          className="md:col-span-2 group relative overflow-hidden liquid-glass rounded-3xl p-6 border border-white/10 hover:border-[#F59E0B]/50 transition-all duration-300 hover:scale-[1.02]"
+          className="md:col-span-2 group relative overflow-hidden rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-[#F59E0B]/30 transition-all duration-300 p-6"
         >
-          <span className="text-5xl block mb-3">💰</span>
-          <h3 className="text-2xl font-bold text-white mb-2">Coin Toolkit</h3>
-          <p className="text-white/70 text-sm mb-4 leading-relaxed">
-            9 ways to bend the game in your favor. Streak shields, double points, second chances, and more.
+          <Coins className="w-10 h-10 text-[#F59E0B] mb-3" />
+          <h3 className="text-xl font-bold text-white mb-2">Coin Toolkit</h3>
+          <p className="text-white/70 text-sm mb-3 leading-relaxed">
+            14 power-ups across 6 categories. Streak shields, double points, mystery boxes.
           </p>
-          <span className="text-xs px-3 py-1 bg-[#F59E0B]/20 border border-[#F59E0B]/40 rounded-full text-[#F59E0B] inline-block mb-4">
-            50-120 coins each
-          </span>
-          <div className="mt-4 text-[#F59E0B] group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 text-sm font-semibold">
+          <div className="text-[#F59E0B] group-hover:translate-x-1 transition-transform inline-flex items-center gap-2 text-sm font-medium">
             View All →
           </div>
         </Link>
 
-        {/* Battles & Leagues - 2 columns wide */}
+        {/* Battles & Leagues - Medium (2 cols) */}
         <Link
           href="/features/battles-leagues"
-          className="md:col-span-2 group relative overflow-hidden liquid-glass rounded-3xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-[1.02]"
+          className="md:col-span-2 group relative overflow-hidden rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-purple-400/30 transition-all duration-300 p-6"
         >
-          <span className="text-5xl block mb-3">⚔️</span>
-          <h3 className="text-2xl font-bold text-white mb-2">Battles & Leagues</h3>
-          <p className="text-white/70 text-sm mb-4 leading-relaxed">
-            1v1 your mates. Winner takes all. Free friendly or coin-wagered showdowns. 
-            Create leagues with up to 100 members.
+          <Swords className="w-10 h-10 text-purple-400 mb-3" />
+          <h3 className="text-xl font-bold text-white mb-2">Battles & Leagues</h3>
+          <p className="text-white/70 text-sm mb-3 leading-relaxed">
+            1v1 your mates. Winner takes all. Create leagues with up to 100 members.
           </p>
-          <div className="mt-4 text-purple-400 group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 text-sm font-semibold">
+          <div className="text-purple-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-2 text-sm font-medium">
             Challenge Friends →
           </div>
         </Link>
 
-        {/* Daily & Weekly Quizzes - 2 columns wide (same as Coin Toolkit) */}
+        {/* Target Man - Small (1 col) */}
         <Link
-          href="/features/quizzes"
-          className="md:col-span-2 group relative overflow-hidden liquid-glass rounded-3xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:scale-[1.02]"
+          href="/features/target-man"
+          className="md:col-span-1 group relative overflow-hidden rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-red-400/30 transition-all duration-300 p-5"
         >
-          <span className="text-5xl block mb-3">📝</span>
-          <h3 className="text-2xl font-bold text-white mb-2">Daily & Weekly Quizzes</h3>
-          <p className="text-white/70 text-sm mb-4 leading-relaxed">
-            9,000+ football questions. Test your knowledge, earn coins, and climb quiz leaderboards.
+          <Target className="w-8 h-8 text-red-400 mb-2" />
+          <h3 className="text-lg font-bold text-white mb-1">Target Man</h3>
+          <p className="text-white/60 text-xs mb-2 leading-relaxed">
+            Darts-style football trivia. 88+ categories.
           </p>
-          <div className="mt-4 text-blue-400 group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 text-sm font-semibold">
-            Test Your Knowledge →
+          <div className="text-red-400 text-xs font-medium">
+            Play →
           </div>
         </Link>
 
-        {/* Live Match Tracking - 2 columns wide (same as Battles & Leagues) */}
+        {/* Quizzes - Medium (2 cols) */}
+        <Link
+          href="/features/quizzes"
+          className="md:col-span-2 group relative overflow-hidden rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-blue-400/30 transition-all duration-300 p-5"
+        >
+          <ClipboardList className="w-9 h-9 text-blue-400 mb-2" />
+          <h3 className="text-lg font-bold text-white mb-1">Daily & Weekly Quizzes</h3>
+          <p className="text-white/60 text-xs mb-2 leading-relaxed">
+            2,500+ football questions. Test your knowledge and earn coins.
+          </p>
+          <div className="text-blue-400 text-xs font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+            Test Knowledge →
+          </div>
+        </Link>
+
+        {/* Live Tracking - Small (1 col) */}
         <Link
           href="/features/live-tracking"
-          className="md:col-span-2 group relative overflow-hidden liquid-glass rounded-3xl p-6 border border-white/10 hover:border-green-500/50 transition-all duration-300 hover:scale-[1.02]"
+          className="md:col-span-1 group relative overflow-hidden rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-green-400/30 transition-all duration-300 p-5"
         >
-          <span className="text-5xl block mb-3">📊</span>
-          <h3 className="text-2xl font-bold text-white mb-2">Live Match Tracking</h3>
-          <p className="text-white/70 text-sm mb-4 leading-relaxed">
-            Real-time stats, lineups, momentum graphs, and match events. All the data you need to make smarter predictions.
+          <Activity className="w-8 h-8 text-green-400 mb-2" />
+          <h3 className="text-lg font-bold text-white mb-1">Live Tracking</h3>
+          <p className="text-white/60 text-xs mb-2 leading-relaxed">
+            Real-time stats and match events.
           </p>
-          <div className="mt-4 text-green-400 group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 text-sm font-semibold">
-            Explore Features →
+          <div className="text-green-400 text-xs font-medium">
+            Explore →
           </div>
         </Link>
       </div>

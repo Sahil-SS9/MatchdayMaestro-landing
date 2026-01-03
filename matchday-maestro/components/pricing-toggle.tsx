@@ -8,37 +8,42 @@ export function PricingToggle() {
   const [activeTier, setActiveTier] = useState<'free' | 'premium'>('free')
 
   const features = [
-    { 
-      name: "Predictions per match", 
-      free: "3", 
+    {
+      name: "Predictions per match",
+      free: "3",
       premium: "5 (+67%)",
-      highlight: true 
+      highlight: true
     },
-    { 
-      name: "AI Autopilot strategies", 
-      free: "Basic (40-45% success)", 
+    {
+      name: "AI Autopilot strategies",
+      free: "Basic (40-45% success)",
       premium: "All 4 (60-70% success)",
-      highlight: true 
+      highlight: true
     },
-    { 
-      name: "Private league size", 
-      free: "10 members", 
-      premium: "100 members" 
+    {
+      name: "Private league size",
+      free: "10 members",
+      premium: "100 members"
     },
-    { 
-      name: "Competitions tracked", 
-      free: "Premier League only", 
-      premium: "All 6 leagues" 
+    {
+      name: "Competitions tracked",
+      free: "Premier League only",
+      premium: "All 6 leagues"
     },
-    { 
-      name: "Advanced analytics", 
-      free: false, 
-      premium: true 
+    {
+      name: "Target Man games",
+      free: "1/week",
+      premium: "1/day"
     },
-    { 
-      name: "Premium animations", 
-      free: false, 
-      premium: true 
+    {
+      name: "Achievements",
+      free: "57 to unlock",
+      premium: "57 + badges"
+    },
+    {
+      name: "Advanced analytics",
+      free: false,
+      premium: true
     },
   ]
 

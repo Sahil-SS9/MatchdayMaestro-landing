@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
+
+export const metadata: Metadata = {
+  title: "Live Match Tracking - Real-Time Predictions | Matchday Maestro",
+  description: "Follow live matches with real-time stats, formations, and prediction opportunities. Fair 30-second windows ensure everyone gets the same chance.",
+  openGraph: {
+    title: "Live Match Tracking - Real-Time Predictions",
+    description: "Live events detection, instant notifications, and fair prediction windows for all users.",
+  },
+}
 import { Footer } from "@/components/footer"
 import { AnimatedStadiumBackground } from "@/components/animated-stadium-background"
 import { ScrollAnimations } from "@/components/scroll-animations"

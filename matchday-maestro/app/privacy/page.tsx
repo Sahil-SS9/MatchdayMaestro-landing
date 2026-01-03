@@ -1,6 +1,16 @@
+import type { Metadata } from "next"
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
 import { AnimatedStadiumBackground } from "@/components/animated-stadium-background"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Matchday Maestro",
+  description: "Learn how Matchday Maestro protects your privacy and handles your data. Our commitment to transparency and data security.",
+  openGraph: {
+    title: "Privacy Policy - Matchday Maestro",
+    description: "How we collect, use, and protect your personal information.",
+  },
+}
 
 export default function PrivacyPage() {
   return (

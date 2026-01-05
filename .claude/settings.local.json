@@ -12,7 +12,8 @@
       "Bash(curl:*)",
       "Bash(printf:*)",
       "WebSearch",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm ls:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

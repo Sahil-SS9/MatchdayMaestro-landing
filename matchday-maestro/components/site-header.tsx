@@ -1,9 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, ChevronDown } from "lucide-react"
+import { Menu, ChevronDown, X } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import {
   DropdownMenu,
@@ -13,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function SiteHeader() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const links = [
     { href: "/how-it-works", label: "How It Works" },
     { href: "/pricing", label: "Pricing" },
@@ -86,28 +88,34 @@ export function SiteHeader() {
           </div>
 
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="border-white/20 bg-white/5 text-white hover:bg-white/10">
+                <button
+                  className="flex items-center justify-center w-10 h-10 rounded-lg border border-white/20 bg-white/5 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setMobileMenuOpen(true)}
+                  aria-label="Open menu"
+                >
                   <Menu className="h-5 w-5" />
-                  <span className="sr-only">Open menu</span>
-                </Button>
+                </button>
               </SheetTrigger>
               <SheetContent side="right" className="liquid-glass border-white/10 p-0 w-64">
-                <div className="flex items-center gap-2 px-4 py-4 border-b border-white/10">
-                  <Image
-                    src="/matchday-maestro-icon.png"
-                    alt="Matchday Maestro"
-                    width={28}
-                    height={28}
-                    className="w-7 h-7"
-                  />
-                  <span className="text-base font-bold text-white">MATCHDAY MAESTRO</span>
+                <div className="flex items-center justify-between gap-2 px-4 py-4 border-b border-white/10">
+                  <div className="flex items-center gap-2">
+                    <Image
+                      src="/matchday-maestro-icon.png"
+                      alt="Matchday Maestro"
+                      width={28}
+                      height={28}
+                      className="w-7 h-7"
+                    />
+                    <span className="text-base font-bold text-white">MATCHDAY MAESTRO</span>
+                  </div>
                 </div>
                 <nav className="flex flex-col gap-1 mt-2 text-white">
                   <Link
                     href="/features"
                     className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#00C896] transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="text-sm">Features</span>
                   </Link>
@@ -116,6 +124,7 @@ export function SiteHeader() {
                       key={l.href}
                       href={l.href}
                       className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#00C896] transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       <span className="text-sm">{l.label}</span>
                     </Link>
@@ -126,7 +135,7 @@ export function SiteHeader() {
                     asChild
                     className="w-full bg-gradient-to-r from-[#00C896] to-[#10b981] text-white font-medium rounded-lg px-6 py-2.5"
                   >
-                    <Link href="/#cta">Get Early Access</Link>
+                    <Link href="/#cta" onClick={() => setMobileMenuOpen(false)}>Get Early Access</Link>
                   </Button>
                 </div>
               </SheetContent>

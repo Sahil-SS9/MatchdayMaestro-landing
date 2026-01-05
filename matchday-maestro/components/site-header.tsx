@@ -98,7 +98,7 @@ export function SiteHeader() {
                   <Menu className="h-5 w-5" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="liquid-glass border-white/10 p-0 w-64">
+              <SheetContent side="right" className="!bg-[#0f1015] border-l border-white/10 p-0 w-[280px]">
                 <div className="flex items-center justify-between gap-2 px-4 py-4 border-b border-white/10">
                   <div className="flex items-center gap-2">
                     <Image

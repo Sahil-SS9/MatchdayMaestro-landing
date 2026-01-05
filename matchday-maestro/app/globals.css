@@ -478,3 +478,56 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Sheet/Dialog animations for mobile menu */
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-to-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+[data-state="open"][data-slot="sheet-content"] {
+  animation: slide-in-from-right 0.3s ease-out;
+}
+
+[data-state="closed"][data-slot="sheet-content"] {
+  animation: slide-out-to-right 0.3s ease-in;
+}
+
+[data-state="open"][data-slot="sheet-overlay"] {
+  animation: fade-in 0.3s ease-out;
+}
+
+[data-state="closed"][data-slot="sheet-overlay"] {
+  animation: fade-out 0.3s ease-in;
+}

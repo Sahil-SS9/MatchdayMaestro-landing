@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Smartphone, Timer, Target, Zap, ShieldCheck, Ban } from "lucide-react"
+import { Smartphone, Timer, Target, Zap, Swords, Ban } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
@@ -90,14 +90,14 @@ export default function Page() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Lightning Round</h3>
               <p className="text-white/60 text-sm leading-relaxed">
-                New battle mode with rapid-fire predictions. 60-second windows, escalating multipliers, winner gets the coins.
+                Rapid-fire battle mode. 60-second windows, first to 10 correct predictions wins. Escalating multipliers, winner gets the coins.
               </p>
             </div>
 
             {/* Gloves Up */}
             <div className="liquid-glass rounded-2xl p-6 border border-[#00C896]/30 hover:border-[#00C896]/60 transition-all group">
               <div className="flex items-center gap-3 mb-4">
-                <ShieldCheck className="w-10 h-10 text-[#00C896]" />
+                <Swords className="w-10 h-10 text-[#00C896]" />
                 <div>
                   <span className="text-xs px-2 py-0.5 bg-[#00C896]/20 border border-[#00C896]/40 rounded text-[#00C896]">
                     New Game
@@ -106,7 +106,7 @@ export default function Page() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Gloves Up</h3>
               <p className="text-white/60 text-sm leading-relaxed">
-                A goalkeeper-themed mini-game. Test your reflexes and shot-stopping knowledge in this fast-paced challenge.
+                Boxing meets football trivia. Answer questions to land punches, build momentum, and knockout your opponent—AI or real player.
               </p>
             </div>
 
@@ -122,7 +122,7 @@ export default function Page() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Ruled Out</h3>
               <p className="text-white/60 text-sm leading-relaxed">
-                VAR-style decision making. Watch the replay, make the call. Will you rule it out or let it stand?
+                Mind games meet trivia. Two players race to name footballers—but duplicates cancel out. Think like no one else to win.
               </p>
             </div>
           </div>

@@ -43,11 +43,15 @@ export function AppShowcase() {
 
   return (
     <div className="relative w-full overflow-hidden py-8">
-      <div className="flex gap-6 justify-center items-center perspective-1000">
+      {/* Gradient fade edges for scroll indication on mobile */}
+      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#0f1015] to-transparent z-10 pointer-events-none md:hidden" />
+      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#0f1015] to-transparent z-10 pointer-events-none md:hidden" />
+
+      <div className="flex gap-4 md:gap-6 md:justify-center items-center perspective-1000 overflow-x-auto scrollbar-hide px-4 md:px-0 snap-x snap-mandatory md:snap-none">
         {screens.map((screen, index) => (
           <div
             key={index}
-            className="relative flex-shrink-0 w-[240px] animate-slide-up"
+            className="relative flex-shrink-0 w-[180px] md:w-[240px] animate-slide-up snap-center"
             style={{
               animationDelay: `${index * 0.1}s`,
               transform: `rotateY(${(index - 2) * 8}deg) translateZ(${Math.abs(index - 2) * -20}px)`,

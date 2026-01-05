@@ -75,7 +75,7 @@ export function FAQ() {
     {
       question: "How do battles work?",
       answer:
-        "Challenge a friend to a head-to-head battle on a specific match. Both of you make predictions, and whoever gets more points wins. You can play for fun (free) or wager coins. Winner takes all! The app automatically judges who won.",
+        "Challenge a friend to a head-to-head battle on a specific match. Both of you make predictions, and whoever gets more points wins. You can play for fun (free) or play for coins. Winner gets all the coins! The app automatically judges who won.",
     },
     {
       question: "Is this gambling?",

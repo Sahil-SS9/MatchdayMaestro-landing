@@ -16,7 +16,7 @@ export function FinalCTA() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
-    const launchDate = new Date("2025-12-15T00:00:00").getTime()
+    const launchDate = new Date("2026-01-30T00:00:00").getTime()
 
     const updateCountdown = () => {
       const now = new Date().getTime()
@@ -99,7 +99,7 @@ export function FinalCTA() {
 
         <form onSubmit={handleSubmit} className="liquid-glass rounded-2xl p-8 space-y-6">
           <h3 className="text-2xl font-bold">Join the Waitlist</h3>
-          <p className="text-white/70">Be first to access Matchday Maestro when we launch December 15th</p>
+          <p className="text-white/70">Be first to access Matchday Maestro when we launch January 30th</p>
 
           <div className="space-y-4">
             <div>

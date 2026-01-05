@@ -4,10 +4,10 @@ import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "Target Man - Football Trivia Game | Matchday Maestro",
-  description: "A darts-inspired football trivia game. Name players to reduce your score from 501 to 0. 88+ categories across 5 major leagues. Test your football knowledge.",
+  description: "A darts-inspired football trivia game. Name players to reduce your score from 501 to 0. 250+ categories across 5 major leagues. Test your football knowledge.",
   openGraph: {
     title: "Target Man - Football Trivia Game",
-    description: "Name footballers to hit your target score. 88+ categories, 7 hint types, multiplayer mode with coin wagering.",
+    description: "Name footballers to hit your target score. 250+ categories, 7 hint types, multiplayer mode.",
   },
 }
 import { Footer } from "@/components/footer"
@@ -118,7 +118,7 @@ export default function TargetManPage() {
           {/* Stat Categories */}
           <section className="mb-16">
             <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">88+ Categories Across 5 Leagues</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">250+ Categories Across 5 Leagues</h2>
               <p className="text-white/70 text-center mb-8">
                 From club legends to nationality challenges - test every dimension of your football knowledge
               </p>
@@ -188,25 +188,23 @@ export default function TargetManPage() {
 
             <div className="grid md:grid-cols-4 gap-4">
               {[
-                { icon: "📊", name: "Stat Range", desc: "Shows approximate stat value range to help narrow your guess", cost: "FREE", isFree: true },
-                { icon: "🔤", name: "First Letter", desc: "Reveals the first letter of a valid player's name", cost: "5 coins" },
-                { icon: "🌍", name: "Nationality", desc: "Shows the player's country of origin", cost: "10 coins" },
-                { icon: "📅", name: "Era Hint", desc: "Reveals the decade when the player was most active", cost: "10 coins" },
-                { icon: "🎯", name: "Checkout Guide", desc: "Suggests a player whose stat would help you checkout", cost: "10 coins" },
-                { icon: "⚽", name: "Position", desc: "Reveals if GK, DF, MF, or FW", cost: "20 coins" },
-                { icon: "👁️", name: "Reveal One", desc: "Shows a complete valid player answer", cost: "35 coins" },
+                { icon: "📊", name: "Stat Range", desc: "Shows approximate stat value range to help narrow your guess", isFree: true },
+                { icon: "🔤", name: "First Letter", desc: "Reveals the first letter of a valid player's name" },
+                { icon: "🌍", name: "Nationality", desc: "Shows the player's country of origin" },
+                { icon: "📅", name: "Era Hint", desc: "Reveals the decade when the player was most active" },
+                { icon: "🎯", name: "Checkout Guide", desc: "Suggests a player whose stat would help you checkout" },
+                { icon: "⚽", name: "Position", desc: "Reveals if GK, DF, MF, or FW" },
+                { icon: "👁️", name: "Reveal One", desc: "Shows a complete valid player answer" },
               ].map((hint, idx) => (
                 <div key={idx} className="liquid-glass rounded-xl p-6 border border-white/10 text-center">
                   <div className="text-3xl mb-3">{hint.icon}</div>
                   <h3 className="font-bold mb-2">{hint.name}</h3>
                   <p className="text-white/60 text-xs mb-3">{hint.desc}</p>
-                  <span className={`text-xs px-2 py-1 rounded ${
-                    hint.isFree
-                      ? "bg-green-500/20 border border-green-500/40 text-green-400"
-                      : "bg-[#F59E0B]/20 border border-[#F59E0B]/40 text-[#F59E0B]"
-                  }`}>
-                    {hint.cost}
-                  </span>
+                  {hint.isFree && (
+                    <span className="text-xs px-2 py-1 rounded bg-green-500/20 border border-green-500/40 text-green-400">
+                      FREE
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -221,31 +219,24 @@ export default function TargetManPage() {
               </div>
 
               <p className="text-white/70 text-center mb-8 max-w-2xl mx-auto">
-                Challenge your friends to Target Man battles. Create lobbies, take turns,
-                and wager coins on who can hit checkout first.
+                Challenge your friends to Target Man battles. Create private lobbies or join open games
+                to compete against players worldwide.
               </p>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full bg-[#00C896]/20 flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">🎮</span>
                   </div>
                   <h3 className="font-bold mb-2">Create Lobby</h3>
-                  <p className="text-white/60 text-sm">Generate invite code and share with friends</p>
+                  <p className="text-white/60 text-sm">Invite friends with a code or join open lobbies to play with random opponents</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full bg-[#00C896]/20 flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">⏱️</span>
                   </div>
                   <h3 className="font-bold mb-2">Real-Time Turns</h3>
-                  <p className="text-white/60 text-sm">Watch opponents play live via Supabase Realtime</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-[#00C896]/20 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <h3 className="font-bold mb-2">Coin Wagering</h3>
-                  <p className="text-white/60 text-sm">Put coins on the line - winner takes all</p>
+                  <p className="text-white/60 text-sm">Watch your opponents play live and compete head-to-head</p>
                 </div>
               </div>
             </div>
@@ -312,8 +303,8 @@ export default function TargetManPage() {
                     </li>
                   </ul>
                   <div className="text-center p-3 rounded-xl bg-[#00C896]/10">
-                    <span className="text-sm text-white/60">Hard Mode: </span>
-                    <span className="font-bold text-[#00C896]">Unlimited access</span>
+                    <span className="text-sm text-white/60">Win Multiplier: </span>
+                    <span className="font-bold text-[#00C896]">1.5x on all wins</span>
                   </div>
                 </div>
               </div>

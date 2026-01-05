@@ -34,10 +34,10 @@ export function AppShowcase() {
       color: "from-amber-500/20 to-amber-600/20",
     },
     {
-      label: "PREMIUM",
-      title: "Unlimited Predictions",
-      image: "/premium-features-unlimited-predictions.jpg",
-      color: "from-violet-500/20 to-violet-600/20",
+      label: "TARGET MAN",
+      title: "Target Man 501",
+      image: "/target-man-501-challenge-screen.jpg",
+      color: "from-rose-500/20 to-rose-600/20",
     },
   ]
 

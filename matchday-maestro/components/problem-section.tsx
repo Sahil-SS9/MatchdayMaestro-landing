@@ -23,7 +23,7 @@ export function ProblemSection() {
     },
     {
       icon: <Dice6 className="w-10 h-10 text-red-400" />,
-      title: "The Impossible Jackpot",
+      title: "The Impossible Prize Pool",
       desc: '"Predict 6 EXACT scores correctly. AND guess the minute of first goal. AND hope nobody else got the same scores so you don\'t split the prize. It\'s basically the lottery with football knowledge."',
       problem: "Apps requiring exact score predictions across 6 matches need lottery-level luck. 15-20 likely scorelines per match means 11.4 MILLION possible combinations. This rewards luck, not football intelligence.",
     },

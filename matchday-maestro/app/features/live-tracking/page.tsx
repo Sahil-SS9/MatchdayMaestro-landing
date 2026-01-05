@@ -61,56 +61,42 @@ export default function LiveTrackingPage() {
           {/* What It Includes */}
           <section className="mb-16">
             <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10 bg-[#1E3A8A]/20">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">What It Includes</h2>
-              
-              <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">5 Tabs, Everything You Need</h2>
+
+              <div className="grid md:grid-cols-2 gap-4">
                 <div className="liquid-glass rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-bold mb-3">📱 Overview Tab</h3>
-                  <ul className="space-y-2 text-white/70 text-sm">
-                    <li>• Live score updates every 10 seconds</li>
-                    <li>• Venue information with city and capacity</li>
-                    <li>• Full match timeline history (goals, cards, substitutions, VAR decisions, penalties, and more)</li>
-                    <li>• Expandable match statistics (possession, shots, passes, corners, fouls)</li>
-                    <li>• Momentum graph using enhanced 5-factor calculations</li>
-                  </ul>
+                  <h3 className="text-lg font-bold mb-2">📱 Overview</h3>
+                  <p className="text-white/70 text-sm">
+                    Live scores, match timeline, key stats, and momentum graphs—all updating as the match unfolds.
+                  </p>
                 </div>
 
                 <div className="liquid-glass rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-bold mb-3">⚽ Lineup Tab</h3>
-                  <ul className="space-y-2 text-white/70 text-sm">
-                    <li>• Interactive formation display supporting all major formations (4-3-3, 4-4-2, 4-2-3-1, 3-5-2, etc.)</li>
-                    <li>• Dynamic horizontal player positioning using even spacing algorithms</li>
-                    <li>• Player names and shirt numbers from API-Football</li>
-                    <li>• Visual representation on a football pitch background</li>
-                  </ul>
+                  <h3 className="text-lg font-bold mb-2">🎯 Predictions</h3>
+                  <p className="text-white/70 text-sm">
+                    See all predictions for this match. Filter by status, view community picks, and track your own.
+                  </p>
                 </div>
 
                 <div className="liquid-glass rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-bold mb-3">📈 Head-to-Head Tab</h3>
-                  <ul className="space-y-2 text-white/70 text-sm">
-                    <li>• Historical matchup data showing last 5 meetings</li>
-                    <li>• Win/loss/draw records</li>
-                    <li>• Previous scorelines</li>
-                  </ul>
+                  <h3 className="text-lg font-bold mb-2">⚽ Line-Ups</h3>
+                  <p className="text-white/70 text-sm">
+                    Visual formations with player positions, shirt numbers, and substitutes for both teams.
+                  </p>
                 </div>
 
                 <div className="liquid-glass rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-bold mb-3">📊 Live Momentum Tab</h3>
-                  <ul className="space-y-2 text-white/70 text-sm">
-                    <li>• Enhanced momentum visualization with minute-by-minute breakdowns</li>
-                    <li>• Shows which team is dominating at each stage of the match</li>
-                    <li>• Diverging format with home team bars extending upward and away team bars downward</li>
-                  </ul>
+                  <h3 className="text-lg font-bold mb-2">📊 Table</h3>
+                  <p className="text-white/70 text-sm">
+                    Live league standings with both teams highlighted so you can see what's at stake.
+                  </p>
                 </div>
 
-                <div className="liquid-glass rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-bold mb-3">📉 Statistics Tab</h3>
-                  <ul className="space-y-2 text-white/70 text-sm">
-                    <li>• Deep dive into 11+ statistical categories</li>
-                    <li>• Dangerous attacks, offsides, goalkeeper saves, pass accuracy</li>
-                    <li>• Team comparison bars for visual analysis</li>
-                    <li>• All data from real match feeds with no mock values</li>
-                  </ul>
+                <div className="liquid-glass rounded-xl p-6 border border-white/10 md:col-span-2">
+                  <h3 className="text-lg font-bold mb-2">📈 Head-to-Head</h3>
+                  <p className="text-white/70 text-sm">
+                    Historical matchups between these teams—win/draw/loss records, recent meetings, and scorelines.
+                  </p>
                 </div>
               </div>
             </div>

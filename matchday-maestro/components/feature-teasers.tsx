@@ -62,7 +62,7 @@ export function FeatureTeasers() {
           <Swords className="w-10 h-10 text-purple-400 mb-3" />
           <h3 className="text-xl font-bold text-white mb-2">Battles & Leagues</h3>
           <p className="text-white/70 text-sm mb-3 leading-relaxed">
-            1v1 your mates. Winner takes all. Create leagues with up to 100 members.
+            1v1 your mates. Winner gets the coins. Create leagues with up to 100 members.
           </p>
           <div className="text-purple-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-2 text-sm font-medium">
             Challenge Friends →

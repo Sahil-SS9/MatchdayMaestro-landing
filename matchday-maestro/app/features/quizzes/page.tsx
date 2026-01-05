@@ -140,9 +140,9 @@ export default function QuizzesPage() {
                     3
                   </div>
                   <div>
-                    <h3 className="font-bold mb-2">Earn Coins & Climb Rankings</h3>
+                    <h3 className="font-bold mb-2">Earn Coins & Track Progress</h3>
                     <p className="text-white/70">
-                      Get coins for every correct answer (5-15 coins depending on difficulty). Weekly competitions also rank you on leaderboards against other players. See how your football knowledge stacks up.
+                      Get coins for every correct answer. The harder the question, the bigger the reward. Track your scores and see how your football knowledge improves over time.
                     </p>
                   </div>
                 </div>

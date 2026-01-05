@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 10 type:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(npx vercel login)",
+      "Bash(npx vercel:*)",
+      "WebFetch(domain:vercel.com)",
+      "Bash(npm view:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Vercel deployment configuration\n\n- Update Next.js to 16.1.1 \\(security patch\\)\n- Add .npmrc for legacy peer deps \\(React 19 compatibility\\)\n- Add .nvmrc for Node 20\n- Add vercel.json with region and headers config\n- Remove pnpm-lock.yaml \\(using npm\\)\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(curl:*)",
+      "Bash(printf:*)",
+      "WebSearch",
+      "Bash(git commit:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "BigRollerz"
+  ]
+}

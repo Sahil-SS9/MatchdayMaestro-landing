@@ -90,10 +90,13 @@ export async function POST(request: NextRequest) {
       console.error('Mailchimp API error:', {
         status: response.status,
         statusText: response.statusText,
-        responseData: responseData
+        responseData: responseData,
+        detail: responseData?.detail || 'No detail provided'
       })
+      // Return more specific error for debugging
+      const errorMessage = responseData?.detail || responseData?.title || 'Failed to subscribe. Please try again later.'
       return NextResponse.json(
-        { error: 'Failed to subscribe. Please try again later.' },
+        { error: errorMessage },
         { status: 500 }
       )
     }

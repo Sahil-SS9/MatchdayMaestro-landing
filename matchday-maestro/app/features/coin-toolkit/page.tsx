@@ -24,8 +24,8 @@ export default function CoinToolkitPage() {
       description: "Earn coins just by playing - no purchase required",
       color: "bg-green-500/20 border-green-500/40",
       powerups: [
-        { name: "Daily Bonus", cost: "FREE", desc: "Log in and make your first prediction each day to earn 10 coins automatically.", icon: "📅" },
-        { name: "Streak Rewards", cost: "FREE", desc: "Earn escalating coins for consecutive correct predictions: +2, +4, +6, +8, up to +10 coins per streak.", icon: "🔥" },
+        { name: "Daily Bonus", isFree: true, desc: "Log in and make your first prediction each day to earn coins automatically.", icon: "📅" },
+        { name: "Streak Rewards", isFree: true, desc: "Earn escalating coins for consecutive correct predictions. The longer your streak, the bigger the bonus.", icon: "🔥" },
       ]
     },
     {
@@ -34,11 +34,11 @@ export default function CoinToolkitPage() {
       description: "Helpful tools that can be combined for maximum effect",
       color: "bg-blue-500/20 border-blue-500/40",
       powerups: [
-        { name: "Streak Shield", cost: "100 coins", desc: "Protects your streak from 3 wrong predictions. Visual indicator shows remaining charges.", icon: "🛡️" },
-        { name: "Second Chance", cost: "90 coins", desc: "Re-predict after seeing result. Must be used within 5 minutes of result reveal.", icon: "🔄" },
-        { name: "Extra Prediction Slot", cost: "125 coins", desc: "Bypass tier limits for 24 hours. Free users get 4 predictions, Premium users get 6.", icon: "➕" },
-        { name: "Lucky Dip", cost: "75 coins", desc: "AI analyzes the match and suggests the optimal prediction with confidence percentage.", icon: "🎲" },
-        { name: "Double Coin Rewards", cost: "150 coins", desc: "All coins earned are doubled for 24 hours. Applies to predictions, quizzes, and streaks.", icon: "💰" },
+        { name: "Streak Shield", desc: "Protects your streak from wrong predictions. Visual indicator shows remaining charges.", icon: "🛡️" },
+        { name: "Second Chance", desc: "Re-predict after seeing the result. Must be used within 5 minutes of result reveal.", icon: "🔄" },
+        { name: "Extra Prediction Slot", desc: "Bypass daily prediction limits for 24 hours. Get more chances to earn points.", icon: "➕" },
+        { name: "Lucky Dip", desc: "AI analyzes the match and suggests the optimal prediction with confidence percentage.", icon: "🎲" },
+        { name: "Double Coin Rewards", desc: "All coins earned are doubled for 24 hours. Applies to predictions, quizzes, and streaks.", icon: "💰" },
       ]
     },
     {
@@ -47,10 +47,10 @@ export default function CoinToolkitPage() {
       description: "Only ONE can be active at a time - choose wisely",
       color: "bg-amber-500/20 border-amber-500/40",
       powerups: [
-        { name: "Double Points (3)", cost: "125 coins", desc: "Your next 3 correct predictions earn 2x points. Counter decrements after each prediction.", icon: "⚡" },
-        { name: "Double Points (5)", cost: "175 coins", desc: "Same as Double Points 3 but for 5 predictions. Better value at 35 coins each vs 42.", icon: "⚡" },
-        { name: "Lightning Round", cost: "400 coins", desc: "5 predictions with building multiplier: 2x → 3x → 4x → 5x. Wrong answers reset to 2x.", icon: "⚡" },
-        { name: "Golden Ticket", cost: "750 coins", desc: "Premium tier: 2x points AND 2x coins for 7 full days. Excludes battles.", icon: "🎫" },
+        { name: "Double Points (3)", desc: "Your next 3 correct predictions earn 2x points.", icon: "⚡" },
+        { name: "Double Points (5)", desc: "Your next 5 correct predictions earn 2x points. Better value than the 3-pack.", icon: "⚡" },
+        { name: "Lightning Round", desc: "5 predictions with building multiplier: 2x → 3x → 4x → 5x. Wrong answers reset to 2x.", icon: "⚡" },
+        { name: "Golden Ticket", desc: "The ultimate boost: 2x points AND 2x coins for 7 full days.", icon: "🎫" },
       ]
     },
     {
@@ -59,16 +59,16 @@ export default function CoinToolkitPage() {
       description: "Bounce back from bad predictions",
       color: "bg-emerald-500/20 border-emerald-500/40",
       powerups: [
-        { name: "Bounce Back", cost: "150 coins", desc: "After 2 wrong predictions, your next correct prediction earns 3x points. Overrides all other multipliers.", icon: "💥" },
+        { name: "Bounce Back", desc: "After 2 wrong predictions, your next correct prediction earns 3x points.", icon: "💥" },
       ]
     },
     {
       name: "Mystery",
       emoji: "🎲",
-      description: "Take a gamble on random rewards",
+      description: "Unlock surprise rewards",
       color: "bg-purple-500/20 border-purple-500/40",
       powerups: [
-        { name: "Mystery Box", cost: "150 coins", desc: "Random power-up with tiered odds: 60% Common, 30% Uncommon, 10% Rare. Expected value ~130 coins.", icon: "🎁" },
+        { name: "Mystery Box", desc: "Open for a random power-up. You might get something common, uncommon, or even rare!", icon: "🎁" },
       ]
     },
     {
@@ -77,7 +77,7 @@ export default function CoinToolkitPage() {
       description: "Advanced features for premium subscribers",
       color: "bg-pink-500/20 border-pink-500/40",
       powerups: [
-        { name: "Prediction Steal", cost: "300 coins", desc: "See top 3 predictions from high-accuracy users for a specific match. Premium subscription required.", icon: "👁️", isPremium: true },
+        { name: "Prediction Steal", desc: "See top 3 predictions from high-accuracy users for a specific match. Premium subscription required.", icon: "👁️", isPremium: true },
       ]
     },
   ]
@@ -106,12 +106,12 @@ export default function CoinToolkitPage() {
             <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10 bg-[#F59E0B]/10">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">What Is Coin Toolkit?</h2>
               <p className="text-lg text-white/70 leading-relaxed mb-6">
-                Your strategic advantage. 14 powerful power-ups organized into 6 categories - from free daily rewards to premium exclusives. Protect your streak, multiply your points, recover from mistakes, or gamble on mystery rewards.
+                Your strategic advantage. 14 powerful power-ups organized into 6 categories - from free daily rewards to premium exclusives. Protect your streak, multiply your points, recover from mistakes, or try your luck with mystery rewards.
               </p>
               <div className="grid md:grid-cols-3 gap-4 mt-6">
                 <div className="text-center p-4 rounded-xl bg-white/5">
-                  <div className="text-2xl font-bold text-[#00C896]">75-750</div>
-                  <div className="text-white/60 text-sm">Coin price range</div>
+                  <div className="text-2xl font-bold text-[#00C896]">14</div>
+                  <div className="text-white/60 text-sm">Power-ups</div>
                 </div>
                 <div className="text-center p-4 rounded-xl bg-white/5">
                   <div className="text-2xl font-bold text-[#00C896]">6</div>
@@ -145,15 +145,16 @@ export default function CoinToolkitPage() {
                         <div className="flex-1">
                           <div className="flex justify-between items-start mb-2 flex-wrap gap-2">
                             <h3 className="text-lg font-bold">{powerup.name}</h3>
-                            <span className={`text-xs px-2 py-1 rounded text-white whitespace-nowrap font-semibold ${
-                              powerup.cost === "FREE"
-                                ? "bg-green-500 border border-green-500"
-                                : powerup.isPremium
-                                  ? "bg-[#9333EA] border border-[#9333EA]"
-                                  : "bg-[#F59E0B] border border-[#F59E0B]"
-                            }`}>
-                              {powerup.cost}
-                            </span>
+                            {powerup.isFree && (
+                              <span className="text-xs px-2 py-1 rounded text-white whitespace-nowrap font-semibold bg-green-500 border border-green-500">
+                                FREE
+                              </span>
+                            )}
+                            {powerup.isPremium && (
+                              <span className="text-xs px-2 py-1 rounded text-white whitespace-nowrap font-semibold bg-[#9333EA] border border-[#9333EA]">
+                                PREMIUM
+                              </span>
+                            )}
                           </div>
                           <p className="text-white/60 text-sm leading-relaxed">{powerup.desc}</p>
                         </div>

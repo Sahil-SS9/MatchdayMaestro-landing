@@ -4,10 +4,10 @@ import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "Battles & Leagues - Social Competition | Matchday Maestro",
-  description: "Challenge friends to head-to-head prediction battles. Create or join private leagues. Wager coins, climb leaderboards, and prove you know football best.",
+  description: "Challenge friends to head-to-head prediction battles. Create or join private leagues. Play for coins, climb leaderboards, and prove you know football best.",
   openGraph: {
     title: "Battles & Leagues - Social Competition",
-    description: "Head-to-head battles with coin wagering. Private leagues with friends. Real-time competition.",
+    description: "Head-to-head battles with coin pools. Private leagues with friends. Real-time competition.",
   },
 }
 import { Footer } from "@/components/footer"
@@ -31,7 +31,7 @@ export default function BattlesLeaguesPage() {
               Battles & Leagues
             </h1>
             <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              1v1 your mates. Winner takes all. Free friendly or coin-wagered showdowns. Create leagues with up to 100 members.
+              1v1 your mates. Play for fun or play for coins. Winner gets the pot. Create leagues with up to 100 members.
             </p>
           </div>
 
@@ -40,10 +40,10 @@ export default function BattlesLeaguesPage() {
             <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10 bg-[#9333EA]/10">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">What Are Battles & Leagues?</h2>
               <p className="text-lg text-white/70 leading-relaxed mb-6">
-                Battles enable 1v1 competitive prediction challenges between friends, supporting both free friendly battles and high-stakes coin-wagered competitions. Private Leagues allow you to create custom leaderboards competing exclusively against friends, family, or colleagues, separate from the global rankings.
+                Battles enable 1v1 competitive prediction challenges between friends, supporting both free friendly battles and intense coin-based competitions. Private Leagues allow you to create custom leaderboards competing exclusively against friends, family, or colleagues, separate from the global rankings.
               </p>
               <p className="text-lg text-white/70 leading-relaxed">
-                This creates a social layer on top of solo predictions, driving engagement and competitive dynamics between friends. All users can participate in unlimited free battles, while coin wagering is opt-in and designed for competitive players who want higher stakes.
+                This creates a social layer on top of solo predictions, driving engagement and competitive dynamics between friends. All users can participate in unlimited free battles, while playing for coins is opt-in and designed for competitive players who want more on the line.
               </p>
             </div>
           </section>
@@ -68,8 +68,8 @@ export default function BattlesLeaguesPage() {
                   <h3 className="text-xl font-bold mb-4">⚔️ Battles</h3>
                   <ul className="space-y-2 text-white/70 text-sm">
                     <li>• Challenge friends to predict specific matches</li>
-                    <li>• Optional coin wagering (winner takes all)</li>
-                    <li>• Battle types: Standard, Lightning, Streak, High-Stakes</li>
+                    <li>• Optional coin entry (winner gets all)</li>
+                    <li>• Battle types: Standard, Lightning, Streak, Ultimate</li>
                     <li>• Automatic resolution when match finishes</li>
                     <li>• Detailed battle history and analytics</li>
                     <li>• Win/loss records and total coins won/lost</li>
@@ -113,7 +113,7 @@ export default function BattlesLeaguesPage() {
                         2
                       </div>
                       <div>
-                        <p className="text-white/70">Pick a match and choose your battle style (quick lightning round or high-stakes showdown)</p>
+                        <p className="text-white/70">Pick a match and choose your battle style (quick lightning round or ultimate showdown)</p>
                       </div>
                     </div>
                     <div className="flex gap-4">
@@ -121,7 +121,7 @@ export default function BattlesLeaguesPage() {
                         3
                       </div>
                       <div>
-                        <p className="text-white/70">Optionally wager coins if you want to make it interesting—winner takes all</p>
+                        <p className="text-white/70">Optionally play for coins if you want to make it interesting—winner gets the pot</p>
                       </div>
                     </div>
                   </div>
@@ -135,7 +135,7 @@ export default function BattlesLeaguesPage() {
                   <ul className="space-y-2 text-white/70 text-sm ml-6">
                     <li>• Compares both players' predictions against what actually happened</li>
                     <li>• Awards points to whoever got more right</li>
-                    <li>• Transfers wagered coins to the winner (if you bet coins)</li>
+                    <li>• Transfers the coin pool to the winner (if you played for coins)</li>
                     <li>• Sends both of you a notification with the results</li>
                   </ul>
                 </div>

@@ -90,7 +90,7 @@ export default function Page() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Lightning Round</h3>
               <p className="text-white/60 text-sm leading-relaxed">
-                New battle mode with rapid-fire predictions. 60-second windows, escalating multipliers, winner takes all.
+                New battle mode with rapid-fire predictions. 60-second windows, escalating multipliers, winner gets the coins.
               </p>
             </div>
 

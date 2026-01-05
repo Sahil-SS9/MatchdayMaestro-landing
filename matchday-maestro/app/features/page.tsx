@@ -162,7 +162,7 @@ export default function FeaturesPage() {
                       { name: "Extra Prediction", cost: 125, desc: "Bypass tier limits for one match" },
                       { name: "Bounce Back", cost: 150, desc: "After 2 wrong, next correct = 3x" },
                       { name: "Double Coin Rewards", cost: 150, desc: "2x coins earned for 24h" },
-                      { name: "Mystery Box", cost: 150, desc: "Random power-up with tiered odds" },
+                      { name: "Mystery Box", cost: 150, desc: "Random power-up with tiered chances" },
                       { name: "Double Points (5)", cost: 175, desc: "2x points on next 5 predictions" },
                       { name: "Prediction Steal", cost: 300, desc: "View top user predictions (Premium)" },
                       { name: "Lightning Round", cost: 400, desc: "Chain 5 for up to 5x multiplier" },
@@ -200,7 +200,7 @@ export default function FeaturesPage() {
                   <div className="flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Battles & Leagues</h2>
                     <p className="text-xl text-white/70 mb-6">
-                      1v1 your mates. Winner takes all. Free friendly or coin-wagered showdowns.
+                      1v1 your mates. Play for fun or play for coins. Winner gets the pot.
                     </p>
                   </div>
                 </div>
@@ -210,8 +210,8 @@ export default function FeaturesPage() {
                     <h3 className="text-xl font-bold mb-3">Battles</h3>
                     <ul className="space-y-2 text-white/70">
                       <li>• Challenge friends to predict specific matches</li>
-                      <li>• Optional coin wagering (winner takes all)</li>
-                      <li>• Battle types: Standard, Lightning, Streak, High-Stakes</li>
+                      <li>• Optional coin entry (winner gets all)</li>
+                      <li>• Battle types: Standard, Lightning, Streak, Ultimate</li>
                       <li>• Automatic resolution when match finishes</li>
                       <li>• Detailed battle history and analytics</li>
                     </ul>
@@ -333,7 +333,7 @@ export default function FeaturesPage() {
                     <ul className="space-y-2 text-white/70 text-sm">
                       <li>• <strong>Normal:</strong> 10 turns, max 180 stat value</li>
                       <li>• <strong>Hard:</strong> 5 turns, max 120 stat value</li>
-                      <li>• <strong>Multiplayer:</strong> Challenge friends, wager coins</li>
+                      <li>• <strong>Multiplayer:</strong> Challenge friends, play for coins</li>
                       <li>• Hints available: Club, Nationality, Position</li>
                     </ul>
                   </div>

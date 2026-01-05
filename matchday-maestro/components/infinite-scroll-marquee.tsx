@@ -14,7 +14,7 @@ export function InfiniteScrollMarquee() {
     { name: "Abdul H.", role: "Strategic Player", text: "Double Points powerup is clutch. Saved it for City vs Arsenal and banked 60 points in one match." },
     { name: "James C.", role: "FPL Refugee", text: "Sick of FPL's weekly lockouts. This lets me predict Champions League nights—finally." },
     { name: "Trerey A.", role: "Competitive Gamer", text: "The streak system keeps me coming back. Currently on 12 matches—not breaking it now." },
-    { name: "Alex C.", role: "Data Analyst", text: "Love that it's skill-based. No random jackpot nonsense, just consistent point grinding." },
+    { name: "Alex C.", role: "Data Analyst", text: "Love that it's skill-based. No random lottery nonsense, just consistent point grinding." },
     { name: "Omari E.", role: "Social Player", text: "Created a league with uni mates. Way more engaging than just watching matches." },
     { name: "Darius M.", role: "Arsenal Fan", text: "Finally got my girlfriend into football predictions. The simple 10-point system makes it easy to explain." },
     { name: "Navjit H.", role: "Streak Chaser", text: "15-match streak and counting. The Streak Shield powerup saved me twice—absolute game changer." },

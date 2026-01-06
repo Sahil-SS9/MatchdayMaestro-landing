@@ -49,11 +49,17 @@ export default function AIAutopilotPage() {
             </div>
           </section>
 
-          {/* App Screenshot Placeholder */}
+          {/* App Screenshot */}
           <section className="mb-16">
             <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10 text-center">
-              <div className="aspect-[9/16] max-w-xs mx-auto bg-white/5 rounded-2xl flex items-center justify-center border border-white/10">
-                <p className="text-white/50 text-sm">App Screenshot Placeholder</p>
+              <div className="aspect-[9/16] max-w-xs mx-auto rounded-2xl overflow-hidden border border-white/10">
+                <Image
+                  src="/ai-auto-pilot-strategy-screen.png"
+                  alt="AI Autopilot Strategy Selection Screen"
+                  width={320}
+                  height={568}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <p className="text-sm text-white/50 mt-4">AI Autopilot Strategy Selection Screen</p>
             </div>

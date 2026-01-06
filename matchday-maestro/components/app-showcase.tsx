@@ -10,44 +10,50 @@ interface AppScreen {
 export function AppShowcase() {
   const screens: AppScreen[] = [
     {
+      label: "MONITOR",
+      title: "Follow Match Updates",
+      image: "/fixtures-match-updates-screen.png",
+      color: "from-cyan-500/20 to-cyan-600/20",
+    },
+    {
       label: "RESULTS",
       title: "Live Match Predictions",
-      image: "/football-match-prediction-results-screen.jpg",
+      image: "/football-match-prediction-results-screen.jpeg",
       color: "from-emerald-500/20 to-emerald-600/20",
     },
     {
       label: "SPEED",
       title: "30-Second Window",
-      image: "/countdown-timer-30-seconds-prediction-window.jpg",
+      image: "/countdown-timer-30-seconds-prediction-window.jpeg",
       color: "from-blue-500/20 to-blue-600/20",
     },
     {
       label: "SOCIAL",
       title: "League Rankings",
-      image: "/social-leaderboard-rankings-football-predictions.jpg",
+      image: "/social-leaderboard-rankings-football-predictions.png",
       color: "from-purple-500/20 to-purple-600/20",
     },
     {
       label: "STANDOUT",
       title: "Achievement Badges",
-      image: "/achievement-badges-trophies-football-app.jpg",
+      image: "/achievement-badges-trophies-football-app.jpeg",
       color: "from-amber-500/20 to-amber-600/20",
     },
     {
       label: "TARGET MAN",
       title: "Target Man 501",
-      image: "/target-man-501-challenge-screen.jpg",
+      image: "/target-man-501-challenge-screen.png",
       color: "from-rose-500/20 to-rose-600/20",
     },
   ]
 
   return (
-    <div className="relative w-full overflow-hidden py-8">
+    <div className="relative w-full py-8">
       {/* Gradient fade edges for scroll indication on mobile */}
       <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#0f1015] to-transparent z-10 pointer-events-none md:hidden" />
       <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#0f1015] to-transparent z-10 pointer-events-none md:hidden" />
 
-      <div className="flex gap-4 md:gap-6 md:justify-center items-center perspective-1000 overflow-x-auto scrollbar-hide px-4 md:px-0 snap-x snap-mandatory md:snap-none">
+      <div className="flex gap-4 md:gap-6 md:justify-center items-center perspective-1000 overflow-x-auto scrollbar-hide px-8 md:px-12 snap-x snap-mandatory md:snap-none">
         {screens.map((screen, index) => (
           <div
             key={index}
@@ -57,15 +63,15 @@ export function AppShowcase() {
               transform: `rotateY(${(index - 2) * 8}deg) translateZ(${Math.abs(index - 2) * -20}px)`,
             }}
           >
+            {/* Label badge - positioned above phone */}
+            <div className="flex justify-center mb-3">
+              <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full text-white shadow-lg">
+                {screen.label}
+              </span>
+            </div>
+
             {/* Phone frame */}
             <div className="relative rounded-[32px] glass-border bg-neutral-900 p-2 hover:scale-105 transition-all duration-500 hover:z-10">
-              {/* Label badge */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
-                <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full text-white shadow-lg">
-                  {screen.label}
-                </span>
-              </div>
-
               {/* Screen content */}
               <div className="relative aspect-[9/19] w-full overflow-hidden rounded-[24px] bg-black">
                 {/* Gradient overlay */}

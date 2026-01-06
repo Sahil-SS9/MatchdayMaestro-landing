@@ -23,7 +23,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="relative isolate">
       <div className="mesh-gradient" />
 
       <div className="floating-orb floating-orb-1" />
@@ -90,11 +90,12 @@ export function Hero() {
               <span>100% Skill-Based</span>
             </div>
           </div>
-
-          <div className="mt-16 w-full">
-            <AppShowcase />
-          </div>
         </div>
+      </div>
+
+      {/* AppShowcase outside container for full-width display */}
+      <div className="mt-16 w-full relative z-10">
+        <AppShowcase />
       </div>
     </section>
   )

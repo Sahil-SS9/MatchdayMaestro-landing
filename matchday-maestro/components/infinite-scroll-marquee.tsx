@@ -29,10 +29,10 @@ export function InfiniteScrollMarquee() {
     <section className="relative w-full overflow-hidden py-12 bg-gradient-to-b from-transparent via-[#00C896]/5 to-transparent">
       <div className="container mx-auto px-4 mb-6">
         <h2 className="text-center text-2xl md:text-3xl font-bold text-white mb-2">
-          Loved by 100+ Beta Testers
+          Built for Football Fans Like You
         </h2>
         <p className="text-center text-white/60 text-sm">
-          Real feedback from players who've made the switch
+          What players are saying about our vision
         </p>
       </div>
 

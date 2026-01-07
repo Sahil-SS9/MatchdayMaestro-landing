@@ -446,7 +446,7 @@
   }
 }
 
-/* Added infinite scroll animation */
+/* Infinite scroll animation with responsive speeds */
 @keyframes infinite-scroll {
   from {
     transform: translateX(0);
@@ -457,11 +457,43 @@
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 30s linear infinite;
+  /* Mobile-first: fastest speed for narrow viewports */
+  animation: infinite-scroll 20s linear infinite;
+  will-change: transform;
+  contain: layout;
 }
 
+/* Tablet: medium speed */
+@media (min-width: 640px) {
+  .animate-infinite-scroll {
+    animation-duration: 35s;
+  }
+}
+
+/* Desktop: slower, more comfortable reading */
+@media (min-width: 1024px) {
+  .animate-infinite-scroll {
+    animation-duration: 50s;
+  }
+}
+
+/* Large desktop: premium, leisurely pace */
+@media (min-width: 1536px) {
+  .animate-infinite-scroll {
+    animation-duration: 60s;
+  }
+}
+
+/* Pause on hover for accessibility */
 .animate-infinite-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-infinite-scroll {
+    animation-duration: 120s; /* Very slow for users sensitive to motion */
+  }
 }
 
 /* Added perspective for 3D phone showcase */

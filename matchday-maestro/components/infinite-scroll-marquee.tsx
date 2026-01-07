@@ -41,15 +41,20 @@ export function InfiniteScrollMarquee() {
       <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0f1015] to-transparent z-10 pointer-events-none" />
 
       {/* Scrolling content */}
-      <div className="flex gap-6 animate-infinite-scroll">
+      <div className="flex gap-6 animate-infinite-scroll" aria-label="Customer testimonials">
         {duplicatedTestimonials.map((testimonial, index) => (
           <div
-            key={index}
+            key={`${testimonial.name}-${index}`}
             className="flex flex-col gap-2 px-6 py-5 liquid-glass rounded-2xl border border-white/10 max-w-sm flex-shrink-0"
+            role="article"
+            aria-label={`Testimonial from ${testimonial.name}`}
           >
             <p className="text-white/90 text-sm italic leading-relaxed">"{testimonial.text}"</p>
             <div className="flex items-center gap-2 mt-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00C896] to-[#10b981] flex items-center justify-center text-white font-bold text-xs">
+              <div
+                className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00C896] to-[#10b981] flex items-center justify-center text-white font-bold text-xs"
+                aria-hidden="true"
+              >
                 {testimonial.name.charAt(0)}
               </div>
               <div>

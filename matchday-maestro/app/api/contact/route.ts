@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Matchday Maestro <noreply@send.matchdaymaestro.com>',
+        from: 'Matchday Maestro <noreply@matchdaymaestro.com>',
         to: [CONTACT_EMAIL],
         reply_to: email,
         subject: `[Contact Form] ${subject}`,

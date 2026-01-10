@@ -39,18 +39,18 @@ export function ZigzagSection({ items }: { items: FeatureItem[] }) {
           across <span className="text-[#00C896] font-semibold">6 major competitions</span> to 
           create predictions that actually reward football knowledge, not lucky guesses.
         </p>
-        <div className="grid grid-cols-3 gap-6 mt-8">
-          <div className="liquid-glass rounded-2xl p-6 border border-white/10 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-[#00C896] mb-2">541,000+</div>
-            <div className="text-xs md:text-sm text-white/60 uppercase tracking-wider">Match Events</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-8">
+          <div className="liquid-glass rounded-2xl p-4 sm:p-6 border border-white/10 text-center">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#00C896] mb-1 sm:mb-2">541,000+</div>
+            <div className="text-xs sm:text-sm text-white/60 uppercase tracking-wider">Match Events</div>
           </div>
-          <div className="liquid-glass rounded-2xl p-6 border border-white/10 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-[#00C896] mb-2">3,059</div>
-            <div className="text-xs md:text-sm text-white/60 uppercase tracking-wider">Patterns</div>
+          <div className="liquid-glass rounded-2xl p-4 sm:p-6 border border-white/10 text-center">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#00C896] mb-1 sm:mb-2">3,059</div>
+            <div className="text-xs sm:text-sm text-white/60 uppercase tracking-wider">Patterns</div>
           </div>
-          <div className="liquid-glass rounded-2xl p-6 border border-white/10 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-[#00C896] mb-2">6</div>
-            <div className="text-xs md:text-sm text-white/60 uppercase tracking-wider">Competitions</div>
+          <div className="liquid-glass rounded-2xl p-4 sm:p-6 border border-white/10 text-center">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#00C896] mb-1 sm:mb-2">6</div>
+            <div className="text-xs sm:text-sm text-white/60 uppercase tracking-wider">Competitions</div>
           </div>
         </div>
       </div>

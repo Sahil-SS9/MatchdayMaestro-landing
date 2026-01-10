@@ -15,10 +15,12 @@ import {
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [featuresExpanded, setFeaturesExpanded] = useState(false)
   const links = [
     { href: "/how-it-works", label: "How It Works" },
     { href: "/pricing", label: "Pricing" },
     { href: "/faq", label: "FAQ" },
+    { href: "/contact", label: "Contact" },
   ]
 
   const featureLinks = [
@@ -112,13 +114,36 @@ export function SiteHeader() {
                   </div>
                 </div>
                 <nav className="flex flex-col gap-1 mt-2 text-white">
-                  <Link
-                    href="/features"
-                    className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#00C896] transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="text-sm">Features</span>
-                  </Link>
+                  <div>
+                    <button
+                      onClick={() => setFeaturesExpanded(!featuresExpanded)}
+                      className="flex items-center justify-between w-full px-4 py-3 hover:bg-white/5 hover:text-[#00C896] transition-colors"
+                    >
+                      <span className="text-sm">Features</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${featuresExpanded ? 'rotate-180' : ''}`} />
+                    </button>
+                    {featuresExpanded && (
+                      <div className="bg-white/5 border-l-2 border-[#00C896]/30 ml-4">
+                        <Link
+                          href="/features"
+                          className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 hover:text-[#00C896] transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <span className="text-sm text-[#00C896]">All Features</span>
+                        </Link>
+                        {featureLinks.map((l) => (
+                          <Link
+                            key={l.href}
+                            href={l.href}
+                            className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 hover:text-[#00C896] transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <span className="text-sm text-white/70">{l.label}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   {links.map((l) => (
                     <Link
                       key={l.href}

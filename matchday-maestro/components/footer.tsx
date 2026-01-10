@@ -95,12 +95,9 @@ export function Footer() {
             <h5 className="mb-4 text-xs font-semibold uppercase tracking-widest text-neutral-400">Company</h5>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="mailto:hello@matchdaymaestro.com"
-                  className="text-neutral-300 hover:text-[#00C896] transition-colors cursor-pointer block relative z-20"
-                >
+                <Link href="/contact" className="text-neutral-300 hover:text-[#00C896] transition-colors cursor-pointer block relative z-20">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

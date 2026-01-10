@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
 
     // Check for Resend configuration
     const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'hello@matchdaymaestro.com'
+    const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'matchdaymaestro@outlook.com'
 
     if (!RESEND_API_KEY) {
       // In production, require email service configuration

@@ -129,9 +129,13 @@ This message was sent from the Matchday Maestro contact form.
 
     if (!response.ok) {
       const errorData = await response.json()
-      console.error('Resend API error:', errorData)
+      console.error('Resend API error:', JSON.stringify(errorData))
+      // Show actual error in development, generic message in production
+      const errorMessage = process.env.NODE_ENV === 'development'
+        ? `Resend error: ${errorData?.message || JSON.stringify(errorData)}`
+        : `Failed to send message: ${errorData?.message || 'Please try again later.'}`
       return NextResponse.json(
-        { error: 'Failed to send message. Please try again later.' },
+        { error: errorMessage },
         { status: 500 }
       )
     }

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Smartphone, Timer, Target, Zap, Swords, Ban } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
+import { DelayBanner } from "@/components/delay-banner"
 
 export const metadata: Metadata = {
   title: "Matchday Maestro - Fair Football Predictions That Reward Knowledge",
@@ -55,6 +56,7 @@ export default function Page() {
       <AnimatedStadiumBackground />
       <ScrollAnimations />
       <SiteHeader />
+      <DelayBanner />
       <Hero />
       <InfiniteScrollMarquee />
       <ProblemSection />

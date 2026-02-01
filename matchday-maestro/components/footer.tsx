@@ -73,6 +73,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/features/gloves-up" className="text-neutral-300 hover:text-[#00C896] transition-colors cursor-pointer block relative z-20">
+                  Gloves Up
+                </Link>
+              </li>
+              <li>
                 <Link href="/features/target-man" className="text-neutral-300 hover:text-[#00C896] transition-colors cursor-pointer block relative z-20">
                   Target Man
                 </Link>

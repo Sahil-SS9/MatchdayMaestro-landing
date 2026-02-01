@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "Features - Everything in Matchday Maestro",
-  description: "Live predictions, AI Autopilot, Target Man trivia, battles & leagues, coin toolkit power-ups, and daily quizzes. Discover all the ways to compete.",
+  description: "Live predictions, AI Autopilot, Gloves Up boxing trivia, Target Man, battles & leagues, coin toolkit power-ups, and daily quizzes. Discover all the ways to compete.",
   openGraph: {
     title: "Features - Everything in Matchday Maestro",
     description: "Live predictions, AI Autopilot, battles, leagues, quizzes, and more. The complete football prediction experience.",
@@ -349,6 +349,51 @@ export default function FeaturesPage() {
                   <span className="px-4 py-2 bg-[#00C896]/20 border border-[#00C896]/40 rounded-full text-sm text-[#00C896]">
                     Extra games: 100 coins
                   </span>
+                </div>
+              </div>
+            </section>
+
+            {/* Gloves Up */}
+            <section id="gloves-up" className="scroll-mt-20">
+              <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/10">
+                <div className="flex items-start gap-6 mb-6">
+                  <span className="text-6xl flex-shrink-0">🥊</span>
+                  <div className="flex-1">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Gloves Up</h2>
+                    <p className="text-xl text-white/70 mb-6">
+                      Boxing meets football trivia. Answer questions to land punches, build momentum, and knockout your opponent—AI or real player.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="liquid-glass rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3">Fight Night (Solo)</h3>
+                    <ul className="space-y-2 text-white/70 text-sm">
+                      <li>• 5 AI difficulty tiers: Rookie to GOAT</li>
+                      <li>• Quick Bout (3 rounds) or Full Fight (5 rounds)</li>
+                      <li>• Health bars, momentum system, consumables</li>
+                      <li>• Win by KO or judges&apos; decision</li>
+                    </ul>
+                  </div>
+                  <div className="liquid-glass rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3">Title Fight (Multiplayer)</h3>
+                    <ul className="space-y-2 text-white/70 text-sm">
+                      <li>• Real-time 1v1 against other players</li>
+                      <li>• Coin stake tiers: Friendly, Bronze, Silver, Gold</li>
+                      <li>• 6 consumable items for tactical advantage</li>
+                      <li>• Climb the rankings and prove you&apos;re the best</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <Link
+                    href="/features/gloves-up"
+                    className="inline-flex items-center gap-2 text-[#EF4444] hover:text-[#EF4444]/80 font-semibold"
+                  >
+                    View Full Details →
+                  </Link>
                 </div>
               </div>
             </section>

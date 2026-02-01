@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Smartphone, Timer, Target, Zap, Swords, Ban } from "lucide-react"
+import { Smartphone, Timer, Target, Zap, Ban } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { DelayBanner } from "@/components/delay-banner"
 
@@ -79,7 +79,7 @@ export default function Page() {
             <p className="text-white/60 mt-2">More ways to compete, more games to master</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Lightning Round Battles */}
             <div className="liquid-glass rounded-2xl p-6 border border-[#F59E0B]/30 hover:border-[#F59E0B]/60 transition-all group">
               <div className="flex items-center gap-3 mb-4">
@@ -93,22 +93,6 @@ export default function Page() {
               <h3 className="text-xl font-bold text-white mb-2">Lightning Round</h3>
               <p className="text-white/60 text-sm leading-relaxed">
                 Rapid-fire battle mode. 60-second windows, first to 10 correct predictions wins. Escalating multipliers, winner gets the coins.
-              </p>
-            </div>
-
-            {/* Gloves Up */}
-            <div className="liquid-glass rounded-2xl p-6 border border-[#00C896]/30 hover:border-[#00C896]/60 transition-all group">
-              <div className="flex items-center gap-3 mb-4">
-                <Swords className="w-10 h-10 text-[#00C896]" />
-                <div>
-                  <span className="text-xs px-2 py-0.5 bg-[#00C896]/20 border border-[#00C896]/40 rounded text-[#00C896]">
-                    New Game
-                  </span>
-                </div>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Gloves Up</h3>
-              <p className="text-white/60 text-sm leading-relaxed">
-                Boxing meets football trivia. Answer questions to land punches, build momentum, and knockout your opponent—AI or real player.
               </p>
             </div>
 
